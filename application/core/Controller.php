@@ -11,6 +11,7 @@
                     $$key = $value;
                 }
             }
+            //Giải phóng biến Data
             unset($data);
 
             //Tạo biến toàn cục
@@ -25,9 +26,21 @@
                 require("$app_path/$view_path/shared/header.php");
             }
 
-            require("$app_path/$view_path/shared/banner.php");
-            require("$app_path/$view_path/$controller_Name/$viewName.html");
-            require("$app_path/$view_path/shared/mp3.php");
+
+            if($viewName != null)
+            {
+                foreach($viewName as $key => $value)
+                {
+                    if(strpos($key,"component") !== false)
+                    {
+                        require("$app_path/$view_path/shared/$value.php");
+                    }
+                    else
+                    {
+                        require("$app_path/$view_path/$controller_Name/$value.html");
+                    }
+                }
+            }
 
             if($useLayout)
             {
