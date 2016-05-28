@@ -11,8 +11,15 @@
 
             $article = new Article();
             $rs = $article->SelectAll();
+
+            //Biến dữ liệu dùng để truyền qua View
             $data = array("rs"=>$rs);
-            $this->View("Index",$data);
+
+            //Biến chứa danh sách component + view
+            $view = array("componentBanner" => "banner","Index" => "Index","componentMp3"=>"mp3");
+
+            //Khởi động view với các biến truyền vào
+            $this->View($view,$data);
         }
 
     }
