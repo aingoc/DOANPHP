@@ -34,7 +34,7 @@
         <div class="container">
             <div class="header-top-in">
                 <div class="logo">
-                    <a href="index.html"><div class = "bookstore">BOOK STORE</div></a>
+                    <a href="index.php"><div class = "bookstore">BOOK STORE</div></a>
                 </div>
                 <div class="header-in">
                     <ul class="icon1 sub-icon1">
@@ -88,7 +88,7 @@
             <div class="h_menu4">
                 <a class="toggleMenu" href="#">Menu</a>
                 <ul class="nav">
-                    <li class="active"><a href="index.html"><i> </i>Trang Chủ</a></li>
+                    <li class="active"><a href="index.php"><i> </i>Trang Chủ</a></li>
                     <li>
                         <a href="index.php?c=category&ct=1" >  SÁCH THIẾU NHI</a>
                         <ul class="drop">
