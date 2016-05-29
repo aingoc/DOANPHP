@@ -1,28 +1,39 @@
 <?php
     class Category extends Controller
     {
-        function __construct()
-        {
 
-        }
-        function Index()
+        private $categoryID;
+        private $categories;
+        private $currentPage = 1;
+        private $totalOfPage;
+        private $listBook;
+        private $nameCategory;
+        private $position = 0;
+        function __construct()
         {
             //Khai báo model category
             include("application/models/categories_model.php");
 
-            $categoryID = empty($_GET["ct"])? "1":$_GET["ct"];
+            $this->categories = new Categories();
+            $this->categoryID = empty($_GET["ct"])? "1":$_GET["ct"];
+            $this->currentPage = empty($_GET["p"])? "1":$_GET["p"];
+        }
+        function Index()
+        {
+            if($this->currentPage > 1)
+            {
+                $this->position = $this->currentPage * 12 - 12;
+            }
 
-            //New
-            $categories = new Categories();
-
-            $listCategory = $categories->SelectBookByCategory(0,13,$categoryID);
-            $nameCategory = $categories->GetNameCategoryByID($categoryID);
+            $this->listBook = $this->categories->SelectBookByCategory($this->position, 12 * $this->currentPage,$this->categoryID);
+            $this->nameCategory = $this->categories->GetNameCategoryByID($this->categoryID);
+            $this->totalOfPage = $this->categories->TotalOfPage($this->categoryID);
 
             //Biến dữ liệu dùng để truyền qua View
-            $data = array("listCategory"=>$listCategory,"nameCategory"=>$nameCategory);
 
+            $data = array("listCategory"=>$this->listBook,"nameCategory"=>$this->nameCategory, "totalOfPage" =>$this->totalOfPage, "currentPage" => $this->currentPage, "categoryID"=>$this->categoryID);
+            $view = array("Index" => "Index","componentPagination"=>"pagination");
 
-            $view = array("Index" => "Index");
             $this->View($view,$data);
         }
     }
