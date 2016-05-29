@@ -2,8 +2,8 @@
     require("application/core/Database.php");
     Class Model
     {
-        private $db;
-        private $className;
+        public $db;
+        public $className;
 
         function __construct()
         {

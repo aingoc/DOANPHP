@@ -5,134 +5,48 @@
             <h3 class="future">BÁN CHẠY</h3>
             <div class="content-middle-in">
                 <ul id="flexiselDemo1">
-                    <li>
-                        <div class = "sizeimg">
-                            <img src="public/themes/images/ThieuNhi.jpg"/>
-                        </div>
-                    </li>
-                    <li><div class = "sizeimg"><img src="public/themes/images/vanhoc.jpg"/></div></li>
-                    <li><div class = "sizeimg"><img src="public/themes/images/kinhte.jpg"/></div></li>
-                    <li><div class = "sizeimg"><img src="public/themes/images/yhoc.jpg"/></div></li>
-                    <li><div class = "sizeimg"><img src="public/themes/images/ngoaingu.jpg"/></div></li>
-
+                    <?php
+                        foreach($hot as $key => $value)
+                        {
+                            echo '<li><div class = "sizeimg"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></div></li>';
+                        }
+                    ?>
                 </ul>
                 <script type="text/javascript" src="public/themes/js/jquery.flexisel.js"></script>
             </div>
         </div>
         <div class="content-middle">
+
             <h3 class="future">SÁCH MỚI</h3>
             <div class="content-top-in">
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi4.jpg" alt="" /></a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Nghề làm phi</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
+                <?php
+                    $count = 0;
+                    foreach($new as $key => $value)
+                    {
+                        echo '  <div class="col-md-3 md-col">
+                                    <div class="col-md">
+                                        <a href="/index.php?c=detail&a=index&b='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>
+                                        <div class="top-content">
+                                            <h5><a href="/index.php?c=detail&a=index&b='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a></h5>
+                                            <div class="white">
+                                                <a href="#'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                                <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi3.jpg" alt="" />	</a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Công chúa mặt trăng</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi1.jpg" alt="" /></a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Những giấc mơ của Thỏ Bi Li</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi2.jpg" alt="" /></a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Món ăn Việt với HeLen</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+                        $count++;
 
-            <div class="content-top-in">
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi5.jpg" alt="" /></a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Quản trị học vui vẽ</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi6.jpg" alt="" />	</a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Thuật ngữ âm nhạc</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi7.jpg" alt="" /></a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Sophie và tên khổng lồ</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 md-col">
-                    <div class="col-md">
-                        <a href="single.html"><img  src="public/themes/images/sachmoi8.jpg" alt="" /></a>
-                        <div class="top-content">
-                            <h5><a href="single.html">Khách hàng là số 1</a></h5>
-                            <div class="white">
-                                <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                <p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+                        if($count == 4)
+                        {
+                            echo '<div class="clearfix"></div></div><div class="content-top-in">';
+                        }
+                    }
+                ?>
+            <div class="clearfix"></div>
             </div>
         </div>
     </div>

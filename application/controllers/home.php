@@ -7,13 +7,16 @@
         }
         function Index()
         {
-            include("application/models/article_model.php");
+            include("application/models/books_model.php");
 
-            $article = new Article();
-            $rs = $article->SelectAll();
+            $books = new Books();
+            //Biến chứa dữ liệu component sách mới
+            $new = $books->SelectNewBooks(0,8);
+
+            $hot = $books->SelectHotBooks(0,8);
 
             //Biến dữ liệu dùng để truyền qua View
-            $data = array("rs"=>$rs);
+            $data = array("new"=>$new, "hot"=>$hot);
 
             //Biến chứa danh sách component + view
             $view = array("componentBanner" => "banner","Index" => "Index","componentMp3"=>"mp3");
