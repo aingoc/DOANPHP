@@ -19,7 +19,7 @@ require("application/core/Model.php");
         function Init()
         {
             //Lấy tên controller từ web gửi nếu không có gán b?ng null
-            $controller = empty($_GET["c"])? "":$_GET["c"];
+            $controller = empty($_GET["c"])? "home":$_GET["c"];
 
             //kiển tra controller gửi từ web xem có dữ liệu không nếu có thì thực hiện ...
             if($controller != "")

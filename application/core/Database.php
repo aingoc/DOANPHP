@@ -6,7 +6,7 @@
         {
             //Lấy biến toàn cục được tạo từ file bootstap
             global $host,$dbName,$user,$pass;
-            $this->db = new PDO("mysql:host=$host;dbname=$dbName","$user","$pass");
+            $this->db = new PDO("mysql:host=$host;dbname=$dbName;charset=UTF8","$user","$pass");
 
         }
 

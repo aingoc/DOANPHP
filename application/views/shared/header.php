@@ -90,40 +90,40 @@
                 <ul class="nav">
                     <li class="active"><a href="index.html"><i> </i>Trang Chủ</a></li>
                     <li>
-                        <a href="#" >  SÁCH THIẾU NHI</a>
+                        <a href="index.php?c=category&ct=1" >  SÁCH THIẾU NHI</a>
                         <ul class="drop">
-                            <li><a href="products.html">Truyện tranh</a></li>
-                            <li><a href="products.html">Cổ tích - Thần thoại</a></li>
+                            <li><a href="index.php?c=category&ct=1">Truyện tranh</a></li>
+                            <li><a href="index.php?c=category&ct=2">Cổ tích - Thần thoại</a></li>
                         </ul>
                     </li>
-                    <li><a href="products.html" >Văn học - Nghệ thuật</a></li>
+                    <li><a href="index.php?c=category&ct=3" >Văn học - Nghệ thuật</a></li>
                     <li>
-                        <a href="#" >  Kinh Tế</a>
+                        <a href="index.php?c=category&ct=4" >  Kinh Tế</a>
                         <ul class="drop">
-                            <li><a href="products.html">Kế Toán</a></li>
-                            <li><a href="products.html">Quản Trị Kinh Doanh</a></li>
-                            <li><a href="products.html">Marketing</a></li>
-                            <li><a href="products.html">Ngoại Thương</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" >  Y Học</a>
-                        <ul class="drop">
-                            <li><a href="products.html">Y Học Thường Thức</a></li>
-                            <li><a href="products.html">Y Học Cổ Truyền</a></li>
+                            <li><a href="index.php?c=category&ct=6">Kế Toán</a></li>
+                            <li><a href="index.php?c=category&ct=6">Quản Trị Kinh Doanh</a></li>
+                            <li><a href="index.php?c=category&ct=6">Marketing</a></li>
+                            <li><a href="index.php?c=category&ct=7">Ngoại Thương</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" >  Ngoại Ngữ</a>
+                        <a href="index.php?c=category&ct=8" >  Y Học</a>
                         <ul class="drop">
-                            <li><a href="products.html">Tiếng Anh</a></li>
-                            <li><a href="products.html">Tiếng Nhật</a></li>
-                            <li><a href="products.html">Tiếng Hàn</a></li>
+                            <li><a href="index.php?c=category&ct=8">Y Học Thường Thức</a></li>
+                            <li><a href="index.php?c=category&ct=9">Y Học Cổ Truyền</a></li>
                         </ul>
                     </li>
-                    <li><a href="products.html" >Nấu Ăn</a></li>
-                    <li><a href="products.html" >Âm nhạc</a></li>
-                    <li><a href="products.html" >Du lịch</a></li>
+                    <li>
+                        <a href="index.php?c=category&ct=10" >  Ngoại Ngữ</a>
+                        <ul class="drop">
+                            <li><a href="index.php?c=category&ct=10">Tiếng Anh</a></li>
+                            <li><a href="index.php?c=category&ct=11">Tiếng Nhật</a></li>
+                            <li><a href="index.php?c=category&ct=12">Tiếng Hàn</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.php?c=category&ct=13" >Nấu Ăn</a></li>
+                    <li><a href="index.php?c=category&ct=14" >Âm nhạc</a></li>
+                    <li><a href="index.php?c=category&ct=15" >Du lịch</a></li>
                 </ul>
                 <script type="text/javascript" src="public/themes/js/nav.js"></script>
             </div>
@@ -132,7 +132,7 @@
     <div class="header-bottom-in">
         <div class="container">
             <div class="header-bottom-on">
-                <p class="wel"><a href="account.html">Chào mừng đến với thế giới của Book Store!   Bạn có thể đăng nhập để mua hàng !!!</a></p>
+                <p class="wel"><a href="index.php?c=home">Chào mừng đến với thế giới của Book Store!   Bạn có thể đăng nhập để mua hàng !!!</a></p>
                 <div class="header-can">
                     <ul class="social-in">
                         <li><a href="https://www.facebook.com/"><i class="facebook"> </i></a></li>
