@@ -21,6 +21,7 @@
 
     <!-- Slideshow javascript-->
     <script type="text/javascript" src="public/themes/js/otherHome.js"></script>
+    <script type="text/javascript" src="public/themes/js/jquery.etalage.min.js"></script>
 
     <!--slider-script-->
     <script src="public/themes/js/responsiveslides.min.js"></script>
