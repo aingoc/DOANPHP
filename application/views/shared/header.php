@@ -96,7 +96,7 @@
                             <li><a href="index.php?c=category&ct=2">Cổ tích - Thần thoại</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.php?c=category&ct=3" >Văn học - Nghệ thuật</a></li>
+                    <li><a href="index.php?c=category&ct=3" >Văn học</a></li>
                     <li>
                         <a href="index.php?c=category&ct=4" >  Kinh Tế</a>
                         <ul class="drop">
