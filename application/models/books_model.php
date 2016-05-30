@@ -4,7 +4,7 @@
         function SelectNewBooks($position,$number)
         {
             //Câu Select
-            $sql = "SELECT * FROM ".$this->className." ORDER BY BOOK_ID DESC LIMIT $position,$number ";
+            $sql = "SELECT * FROM ".$this->className." WHERE STATUS = 'NEW' ORDER BY BOOK_ID DESC LIMIT $position,$number ";
 
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
@@ -16,7 +16,7 @@
         function SelectHotBooks($position,$number)
         {
             //Câu Select
-            $sql = "SELECT * FROM ".$this->className." WHERE STATUS = 'NEW' ORDER BY BOOK_ID DESC LIMIT $position,$number ";
+            $sql = "SELECT * FROM ".$this->className." WHERE STATUS = 'HOT' ORDER BY BOOK_ID DESC LIMIT $position,$number ";
 
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
