@@ -22,10 +22,11 @@
         {
             if($this->currentPage > 1)
             {
-                $this->position = $this->currentPage * 12 - 12;
+                $this->position = $this->currentPage * 8 - 8;
             }
 
-            $this->listBook = $this->categories->SelectBookByCategory($this->position, 12 * $this->currentPage,$this->categoryID);
+            $this->listBook = $this->categories->SelectBookByCategory($this->position,8,$this->categoryID);
+			
             $this->nameCategory = $this->categories->GetNameCategoryByID($this->categoryID);
             $this->totalOfPage = $this->categories->TotalOfPage($this->categoryID);
 

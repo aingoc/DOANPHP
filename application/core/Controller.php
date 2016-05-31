@@ -13,7 +13,7 @@
             }
             //Giải phóng biến Data
             unset($data);
-
+			
             //Tạo biến toàn cục
             global $app_path,$controller_path,$view_path;
 

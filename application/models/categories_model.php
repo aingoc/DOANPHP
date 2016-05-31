@@ -33,7 +33,7 @@
             $runSql = $this->db->QueryResult($sql);
             $result = $runSql->fetchAll(PDO::FETCH_CLASS);
 
-            $totalOfPage = ($result[0]->COUNT /12);
+            $totalOfPage = ($result[0]->COUNT /8);
 
             if($totalOfPage<1)
             {
