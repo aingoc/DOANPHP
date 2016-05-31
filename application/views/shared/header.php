@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Books Store - Trang chủ</title>
+    <title>Books Store</title>
     <link href="public/themes/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="public/themes/js/jquery.min.js"></script>
@@ -21,6 +21,7 @@
 
     <!-- Slideshow javascript-->
     <script type="text/javascript" src="public/themes/js/otherHome.js"></script>
+    <script type="text/javascript" src="public/themes/js/jquery.etalage.min.js"></script>
 
     <!--slider-script-->
     <script src="public/themes/js/responsiveslides.min.js"></script>
@@ -100,8 +101,8 @@
                     <li>
                         <a href="index.php?c=category&ct=4" >  Kinh Tế</a>
                         <ul class="drop">
-                            <li><a href="index.php?c=category&ct=6">Kế Toán</a></li>
-                            <li><a href="index.php?c=category&ct=6">Quản Trị Kinh Doanh</a></li>
+                            <li><a href="index.php?c=category&ct=4">Kế Toán</a></li>
+                            <li><a href="index.php?c=category&ct=16">Quản Trị Kinh Doanh</a></li>
                             <li><a href="index.php?c=category&ct=6">Marketing</a></li>
                             <li><a href="index.php?c=category&ct=7">Ngoại Thương</a></li>
                         </ul>
