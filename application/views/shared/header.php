@@ -34,7 +34,7 @@
         <div class="container">
             <div class="header-top-in">
                 <div class="logo">
-                    <a href="index.php"><div class = "bookstore">BOOK STORE</div></a>
+                    <div class = "bookstore">BOOK STORE</div>
                 </div>
                 <div class="header-in">
                     <ul class="icon1 sub-icon1">
@@ -96,7 +96,17 @@
                             <li><a href="index.php?c=category&ct=2">Cổ tích - Thần thoại</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.php?c=category&ct=3" >Văn học</a></li>
+                    <li>
+						<a href="index.php?c=category&ct=3" >Văn học - Nghệ thuật</a>
+						<ul class="drop">
+							<li><a href="index.php?c=category&ct=3">Văn học Việt Nam</a></li>
+							<li><a href="index.php?c=category&ct=17">Thơ ca Dân gian</a></li>
+							<li><a href="index.php?c=category&ct=18">Truyện tiểu thuyết</a></li>
+							<li><a href="index.php?c=category&ct=19">Truyện viễn tưởng</a></li>
+							<li><a href="index.php?c=category&ct=20">Trinh thám - Vụ án</a></li>
+                        </ul>
+					</li>
+					
                     <li>
                         <a href="index.php?c=category&ct=4" >  Kinh Tế</a>
                         <ul class="drop">
