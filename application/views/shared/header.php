@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="total">
                                     <div class="total_left">CartSubtotal : </div>
-                                    <div class="total_right">$250.00</div>
+                                    <div class="total_right">25000VNĐ</div>
                                     <div class="clearfix"> </div>
                                 </div>
                                 <div class="login_buttons">
@@ -143,7 +143,7 @@
     <div class="header-bottom-in">
         <div class="container">
             <div class="header-bottom-on">
-                <p class="wel"><a href="index.php?c=home">Chào mừng đến với thế giới của Book Store!   Bạn có thể đăng nhập để mua hàng !!!</a></p>
+                <p class="wel"><a href="index.php?c=login">Chào mừng đến với thế giới của Book Store!   Bạn có thể đăng nhập để mua hàng !!!</a></p>
                 <div class="header-can">
                     <ul class="social-in">
                         <li><a href="https://www.facebook.com/"><i class="facebook"> </i></a></li>
