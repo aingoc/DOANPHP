@@ -35,7 +35,7 @@
 
             $totalOfPage = ($result[0]->COUNT /8);
 
-            if($totalOfPage<1)
+            if($totalOfPage <= 1)
             {
                 return 1;
             }
