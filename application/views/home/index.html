@@ -8,7 +8,7 @@
                     <?php
                         foreach($hot as $key => $value)
                         {
-                            echo '<li><div class = "sizeimg"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></div></li>';
+                            echo '<li><div class = "sizeimg"><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></a></div></li>';
                         }
                     ?>
                 </ul>
@@ -25,9 +25,9 @@
                     {
                         echo '  <div class="col-md-3 md-col">
                                     <div class="col-md">
-                                        <a href="/index.php?c=detail&a=index&b='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>
+                                        <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>
                                         <div class="top-content">
-                                            <h5><a href="/index.php?c=detail&a=index&b='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a></h5>
+                                            <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a></h5>
                                             <div class="white">
                                                 <a href="#'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
                                                 <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>

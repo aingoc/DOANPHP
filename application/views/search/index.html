@@ -1,0 +1,36 @@
+<div class="products">
+    <div class=" top-products">
+        <?php
+                $count = 0;
+                foreach($listCategory as $key=>$value)
+        {
+        echo '
+        <div class="col-md-3 md-col">
+            <div class="col-md">
+                <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="compare-in"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>
+                <div class="top-content">
+                    <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a></h5>
+                    <div class="white">
+                        <a href="#'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                        <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ';
+
+        $count++;
+
+        if($count == 4)
+        {
+        echo '<div class="clearfix"></div></div><div class=" top-products">';
+    $count = 0;
+    }
+    }
+
+    ?>
+</div>
+    <div class="clearfix"></div>
+</div>
+<!---->

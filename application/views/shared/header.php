@@ -39,8 +39,8 @@
                 </div>
                 <div class="header-in">
                     <ul class="icon1 sub-icon1">
-                        <li><a href="wishlist.html">GIỎ HÀNG (0)</a> </li>
-                        <li><a href="account.html">  ĐĂNG NHẬP  </a></li>
+                        <li><a href="#">GIỎ HÀNG (0)</a> </li>
+                        <li><a href="index.php?c=login">  ĐĂNG NHẬP  </a></li>
                         <li>
                             <div class="cart">
                                 <a href="#" class="cart-in"> </a>
@@ -151,8 +151,8 @@
                         <li><a href="https://www.skype.com"><i class="skype"> </i></a></li>
                     </ul>
                     <div class="search">
-                        <form>
-                            <input type="text" value="Tìm sách...!" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+                        <form method="GET" action="index.php" enctype="multipart/form-data">
+                            <input type="text" name="search" value="Tìm sách...!" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
                             <input type="submit" value="">
                         </form>
                     </div>
