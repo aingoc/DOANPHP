@@ -4,7 +4,7 @@
         function GetBookByName($position,$number,$bookName)
         {
             //Câu Select
-            $sql = "SELECT * FROM books WHERE BOOK_NAME LIKE '%" . $bookName . "%' ORDER BY BOOK_ID DESC LIMIT $position,$number ";
+            $sql = "SELECT * FROM books WHERE BOOK_NAME LIKE '%" . $bookName . "%' ORDER BY DATE DESC LIMIT $position,$number ";
 
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
