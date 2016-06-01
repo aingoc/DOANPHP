@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2016 at 06:29 AM
+-- Generation Time: Jun 01, 2016 at 06:32 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `doanphp`
+-- Database: `database_doanphp`
 --
 
 -- --------------------------------------------------------
@@ -110,7 +110,69 @@ INSERT INTO `books` (`BOOK_ID`, `BOOK_NO`, `BOOK_NAME`, `BOOK_DESCRIPTION`, `STA
 (72, 72, 'Cuộc Tình Ma Quái', 'Chuyện tình khang và hạnh\r\n\r\nSự thật về hạnh\r\n\r\nOan hồn của hạnh\r\n\r\nHồn ma xuất hiện\r\n\r\nNgày trở về của Khang\r\n\r\nMối tình liêu trai\r\n\r\nĐoạn kết của cuộc tình ma quái', 'normal', 19, 'CuocTinhMaQuai.jpg', '', '', '', 'VNĐ', 6000, '2016-05-31 07:00:00'),
 (73, 73, 'Bà Chúa Đền Sải Cả', 'Giấc mộng trùng khơi\r\n\r\nNước mắt nàng tiên\r\n\r\nNgày trở về\r\n\r\nĐoạn kết', 'normal', 19, 'BaChuaDenSaiCa.jpg', '', '', '', 'vnđ', 3200, '2016-05-31 09:00:00'),
 (74, 74, 'Đêm Sấm Sét', '    .... Tiếng hú lanh lảnh vang lên. Chiếc đầu lâu của một người con gái với mái tóc màu đen rối tung, tòn teng phía trước đầu là một bộ lòng người, đầy đủ gan tim, phèo phổi với màu đỏ đỏ bầm....\r\n    ........', 'normal', 19, 'DemSamSet.jpg', '', '', '', 'VNĐ', 11200, '2016-05-31 07:00:00'),
-(75, 75, 'Bóng Sói', 'Truyện viễn tưởng của Trần Hồng Ngọc nằm trong tủ sách lâu đài xanh.', 'normal', 19, 'BOngSoi.jpg', '', '', '', 'vnđ', 12000, '2016-05-31 15:00:00');
+(75, 75, 'Bóng Sói', 'Truyện viễn tưởng của Trần Hồng Ngọc nằm trong tủ sách lâu đài xanh.', 'normal', 19, 'BOngSoi.jpg', '', '', '', 'vnđ', 12000, '2016-05-31 15:00:00'),
+(76, 1, 'Bán Hàng Bậc Cao', 'Sách Kinh Tế', 'normal', 4, 'banhang.jpg', '', '', '', 'vnđ', 213000, '2016-06-22 00:00:00'),
+(77, 2, 'Chinh Phục Nghệ Thuật Khách Hàng', 'Sách Kinh Tế', 'normal ', 4, 'chinhphuc.jpg', '', '', '', 'vnđ', 62000, '2016-06-30 00:00:00'),
+(78, 3, 'Kinh Tế Đại Cương', 'Sách Kinh Tế', 'normal ', 4, 'kinhtehoc.jpg', '', '', '', 'vnđ', 75000, '2016-06-22 00:00:00'),
+(79, 4, 'Kế Toán Quản Trị', 'Sách Kinh Tế', 'normal ', 4, 'ktoan.jpg', '', '', '', 'vnđ', 80000, '2016-06-29 00:00:00'),
+(80, 1, 'Bí Mật Triệu Đô', 'Sách Ngoại Thương', 'new', 7, 'bimat.jpg', '', '', '', 'vnđ ', 65000, '2016-06-29 00:00:00'),
+(81, 2, 'Con Đường Dấn Đến Sự Giàu Có', 'Sách Ngoại Thương', 'normal ', 7, 'conduong.jpg', '', '', '', 'vnđ', 57000, '2016-06-09 00:00:00'),
+(82, 3, 'Đánh Cắp Ý Tưởng', 'Những ý tưởng tốt để giúp chúng ta trên con đường thành công', 'normal ', 7, 'danhcap.jpg', '', '', '', 'vnđ', 62000, '2016-06-23 00:00:00'),
+(83, 4, 'Đừng Cố Gắng Bán Mà Giúp Khách Hàng Mua', 'sách ngoại thương', 'normal', 7, 'muaban.jpg', '', '', '', 'vnđ', 55000, '2016-06-29 00:00:00'),
+(84, 5, 'Những Ông Trùm Tài Chính', 'sách ngoại thương', 'normal ', 7, 'ongtrum.jpg', '', '', '', 'vnđ', 62000, '2016-06-23 00:00:00'),
+(85, 6, 'Tiền Không Phải Là Vấn Đề', 'Sách Ngoại Thương', 'normal ', 7, 'tienjpg', '', '', '', 'vnđ', 53000, '2016-06-23 00:00:00'),
+(86, 1, 'Y Học Thường Thức Thời @', 'Sách y học', 'normal ', 8, '@.jpg', '', '', '', 'vnđ', 62000, '2016-06-09 00:00:00'),
+(87, 2, 'Bách Khoa Y Học', 'sách y học', 'normal ', 8, 'bachkhoa.jpg', '', '', '', 'vnđ', 50000, '2016-06-15 00:00:00'),
+(88, 3, 'Y Học Thường Thức Trong Gia Đình', 'sách y học', 'normal ', 8, 'giadinh.jpg', '', '', '', 'vnđ', 70000, '2016-06-30 00:00:00'),
+(89, 4, 'hatnhan.jpg', 'sách y học', 'normal ', 8, 'hatnha.jpg', '', '', '', 'vnđ', 72000, '2016-06-10 00:00:00'),
+(90, 1, 'Lý Luận Y Học Cổ Truyền', 'sách y học', 'normal ', 9, 'cotruyen.jpg', '', '', '', 'vnđ', 61000, '2016-06-30 00:00:00'),
+(91, 2, 'Bệnh Học Và Điệu Trị Đông Y', 'sách y học', 'normal ', 9, 'dongy.jpg', '', '', '', 'vnđ', 55000, '2016-06-15 00:00:00'),
+(92, 3, 'Y Học Gia Đình', 'sách y học', 'normal ', 9, 'giadinh.jpg', '', '', '', 'vnđ', 50000, '2016-06-29 00:00:00'),
+(93, 4, 'Sổ Tay Lâm Sàng', 'sách y học', 'normal ', 9, 'lamsang.jpg', '', '', '', 'vnđ', 52000, '2016-06-21 00:00:00'),
+(94, 5, 'Bài Giảng Y Học Cổ Truyền ', 'sách y học', 'normal ', 9, 'yhoc.jpg', '', '', '', 'vnđ', 51000, '2016-06-23 00:00:00'),
+(95, 6, '11 Ngày ', 'sách y học', 'normal ', 9, 'ykhoa.jpg', '', '', '', 'vnđ', 52000, '2016-06-16 00:00:00'),
+(96, 1, 'Ngữ Pháp Tiếng Anh', 'Sách Ngoại Ngữ', 'normal ', 10, 'nguphap.jpg', '', '', '', 'vnđ', 78000, '2016-06-14 00:00:00'),
+(97, 2, '300 Từ Vựng Tiếng Anh', 'sách ngoại ngữ', 'normal ', 10, '300.jpg', '', '', '', 'vnđ', 80000, '2016-06-21 00:00:00'),
+(98, 3, 'Bài Tập Thành Ngữ Tiếng Anh', 'sách ngoại ngữ', 'normal ', 10, 'baitap.jpg', '', '', '', 'vnđ', 75000, '2016-06-30 00:00:00'),
+(99, 4, 'Ngữ Pháp Tiếng Anh', 'sách ngoại ngữ', 'normal ', 10, 'canban.jpg', '', '', '', 'vnđ', 72000, '2016-06-29 00:00:00'),
+(100, 5, 'Tự Học Đàm Thoại Tiếng Anh', 'sách ngoại ngữ', 'normal ', 10, 'captoc.jpg', '', '', '', 'vnđ', 70000, '2016-06-29 00:00:00'),
+(101, 6, 'Bộ Sưu Tập Ngữ Pháp', 'sách ngoại ngữ', 'normal ', 10, 'hiendai.jpg', '', '', '', 'vnđ', 71000, '0000-00-00 00:00:00'),
+(102, 1, 'Tự Học Tiếng Nhật', 'sách ngoại ngữ', 'normal ', 11, '30ngay.jpg', '', '', '', 'vnđ', 72000, '2016-06-22 00:00:00'),
+(103, 2, '1800 Câu Đàm Thoại', 'sách ngoại ngữ', 'normal ', 11, '1800.jpg', '', '', '', 'vnđ', 72000, '2016-06-21 00:00:00'),
+(104, 3, '4500 Câu Giao Tiếp', 'sách ngoại ngữ', 'normal ', 11, '4500.jpg', '', '', '', 'vnđ', 65000, '2016-06-22 00:00:00'),
+(105, 4, 'Ngữ Pháp Tiếng Nhật Căn Bản', 'sách ngoại ngữ', 'normal ', 11, 'nguphap.jpg', '', '', '', 'vnđ', 71000, '2016-06-30 00:00:00'),
+(106, 5, 'Tiếng Nhật Sơ Cấp', 'sách ngoại ngữ', 'normal ', 11, 'socap.jpg', '', '', '', 'vnđ', 69000, '2016-06-15 00:00:00'),
+(107, 6, 'Tiếng Nhật Cho Mọi Người', 'sách ngoại ngữ', 'normal ', 11, 'tiengnhat.jpg', '', '', '', 'vnđ', 69000, '2016-06-22 00:00:00'),
+(108, 1, 'Tự Học Tiếng Hàn', 'sách ngoại ngữ', 'normal ', 12, 'batdau.jpg', '', '', '', 'vnđ', 70000, '2016-06-29 00:00:00'),
+(109, 2, 'Tiếng Hàn Dành Cho Người Việt', 'sách ngoại ngữ', 'normal ', 12, 'nguoiviet.jpg', '', '', '', 'vnđ', 70000, '2016-06-13 00:00:00'),
+(110, 3, 'Ngữ Pháp Tiếng Hàn', 'sách ngoại ngữ', 'normal ', 12, 'nguphap.jpg', '', '', '', 'vnđ', 65000, '2016-06-20 00:00:00'),
+(111, 4, 'Ngữ Pháp Tiếng Hàn', 'sách ngoại ngữ', 'normal ', 12, 'nguphap1.jpg', '', '', '', 'vnđ', 62000, '2016-06-09 00:00:00'),
+(112, 5, 'Tự Học Tiếng Hàn', 'sách ngoại ngữ', 'normal ', 12, 'tuhoc.jpg', '', '', '', 'vnđ', 80000, '2016-06-29 00:00:00'),
+(113, 6, 'Từ Điển Ngữ Pháp Tiếng Hàn', 'sách ngoại ngữ', 'normal ', 12, 'tudien.jpg', '', '', '', 'vnđ', 78000, '2016-06-23 00:00:00'),
+(114, 1, '60 Món Ăn Cua Cá Mực', '60 món ăn từ các loại hản sản như cá,cua,mực giành cho các chị em vào bếp.', 'normal ', 13, '60.jpg', '', '', '', 'vnđ', 52000, '2016-06-09 00:00:00'),
+(115, 2, '212 Món Ăn', 'hướng dẫn các chị em nội trợ 212 món ăn gia đình dễ làm.', 'normal ', 13, '212mon.jpg', '', '', '', 'vnđ', 62000, '2016-06-22 00:00:00'),
+(116, 3, 'Nấu Ăn Chay', 'hướng dẫn các món ăn chay cho các chị em nội trợ', 'normal ', 13, 'anchay.jpg', '', '', '', 'vnđ', 60000, '2016-06-15 00:00:00'),
+(117, 4, 'Món Ăn Việt Helen', 'cùng helen vào bếp nha các chị em nội trợ.', 'new', 13, 'helen.jpg', '', '', '', 'vnđ', 7000, '2016-06-28 00:00:00'),
+(118, 5, 'Món Ăn Thái', 'Hướng dẫn các chị em làm món ăn thái đơn giản và ngon', 'normal ', 13, 'monthai.jpg', '', '', '', 'vnđ', 70000, '2016-06-15 00:00:00'),
+(119, 6, 'Nấu Ăn Gia Đình', 'hướng dẫn các món ăn cho gia đình nhỏ của các chị em nội trợ', 'normal ', 13, 'naugd.jpg', '', '', '', 'vnđ', 62000, '2016-06-23 00:00:00'),
+(120, 1, 'Lý Thuyết Âm Nhạc Cơ Bản', 'dành cho những người đam mê âm nhạc.\r\n', 'normal ', 14, 'amnhaccoban.jpg', '', '', '', 'vnđ', 112000, '2016-06-22 00:00:00'),
+(121, 2, 'Âm Nhạc Dành Cho Trẻ Em', 'dành cho các bé có sở thích và đam mê học nhạc', 'normal ', 14, 'danhchotreem.jpg', '', '', '', 'vnđ', 110000, '2016-06-15 00:00:00'),
+(122, 3, 'Phương Pháp Học Ghi Ta', 'dành cho những người đam mê học ghita.', 'normal ', 14, 'hocghita.jpg', '', '', '', 'vnđ', 110000, '2016-06-16 00:00:00'),
+(123, 4, 'Nhạc Lý Cơ Bản', 'hướng dẫn tất cả các phương pháp cơ bản cho người mới bắt đầu học nhạc', 'normal ', 14, 'nhaclycb.jpg', '', '', '', 'vnđ', 110000, '2016-06-14 00:00:00'),
+(124, 5, 'Organ Điện Tử', 'dành cho các bạn đam mê organ điện tử', 'normal ', 14, 'organ.jpg', '', '', '', 'vnđ', 150000, '2016-06-15 00:00:00'),
+(125, 6, 'Thuật Ngữ Âm Nhạc', 'hướng dẫn tất cả các thuật ngữ về âm nhạc', 'new', 14, 'thuatngu.jpg', '', '', '', 'vnđ', 120000, '2016-06-22 00:00:00'),
+(126, 1, '63 Tỉnh Thành Các Địa Danh Du Lịch', 'tuyển tập các địa điểm du lịch cho đẹp và sang trọng bậc nhât việt nam', 'normal ', 15, '63tinhthanh.jpg', '', '', '', 'vnđ', 64000, '2016-06-23 00:00:00'),
+(127, 2, 'Địa Lý Du Lịch Việt Nam', 'giúp chúng ta có thể hiểu rõ hơn về những địa danh mà chúng ta muốn khám phá.', 'normal ', 15, 'dialy.jpg', '', '', '', 'vnđ', 60000, '2016-06-15 00:00:00'),
+(128, 3, 'Du Lịch Việt Nam', 'Tuyển tập những địa danh du lịch của việt nam.', 'normal ', 15, 'dulichvn.jpg', '', '', '', 'vnđ', 59000, '2016-06-22 00:00:00'),
+(129, 4, 'Du Lịch Sinh Thái', 'Tuyển tập những địa danh du lịch của việt nam.', 'normal ', 15, 'sinhthai.jpg', '', '', '', 'vnđ', 61000, '2016-06-10 00:00:00'),
+(130, 5, 'Du Lịch Tâm Linh', 'Tuyển tập những địa danh du lịch cho những người tin tưởng vào phật vào chúa...', 'normal ', 15, 'tamlinh.jpg', '', '', '', 'vnđ', 70000, '2016-06-21 00:00:00'),
+(131, 6, 'Du Lịch Châu Thế Giới', 'sưu tâm các địa danh du lịch nổi tiếng trên thê giới', 'normal ', 15, 'thegioi.jpg', '', '', '', 'vnd', 129000, '2016-06-06 00:00:00'),
+(132, 1, 'Thơ Văn Cao Bá Quát', 'tuyển tập những bài thơ hay để lại tên tuổi Cao Bá Quát', 'normal ', 17, 'caobaquat.jpg', '', '', '', 'vnđ', 150000, '2016-06-23 00:00:00'),
+(133, 2, 'Văn Thơ Hồ Chí Minh', 'tuyển tập những bài thơ hay của Chỉ Tịch Hồ Chí Minh', 'new', 17, 'hcm.jpg', '', '', '', 'vnđ', 175000, '2016-06-14 00:00:00'),
+(134, 3, 'Thơ Văn Lý Trần', 'những bài thơ để đời của Lý Trần', 'normal ', 17, 'lytran.jpg', '', '', '', 'vnđ', 182000, '2016-06-14 00:00:00'),
+(135, 4, 'Thơ Văn Nguyễn Thượng Hiền', 'những bài thơ hay đánh bóng tên tuổi của nhà thơ Nguyễn Thượng Hiền', 'normal ', 17, 'nguyenthuonghien.jpg', '', '', '', 'vnđ', 170000, '2016-06-22 00:00:00'),
+(136, 5, 'Thơ Văn Phùng Khắc Hoan', 'tuyển tập những bài thơ hay để đời của nhà thơ Phùng Khắc Hoan', 'normal ', 17, 'phungkhachoan.jpg', '', '', '', 'vnđ', 162000, '2016-06-29 00:00:00'),
+(137, 6, 'Truyện Kiều', 'Truyện Kiều đã làm lên tên tuổi của Nguyễn Du', 'normal ', 17, 'truyenkieu.jpg', '', '', '', 'vnđ', 161000, '2016-06-22 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -286,7 +348,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `BOOK_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `BOOK_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 --
 -- AUTO_INCREMENT for table `categories`
 --
