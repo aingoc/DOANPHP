@@ -1,19 +1,20 @@
 <div class="single">
     <div class="col-md-9 top-in-single">
         <div class="col-md-5 single-top">
-                    <a href="optionallink.html">
-                        <img class="etalage_thumb_image img-responsive" src="public/themes/images/si1.jpg" alt="" >
+                    <a href="#">
+                        <img class="etalage_thumb_image img-responsive col-md-12" src="public/themes/images/<?php echo $bookDetail[0]->BOOK_IMAGE ?>" alt="" >
                     </a>
         </div>
         <div class="col-md-7 single-top-in">
             <div class="single-para">
                 <h4><?php echo $bookDetail[0]->BOOK_NAME ?></h4>
                 <div class="para-grid">
-                    <span  class="add-to">104 000 VNĐ</span>
+                    <span  class="add-to"><?php echo number_format(intval($bookDetail[0]->BOOK_COST)) ?> VNĐ</span>
                     <a href="#" class="hvr-shutter-in-vertical cart-to"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào Giỏ</a>
                     <div class="clearfix"></div>
                 </div>
-                <h5>Giới thiệu</h5>
+                <h5>Giới thiệu <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p></h5>
+
                 <div class="available">
                     <h6>Đặt hàng :</h6>
                     <ul>
@@ -32,60 +33,59 @@
         </div>
         <div class="clearfix"> </div>
         <div class="content-top-in">
-            <div class="col-md-4 top-single">
-                <div class="col-md">
-                    <img  src="images/pic8.jpg" alt="" />
-                    <div class="top-content">
-                        <h5>Mascot Kitty - White</h5>
-                        <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-							<p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 top-single">
-                <div class="col-md">
-                    <img  src="images/pic9.jpg" alt="" />
-                    <div class="top-content">
-                        <h5>Mascot Kitty - White</h5>
-                        <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-							<p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 top-single-in">
-                <div class="col-md">
-                    <img  src="images/pic10.jpg" alt="" />
-                    <div class="top-content">
-                        <h5>Mascot Kitty - White</h5>
-                        <div class="white">
-                            <a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-							<p class="dollar">12000<span class="in-dollar">VNĐ</span></p>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+                    foreach($bookSameType as $key => $value)
+                    {
+                        echo '
+
+                                <div class="col-md-4 top-single">
+                                    <div class="col-md">
+                                        <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
+                                            <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" />
+                                        </a>
+                                        <div class="top-content">
+                                            <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
+                                                <h5>'.$value->BOOK_NAME.'</h5>
+                                            </a>
+                                            <div class="white">
+                                                <a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                                <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        ';
+                    }
+            ?>
             <div class="clearfix"></div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="single-bottom">
             <h4 class="text-center">Sách Hot</h4>
-            <div class="product">
-                <img class="img-responsive fashion col-md-12" src="public/themes/images/changvang.jpg" alt="">
-                <div class="col-md-12 text-center">
-                    <a href="#" class="elit">Chạng Vạng</a>
-                    <span class="price price-in"><small>160000 VNĐ</small> 150 000 VNĐ</span>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-           
+    <?php
+        foreach($hot as $key => $value)
+        {
+            echo '
+
+
+                            <div class="product">
+                                <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
+                                    <img class="img-responsive fashion col-md-12" src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="">
+                                </a>
+                                <div class="col-md-12 text-center">
+                                    <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="elit">'.$value->BOOK_NAME.'</a>
+                                    <span class="price price-in"><small>$100000 </small>'.number_format(intval($value->BOOK_COST)).' VNĐ</span>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+
+                ';
+        }
+    ?>
         </div>
     </div>
     <div class="clearfix"> </div>
