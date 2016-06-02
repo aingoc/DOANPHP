@@ -103,7 +103,7 @@
 							<li><a href="index.php?c=category&ct=3">Văn học Việt Nam</a></li>
 							<li><a href="index.php?c=category&ct=17">Thơ ca Dân gian</a></li>
 							<li><a href="index.php?c=category&ct=18">Truyện tiểu thuyết</a></li>
-							<li><a href="index.php?c=category&ct=19">Truyện viễn tưởng</a></li>
+							<li><a href="index.php?c=category&ct=19">Truyện Kinh dị</a></li>
 							<li><a href="index.php?c=category&ct=20">Trinh thám - Vụ án</a></li>
                         </ul>
 					</li>
