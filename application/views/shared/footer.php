@@ -40,6 +40,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
+	<p class="footer-class">Copyright © 2016 by  <a href="www.viendong.edu.vn" target="_blank">Viễn Đông College - 07THC</a> </p>
 </div>
 </body>
 </html>
