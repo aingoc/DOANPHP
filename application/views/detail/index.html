@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="public/themes/css/etalage.css">
+<script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
 <script>
     jQuery(document).ready(function($){
 
@@ -36,7 +37,34 @@
                     <div class="clearfix"></div>
                 </div>
                 <h5>Giới thiệu 
-					<p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>
+					<!--<p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <?php
+                                $description= explode(" ",$bookDetail[0]->BOOK_DESCRIPTION);
+                                $description1 = "";
+                                $count = 0;
+                                for($i=0;$i < count($description);$i++)
+                                {
+                                    if($count < 50)
+                                    {
+                                        $description1 .= " ".$description[$i];
+                                    }
+                                    $count++;
+                                }
+                            ?>
+                            <p><?php echo $description1."..." ?></p>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>
+                            </div>
+                        </div>
+
+                        <a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" >Xem thêm</a>
+
+                        <script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
+                    </div>
 				</h5>
 
                 <div class="available">
@@ -91,6 +119,9 @@
             <div class="clearfix"></div>
         </div>
     </div>
+
+
+
     <div class="col-md-3">
         <div class="single-bottom">
             <h4 class="text-center">Sách Hot</h4>
