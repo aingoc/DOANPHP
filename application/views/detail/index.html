@@ -35,7 +35,9 @@
                     <a href="#" class="hvr-shutter-in-vertical cart-to"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào Giỏ</a>
                     <div class="clearfix"></div>
                 </div>
-                <h5>Giới thiệu <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p></h5>
+                <h5>Giới thiệu 
+					<p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>
+				</h5>
 
                 <div class="available">
                     <h6>Đặt hàng :</h6>
@@ -48,13 +50,17 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select>
+							
                         </li>
                     </ul>
+					
                 </div>
             </div>
         </div>
         <div class="clearfix"> </div>
+		
         <div class="content-top-in">
+			<h3 class="samecategories">CÙNG LOẠI</h3>
             <?php
                     foreach($bookSameType as $key => $value)
                     {
@@ -66,9 +72,9 @@
                                             <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" />
                                         </a>
                                         <div class="top-content">
-                                            <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
-                                                <h5>'.$value->BOOK_NAME.'</h5>
-                                            </a>
+											<h5>
+												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a>
+											</h5>
                                             <div class="white">
                                                 <a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
                                                 <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
