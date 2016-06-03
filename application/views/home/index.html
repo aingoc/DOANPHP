@@ -24,8 +24,19 @@
                     foreach($new as $key => $value)
                     {
                         echo '  <div class="col-md-3 md-col">
-                                    <div class="col-md">
-                                        <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>
+                                    <div class="col-md ">
+                                        <div class="hovereffect">
+                                            <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+                                            <div class="overlay">
+                                                <h2>'.$value->BOOK_NAME.'</h2>
+                                                </br>
+                                                </br>
+                                                <p>
+                                                    <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!--<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>-->
                                         <div class="top-content">
                                             <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a></h5>
                                             <div class="white">
