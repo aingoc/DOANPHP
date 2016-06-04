@@ -12,7 +12,7 @@
                 <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1280px; height: 700px; overflow: hidden;">
                     <?php
                         foreach($banner as $key => $value){
-                            echo '<div data-p="112.50" style="display: none;"><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img data-u="image" class="img-responsive" src="public/themes/images/'.$value->BOOK_IMAGE.'" /></a></div>';
+                            echo '<div data-p="112.50" style="display: none;"><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img data-u="image" class="img-responsive" src="public/themes/images/'.$value->BOOK_IMAGE_1.'" /></a></div>';
                         }
                     ?>
 
