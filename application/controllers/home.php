@@ -15,8 +15,10 @@
 
             $hot = $books->SelectHotBooks(0,8);
 
+            $banner = $books->SelectBannerBooks(0,4);
+
             //Biến dữ liệu dùng để truyền qua View
-            $data = array("new"=>$new, "hot"=>$hot);
+            $data = array("new"=>$new, "hot"=>$hot, "banner" => $banner);
 
             //Biến chứa danh sách component + view
             $view = array("componentBanner" => "banner","Index" => "Index","componentMp3"=>"mp3");

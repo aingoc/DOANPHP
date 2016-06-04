@@ -1,24 +1,49 @@
 <div class="products">
     <div class=" top-products">
         <?php
-                $count = 0;
-                foreach($listCategory as $key=>$value)
-        {
-        echo '
-        <div class="col-md-3 md-col">
-            <div class="col-md">
-                <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="compare-in"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>
-                <div class="top-content">
-                    <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a></h5>
-                    <div class="white">
-                        <a href="#'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                        <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
-                        <div class="clearfix"></div>
+            $count = 0;
+            foreach($listCategory as $key=>$value)
+            {
+                $bookName = explode(" ",$value->BOOK_NAME);
+                $bookCut = "";
+                if(count($bookName) > 6)
+                {
+                for($i=0;$i <= 5;$i++)
+                {
+                $bookCut .= " ".$bookName[$i];
+                }
+                $bookCut .= "...";
+                }
+                else
+                {
+                $bookCut = $value->BOOK_NAME;
+                }
+
+                echo '
+                <div class="col-md-3 md-col">
+                    <div class="col-md">
+                        <div class="hovereffect">
+                            <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+                            <div class="overlay">
+                                <h2>'.$value->BOOK_NAME.'</h2>
+                                </br>
+                                </br>
+                                <p>
+                                    <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="top-content">
+                            <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a></h5>
+                            <div class="white">
+                                <a href="#'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        ';
+                ';
 
         $count++;
 
