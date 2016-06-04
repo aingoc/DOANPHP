@@ -58,20 +58,23 @@
                                 $descriptionCut = $bookDetail[0]->BOOK_DESCRIPTION;
                                 }
                             ?>
-                            <p><?php echo $descriptionCut ?></p>
+                            <p>
+                                <?php
+                                 echo $descriptionCut;
+
+                                if($check == 1)
+                                {
+                                    echo '<a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" >Xem thêm</a>';
+                                }
+                                ?>
+
+                            </p>
                         </div>
                         <div id="collapseTwo" class="accordion-body collapse">
                             <div class="accordion-inner">
-                                <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>
+                                <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?><a class="SeeMore1" data-toggle="collapse" href="#collapseTwo" >Rút ngắn</a></p>
                             </div>
                         </div>
-                        <?php
-                            if($check == 1)
-                            {
-                                echo '<a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" >Xem thêm</a>';
-                            }
-                        ?>
-
 
                         <script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
                     </div>
