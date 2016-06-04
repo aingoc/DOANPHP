@@ -27,6 +27,10 @@
     <script src="public/themes/js/responsiveslides.min.js"></script>
     <script type="text/javascript" src="public/themes/js/jquery.flexisel.js"></script>
 
+    <!--Validate-->
+    <link rel="stylesheet" href="public/themes/dist/css/bootstrapValidator.css"/>
+    <script type="text/javascript" src="public/themes/dist/js/bootstrapValidator.js"></script>
+
 </head>
 <body>
 <!--header-->

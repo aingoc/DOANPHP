@@ -15,7 +15,7 @@
 
             $hot = $books->SelectHotBooks(0,8);
 
-            $banner = $books->SelectBannerBooks(0,4);
+            $banner = $books->SelectBannerBooks(0,5);
 
             //Biến dữ liệu dùng để truyền qua View
             $data = array("new"=>$new, "hot"=>$hot, "banner" => $banner);

@@ -2045,7 +2045,6 @@ h2.contact-in {
 }
 
 .hovereffect img {
-	display: block;
 	position: relative;
 	-webkit-transition: all 0.35s;
 	transition: all 0.35s;

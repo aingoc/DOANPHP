@@ -64,7 +64,7 @@
 
                                 if($check == 1)
                                 {
-                                    echo '<a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" >Xem thêm</a>';
+                                    echo '<a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" > Xem thêm</a>';
                                 }
                                 ?>
 
@@ -72,7 +72,7 @@
                         </div>
                         <div id="collapseTwo" class="accordion-body collapse">
                             <div class="accordion-inner">
-                                <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?><a class="SeeMore1" data-toggle="collapse" href="#collapseTwo" >Rút ngắn</a></p>
+                                <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?><a class="SeeMore1" data-toggle="collapse" href="#collapseTwo" > Rút ngắn</a></p>
                             </div>
                         </div>
 
@@ -105,16 +105,39 @@
             <?php
                     foreach($bookSameType as $key => $value)
                     {
+                        $bookName = explode(" ",$value->BOOK_NAME);
+                        $bookCut = "";
+                        if(count($bookName) > 6)
+                        {
+                        for($i=0;$i <= 5;$i++)
+                        {
+                        $bookCut .= " ".$bookName[$i];
+                        }
+                        $bookCut .= "...";
+                        }
+                        else
+                        {
+                        $bookCut = $value->BOOK_NAME;
+                        }
+
                         echo '
 
                                 <div class="col-md-4 top-single">
                                     <div class="col-md">
-                                        <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
-                                            <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" />
-                                        </a>
+                                        <div class="hovereffect">
+                                            <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+                                            <div class="overlay">
+                                                <h2>'.$value->BOOK_NAME.'</h2>
+                                                </br>
+                                                </br>
+                                                <p>
+                                                    <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+                                                </p>
+                                            </div>
+                                        </div>
                                         <div class="top-content">
 											<h5>
-												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$value->BOOK_NAME.'</a>
+												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a>
 											</h5>
                                             <div class="white">
                                                 <a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
@@ -145,9 +168,19 @@
 
 
                             <div class="product">
-                                <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
-                                    <img class="img-responsive fashion col-md-12" src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="">
-                                </a>
+                                <div class="col-md-12 text-center">
+                                    <div class="hovereffect">
+                                        <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+                                        <div class="overlay">
+                                            <h2>'.$value->BOOK_NAME.'</h2>
+                                            </br>
+                                            </br>
+                                            <p>
+                                                <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-12 text-center">
                                     <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="elit">'.$value->BOOK_NAME.'</a>
                                     <span class="price price-in"><small>$100000 </small>'.number_format(intval($value->BOOK_COST)).' VNĐ</span>
