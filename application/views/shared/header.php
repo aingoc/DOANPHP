@@ -48,7 +48,6 @@
                 </div>
                 <div class="header-in">
                     <ul class="icon1 sub-icon1 ">
-                        <li><a href="#">GIỎ HÀNG (0)</a> </li>
                         <li>
                             <?php
                                 if(!empty($_SESSION["username"]))
@@ -57,13 +56,13 @@
                                     echo '
                                         <ul class="drop">
                                             <li><a href="index.php?c=login&a=UserDetail">Thông tin cá nhân</a></li>
-                                            <li><a href="index.php?c=login&a=logout">Logout</a></li>
+                                            <li><a href="index.php?c=login&a=logout">Đăng xuất</a></li>
                                         </ul>
                                         ';
                                 }
                                 else
                                 {
-                                    echo '<a href="index.php?c=login">Đăng Nhập</a>';
+                                    echo '<a href="index.php?c=login">ĐĂNG NHẬP</a>';
                                 }
                             ?>
                         </li>
