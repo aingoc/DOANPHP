@@ -108,7 +108,7 @@ $(document).ready(function() {
 						message: 'The password is required and cannot be empty'
 					},
 					regexp: {
-						regexp: '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i',
+						regexp: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i,
 						message: 'The value is not a valid email address'
 					}
 				}
