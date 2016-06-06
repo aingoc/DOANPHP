@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,14 @@
     <script src="public/themes/js/responsiveslides.min.js"></script>
     <script type="text/javascript" src="public/themes/js/jquery.flexisel.js"></script>
 
+    <!--Validate-->
+    <link rel="stylesheet" href="public/themes/dist/css/bootstrapValidator.css"/>
+    <script type="text/javascript" src="public/themes/dist/js/bootstrapValidator.js"></script>
+
+    <!--Validate-->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
 </head>
 <body>
 <!--header-->
@@ -38,9 +47,26 @@
                     <div class = "bookstore">BOOK STORE</div>
                 </div>
                 <div class="header-in">
-                    <ul class="icon1 sub-icon1">
+                    <ul class="icon1 sub-icon1 ">
                         <li><a href="#">GIỎ HÀNG (0)</a> </li>
-                        <li><a href="index.php?c=login">  ĐĂNG NHẬP  </a></li>
+                        <li>
+                            <?php
+                                if(!empty($_SESSION["username"]))
+                                {
+                                    echo '<a href="index.php?c=login&a=UserDetail">'.$_SESSION["username"][0]->USER_NAME.'</a>';
+                                    echo '
+                                        <ul class="drop">
+                                            <li><a href="index.php?c=login&a=UserDetail">Thông tin cá nhân</a></li>
+                                            <li><a href="index.php?c=login&a=logout">Logout</a></li>
+                                        </ul>
+                                        ';
+                                }
+                                else
+                                {
+                                    echo '<a href="index.php?c=login">Đăng Nhập</a>';
+                                }
+                            ?>
+                        </li>
                         <li>
                             <div class="cart">
                                 <a href="#" class="cart-in glyphicon glyphicon-shopping-cart"> </a>
@@ -153,6 +179,7 @@
                     <div class="search">
                         <form method="GET" action="index.php" enctype="multipart/form-data">
                             <input type="text" name="search" value="Tìm sách...!" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+                            <input type="hidden" name="c" value="search">
                             <input type="submit" value="">
                         </form>
                     </div>

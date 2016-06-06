@@ -6,7 +6,7 @@
                     <div class="col-xs-6">
                         <a href="#" class="active" id="login-form-link" style="padding-left:40px">Đăng Nhập</a>
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 text-center">
                         <a href="#" id="register-form-link">Đăng ký</a>
                     </div>
                 </div>
@@ -15,21 +15,17 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                        <form id="login-form" action="index.php?c=login&a=LoginValidate" method="post" role="form" style="display: block;">
                             <div class="form-group">
-                                <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Mail@example.com" value="">
+                                <input type="text" name="usernameLogin" id="username" tabindex="1" class="form-control" placeholder="Mail@example.com" value="">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mật khẩu">
-                            </div>
-                            <div class="form-group text-center">
-                                <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                                <label for="remember"> Ghi nhớ</label>
+                                <input type="password" name="passwordLogin" id="password" tabindex="2" class="form-control" placeholder="Mật khẩu">
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
-                                        <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn-primary" value="Log In">
+                                        <input type="submit" name="login" id="login-submit" tabindex="4" class="form-control btn-primary" value="Login">
                                     </div>
                                 </div>
                             </div>
@@ -37,31 +33,36 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="text-center">
-                                            <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Quên mật khẩu ???</a>
+                                            <a href="#" tabindex="5" class="forgot-password">Quên mật khẩu ???</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                        <form id="register-form" action="index.php?c=login&a=LoginRegister" method="POST" role="form" style="display: none;">
                             <div class="form-group">
-                                <input type="text" name="Ten" id="Ten" tabindex="1" class="form-control" placeholder="Họ Tên" value="">
+                                <input type="text" name="Ten" id="Ten" tabindex="1" class="form-control" placeholder="Họ tên" value="">
                             </div>
+                            <div class="form-group">
+                                <input type="text" name="username1" id="username1" tabindex="1" class="form-control" onkeyup="valid(this)" onblur="valid(this)" placeholder="Username" value="">
+                            </div>
+                            <script>
+                            function valid(f) {
+                            !(/^[A-z&#209;&#241;0-9]*$/i).test(f.value)?f.value = f.value.replace(/[^A-z&#209;&#241;0-9]/ig,''):null;
+                            }</script>
                             <div class="form-group">
                                 <input type="text" name="DiaChi" id="DiaChi" tabindex="1" class="form-control" placeholder="Địa chỉ" value="">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="SDT" id="SDT" tabindex="1" class="form-control" placeholder="Số điện thoại" value="">
+                                <input type="text" name="SDT" id="SDT" pattern="[0-9]{10}" tabindex="1" class="form-control" placeholder="Số điện thoại" value="">
                             </div>
                             <div class="form-group">
                                 <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="mail@example.com" value="">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mật khẩu">
+                                <input type="password" name="password1" id="password1" tabindex="2" class="form-control" placeholder="Mật khẩu">
                             </div>
-                            <div class="form-group">
-                                <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Nhập lại mật khẩu">
-                            </div>
+                            <input type="hidden" name="checkValidate" value="register">
                             <div class="form-group">
                                 <div class="roww">
                                     <div class="col-sm-6 col-sm-offset-3">
