@@ -7,6 +7,9 @@ require("application/core/Model.php");
     {
         function __construct()
         {
+            //chạy session
+            session_start();
+
             //Tạo biến toàn cục
             global $app_path,$controller_path,$model_path,$view_path;
 
@@ -20,10 +23,6 @@ require("application/core/Model.php");
         {
             //Lấy tên controller từ web gửi nếu không có gán b?ng null
             $controller = empty($_GET["c"])? "home":$_GET["c"];
-            if(empty($_GET["search"]) ==false)
-            {
-                $controller = "search";
-            }
 
             //kiển tra controller gửi từ web xem có dữ liệu không nếu có thì thực hiện ...
             if($controller != "")
@@ -58,9 +57,11 @@ require("application/core/Model.php");
                     //Không có thì văng thông baó lỗi
                     require("$this->app_path/$this->controller_path/404.php");
                 }
-
-                //Cuối cùng khởi tạo controller với action tương ứng
-                $controller->$action();
+                else
+                {
+                    //Cuối cùng khởi tạo controller với action tương ứng
+                    $controller->$action();
+                }
             }
         }
     }
