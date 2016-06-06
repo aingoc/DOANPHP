@@ -117,14 +117,14 @@
                 <ul class="nav">
                     <li class="active"><a href="index.php"><i> </i>Trang Chủ</a></li>
                     <li>
-                        <a href="index.php?c=category&ct=1" >  SÁCH THIẾU NHI</a>
+                        <a>  SÁCH THIẾU NHI</a>
                         <ul class="drop">
                             <li><a href="index.php?c=category&ct=1">Truyện tranh</a></li>
                             <li><a href="index.php?c=category&ct=2">Cổ tích - Thần thoại</a></li>
                         </ul>
                     </li>
                     <li>
-						<a href="index.php?c=category&ct=3" >Văn học - Nghệ thuật</a>
+						<a>  VĂN HỌC - NGHỆ THUẬT</a>
 						<ul class="drop">
 							<li><a href="index.php?c=category&ct=3">Văn học Việt Nam</a></li>
 							<li><a href="index.php?c=category&ct=17">Thơ ca Dân gian</a></li>
@@ -135,7 +135,7 @@
 					</li>
 					
                     <li>
-                        <a href="index.php?c=category&ct=4" >  Kinh Tế</a>
+                        <a>  KINH TẾ</a>
                         <ul class="drop">
                             <li><a href="index.php?c=category&ct=4">Kế Toán</a></li>
                             <li><a href="index.php?c=category&ct=16">Quản Trị Kinh Doanh</a></li>
@@ -144,14 +144,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="index.php?c=category&ct=8" >  Y Học</a>
+                        <a>  Y HỌC</a>
                         <ul class="drop">
                             <li><a href="index.php?c=category&ct=8">Y Học Thường Thức</a></li>
                             <li><a href="index.php?c=category&ct=9">Y Học Cổ Truyền</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="index.php?c=category&ct=10" >  Ngoại Ngữ</a>
+                        <a>  NGOẠI NGỮ</a>
                         <ul class="drop">
                             <li><a href="index.php?c=category&ct=10">Tiếng Anh</a></li>
                             <li><a href="index.php?c=category&ct=11">Tiếng Nhật</a></li>
