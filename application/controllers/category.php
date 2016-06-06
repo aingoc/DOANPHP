@@ -3,7 +3,7 @@
     {
 
         private $categoryID;
-        private $categories;
+        private $categoryModel;
         private $currentPage = 1;
         private $totalOfPage;
         private $listBook;
@@ -14,7 +14,7 @@
             //Khai báo model category
             include("application/models/categories_model.php");
 
-            $this->categories = new Categories();
+            $this->categoryModel = new Categories();
             $this->categoryID = empty($_GET["ct"])? "1":$_GET["ct"];
             $this->currentPage = empty($_GET["p"])? "1":$_GET["p"];
         }
@@ -25,10 +25,10 @@
                 $this->position = $this->currentPage * 8 - 8;
             }
 
-            $this->listBook = $this->categories->SelectBookByCategory($this->position,8,$this->categoryID);
+            $this->listBook = $this->categoryModel->SelectBookByCategory($this->position,8,$this->categoryID);
 			
-            $this->nameCategory = $this->categories->GetNameCategoryByID($this->categoryID);
-            $this->totalOfPage = $this->categories->TotalOfPage($this->categoryID);
+            $this->nameCategory = $this->categoryModel->GetNameCategoryByID($this->categoryID);
+            $this->totalOfPage = $this->categoryModel->TotalOfPage($this->categoryID);
 
             //Biến dữ liệu dùng để truyền qua View
 
