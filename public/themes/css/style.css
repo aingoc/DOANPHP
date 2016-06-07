@@ -53,6 +53,7 @@ a.cart-in{
 	background: #E43F24 ;
 	display:block;
 	text-decoration:none;
+	border-radius: 5px;
 }
 .cart span{
   background: #962810;
