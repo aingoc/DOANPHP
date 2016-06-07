@@ -29,6 +29,19 @@
                     <td width="35%">Số điện thoại</td>
                     <td width="65%"><a href="#" id="user_phone" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_PHONE; ?></a></td>
                 </tr>
+                <tr>
+                    <td width="35%">Tuổi</td>
+                    <td width="65%"><a href="#" id="user_age" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_AGE; ?></a></td>
+                </tr>
+                <tr>
+                    <td width="35%">Email</td>
+                    <td width="65%"><a href="#" id="user_email" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_EMAIL; ?></a></td>
+                </tr>
+                <tr>
+                    <td width="35%">Password</td>
+                    <td width="65%"><a href="#" id="password" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"></a></td>
+                </tr>
+
             </tbody>
         </table>
     </div>

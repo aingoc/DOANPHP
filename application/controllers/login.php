@@ -37,10 +37,10 @@ class Login extends Controller
         {
             //Lấy dữ liệu từ database bằng username password
             $username = $this->userModel->CheckUserPass($_POST["usernameLogin"],md5($_POST["passwordLogin"]));
+
             //Nếu $username = null thì show trang lỗi
             if($username != null) {
                 $_SESSION["userInfo"] = $username;
-                var_dump($_SESSION["userInfo"]);
                 header('Location: index.php');
                 exit;
             }
@@ -85,6 +85,7 @@ class Login extends Controller
             $email = $_POST["email"];
             $password = $_POST["password1"];
             $register = $this->userModel->UserRegister($name,$username,$address,$sdt,$email,md5($password));
+
             if($register = 1)
             {
                 //Lấy dữ liệu từ database bằng username password
@@ -122,7 +123,19 @@ class Login extends Controller
             exit;
         }
         $this->userModel = new User();
-        $update = $this->userModel->UserUpdate($_POST["pk"],$_POST["name"],$_POST["value"]);
+        $password = 0;
+
+        if($_POST["name"] = "password")
+        {
+            $check = md5($_POST["value"]);
+        }
+        else
+        {
+            $check = $_POST["value"];
+        }
+
+        $update = $this->userModel->UserUpdate($_POST["pk"],$_POST["name"],$check);
+
         if($update = 1)
         {
             $upper = strtoupper($_POST["name"]);

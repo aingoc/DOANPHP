@@ -27,10 +27,10 @@
         {
             //Câu Select
             $sql = "Update users SET  $column = '$value' WHERE USER_ID = $id ";
-            echo $sql;
+
             //Thực thi câu lệnh
             $runSql = $this->db->ExeQuery($sql);
-
+            echo $runSql;
             //Trả về dữ liệu
             return $runSql;
         }
