@@ -51,9 +51,9 @@
                         <li><a href="#">GIỎ HÀNG (0)</a> </li>
                         <li>
                             <?php
-                                if(!empty($_SESSION["username"]))
+                                if(!empty($_SESSION["userInfo"]))
                                 {
-                                    echo '<a href="index.php?c=login&a=UserDetail">'.$_SESSION["username"][0]->USER_NAME.'</a>';
+                                    echo '<a id="userHeader" href="index.php?c=login&a=UserDetail">'.$_SESSION["userInfo"][0]->USER_NAME.'</a>';
                                     echo '
                                         <ul class="drop">
                                             <li><a href="index.php?c=login&a=UserDetail">Thông tin cá nhân</a></li>

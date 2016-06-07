@@ -4,7 +4,7 @@
         function CheckUserPass($username,$password)
         {
             //Câu Select
-            $sql = "SELECT * FROM users WHERE 1=1 AND USERNAME = '$username'
+            $sql = "SELECT USER_ID, USER_NAME,USER_NO,USER_BIRTHDAY,USER_SEX,USER_AGE,USER_ADDRESS,USER_PHONE,USER_EMAIL FROM users WHERE 1=1 AND USERNAME = '$username'
                                                   AND PASSWORD = '$password' ";
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
@@ -17,6 +17,17 @@
         {
             //Câu Select
             $sql = "INSERT INTO users (USER_NAME,USERNAME,USER_ADDRESS,USER_PHONE,USER_EMAIL,PASSWORD) VALUES ('$name','$username','$address',$sdt,'$email','$password') ";
+            //Thực thi câu lệnh
+            $runSql = $this->db->ExeQuery($sql);
+
+            //Trả về dữ liệu
+            return $runSql;
+        }
+        function UserUpdate($id,$column,$value)
+        {
+            //Câu Select
+            $sql = "Update users SET  $column = '$value' WHERE USER_ID = $id ";
+            echo $sql;
             //Thực thi câu lệnh
             $runSql = $this->db->ExeQuery($sql);
 

@@ -11,7 +11,7 @@ class Login extends Controller
     function Index()
     {
 
-        if(!empty($_SESSION["username"]))
+        if(!empty($_SESSION["userInfo"]))
         {
             header('Location: index.php?c=login&a=UserDetail');
             exit;
@@ -26,7 +26,7 @@ class Login extends Controller
     function LoginValidate()
     {
 
-        if(!empty($_SESSION["username"]))
+        if(!empty($_SESSION["userInfo"]))
         {
             header('Location: index.php?c=login&a=UserDetail');
             exit;
@@ -39,8 +39,8 @@ class Login extends Controller
             $username = $this->userModel->CheckUserPass($_POST["usernameLogin"],md5($_POST["passwordLogin"]));
             //Nếu $username = null thì show trang lỗi
             if($username != null) {
-                $_SESSION["username"] = $username;
-                var_dump($_SESSION["username"]);
+                $_SESSION["userInfo"] = $username;
+                var_dump($_SESSION["userInfo"]);
                 header('Location: index.php');
                 exit;
             }
@@ -67,7 +67,7 @@ class Login extends Controller
 
     function LoginRegister()
     {
-        if (!empty($_SESSION["username"])) {
+        if (!empty($_SESSION["userInfo"])) {
             header('Location: index.php?c=login&a=UserDetail');
             exit;
         }
@@ -78,7 +78,6 @@ class Login extends Controller
         }
         else
         {
-
             $name = $_POST["Ten"];
             $username= $_POST["username1"];
             $address = $_POST["DiaChi"];
@@ -92,8 +91,8 @@ class Login extends Controller
                 $login = $this->userModel->CheckUserPass($username,md5($password));
                 //Nếu $username = null thì show trang lỗi
                 if($login != null) {
-                    $_SESSION["username"] = $login;
-                    var_dump($_SESSION["username"]);
+                    $_SESSION["userInfo"] = $login;
+                    var_dump($_SESSION["userInfo"]);
                     header('Location: index.php');
                     exit;
                 }
@@ -108,8 +107,28 @@ class Login extends Controller
 
     function UserDetail()
     {
+        if (empty($_SESSION["userInfo"])) {
+            header('Location: index.php?c=login');
+            exit;
+        }
         $view = array("User_Detail" => "User_Detail");
         $this->View($view);
+    }
+
+    function UserUpdate()
+    {
+        if (empty($_SESSION["userInfo"])) {
+            header('Location: index.php?c=login');
+            exit;
+        }
+        $this->userModel = new User();
+        $update = $this->userModel->UserUpdate($_POST["pk"],$_POST["name"],$_POST["value"]);
+        if($update = 1)
+        {
+            $upper = strtoupper($_POST["name"]);
+            $_SESSION["userInfo"][0]->$upper = $_POST["value"];
+        }
+
     }
 }
 ?>
