@@ -52,5 +52,20 @@ class Cart extends Controller
             }
         }
     }
+
+    function UpdateSessionBookID()
+    {
+
+        for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
+        {
+
+            if($_POST["id"] = $_SESSION["cartBook"][$i][0])
+            {
+                $_SESSION['cartBook'][$i][1] = $_POST['quality'];
+            }
+            var_dump( $_SESSION['cartBook'][$i][1]);
+        }
+
+    }
 }
 ?>
