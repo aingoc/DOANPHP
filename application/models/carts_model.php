@@ -3,6 +3,7 @@
     {
         function GetBookByMultipleID($listBookID)
         {
+
             $in = join(",",$listBookID);
 
             //Câu Select

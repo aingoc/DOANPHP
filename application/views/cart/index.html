@@ -1,3 +1,4 @@
+
 </br>
     <div class="row">
         <div class="col-xs-8 col-md-offset-2">
@@ -9,10 +10,12 @@
                                 <h5><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng Của Tôi</h5>
                             </div>
                             <div class="col-xs-6">
+                                <a href="index.php?c=home">
                                 <button type="button" class="btn btn-primary btn-sm btn-block">
                                     <span class="glyphicon glyphicon-share-alt"></span>
                                     Tiếp Tục Mua Hàng
                                 </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -30,7 +33,7 @@
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="col-xs-6 text-right">
-                                            <h6 class="bookCost" value="'.number_format(intval($value->BOOK_COST)).'"><strong >'.number_format(intval($value->BOOK_COST)).'</strong> <span class="text-muted"> VNĐ x</span></h6>
+                                            <h6 class="bookCost" value="'.intval($value->BOOK_COST).'"><strong >'.number_format(intval($value->BOOK_COST)).'</strong> <span class="text-muted"> VNĐ x</span></h6>
                                         </div>
                                         <div class="col-xs-4">
                                             <input type="number" class="form-control input-sm quality" value="1">
@@ -52,7 +55,11 @@
                 <div class="panel-footer">
                         <div class="row text-center">
                             <div class="col-xs-9">
+                                <h3><strong>Tổng tiền : </strong></h3>
+                                <h4 class="total"></h4>
+
                             </div>
+
                             <div class="col-xs-3">
                                 <button type="button" class="btn btn-success btn-block">
                                     Đặt Hàng
@@ -64,21 +71,64 @@
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function() {
+        //Chạy khi page bắt đầu
+        var total = 0;
+        var bookCost;
+        var quality;
+        var BookID;
+        $(".quality").each(function(){
+            var bookCost = parseInt($(this).parentsUntil('.panel-body').find('.bookCost').attr('value'));
+            var quality = $(this).val();
+            if(quality == 0)
+            {
+                quality = $(this).attr('value');
+                $(this).val(quality);
+            }
+            total = total + (quality * bookCost);
+        });
+        $('.total').text(total + " VNĐ");
+
         $('.remove').click(function() {
+            bookCost = parseInt($(this).parentsUntil('.panel-body').find('.bookCost').attr('value'));
+            quality = $(this).parentsUntil('.panel-body').find('.quality').val();
+            bookID = $(this).attr('bookID');
+
             $(this).parentsUntil('.panel-body').fadeOut();
+
+            total = (total - (bookCost * quality));
+
+            $('.total').text(total + " VNĐ");
             var bookID = $(this).attr('bookID');
-//            var quality = $(this).;
-//            alert(quality);
+
+            $.ajax({
+                url: 'index.php?c=cart&a=RemoveSessionBookID',
+                dataType:'json',
+                data: {
+                    id: bookID
+                },
+                type: "POST"
+            });
+
         });
 
         $( ".quality" ).change(function() {
-            var quality = $(this).parentsUntil('.panel-body').find('.bookCost').attr('value');
-            alert( quality );
+            total = 0;
+            $(".quality").each(function(){
+                bookCost = parseInt($(this).parentsUntil('.row').find('.bookCost').attr('value'));
+                quality = $(this).val();
+                if(quality == 0)
+                {
+                    quality = $(this).attr('value');
+                    $(this).val(quality);
+                }
+                total = total + (quality * bookCost);
+            });
+            $('.total').text(total + " VNĐ");
+
+
         });
     });
-
-
-
 </script>
