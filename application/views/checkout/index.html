@@ -58,7 +58,36 @@
                      Thông tin đơn hàng
                  </div>
                  <div class="panel-body">
+                     <table class="table">
+                         <thead>
+                         <tr>
+                             <th>Tên Sách</th>
+                             <th>Số lượng</th>
+                             <th>Thành tiền</th>
+                         </tr>
+                         </thead>
+                         <tbody>
+                         <?php
+                            $count = 0;
+                            foreach($listCartBook as $key=>$value)
+                            {
+                                echo '
+                                     <tr>
+                                         <td>'.$value->BOOK_NAME.'</td>
+                                         <td>'.$_SESSION["cartBook"][$count][1].'</td>
+                                         <td>'.number_format(intval($_SESSION["cartBook"][$count][1]*$value->BOOK_COST)).' VNĐ</td>
+                                     </tr>
+                                    ';
+                                $count++;
+                            }
 
+                         ?>
+
+                         </tbody>
+                     </table>
+                 </div>
+                 <div class="panel-footer">
+                     Tổng tiền :
                  </div>
              </div>
          </div>

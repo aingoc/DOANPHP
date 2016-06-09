@@ -112,6 +112,7 @@
         var bookCost;
         var quality;
         var BookID;
+        var sale = 0;
         $(".quality").each(function(){
             var bookCost = parseInt($(this).parentsUntil('.panel-body').find('.bookCost').attr('value'));
             var quality = $(this).val();
@@ -121,8 +122,27 @@
                 $(this).val(quality);
             }
             total = total + (quality * bookCost);
+
+
         });
-        $('.total').text(total + " VNĐ");
+
+        if(total >200000 && total <= 500000)
+        {
+            sale = total - ((total * 96)/100);
+            total = (total * 96)/100;
+            $('.total').text(total + " VNĐ (Giảm giá 4% - "+sale+"VNĐ)");
+        }
+        else if(total > 500000)
+        {
+            sale = total - ((total * 88)/100);
+            total = (total * 88)/100;
+            $('.total').text(total + " VNĐ (Giảm giá 12% - "+sale+"VNĐ)");
+        }
+        else
+        {
+            $('.total').text(total + " VNĐ");
+        }
+
 
         $('.remove').click(function() {
             bookCost = parseInt($(this).parentsUntil('.panel-body').find('.bookCost').attr('value'));
@@ -132,8 +152,6 @@
             $(this).parentsUntil('.panel-body').fadeOut();
 
             total = (total - (bookCost * quality));
-
-            $('.total').text(total + " VNĐ");
             var bookID = $(this).attr('bookID');
 
             $.ajax({
@@ -173,7 +191,23 @@
 
 
             });
-            $('.total').text(total + " VNĐ");
+
+            if(total > 200000 && total <= 500000)
+            {
+                sale = total - ((total * 96)/100);
+                total = (total * 96)/100;
+                $('.total').text(total + " VNĐ (Đã giảm giá 4% - "+sale+"VNĐ)");
+            }
+            else if(total > 500000)
+            {
+                sale = total - ((total * 88)/100);
+                total = (total * 88)/100;
+                $('.total').text(total + " VNĐ (Đã giảm giá 12% - "+sale+"VNĐ)");
+            }
+            else
+            {
+                $('.total').text(total + " VNĐ");
+            }
 
 
         });
