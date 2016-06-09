@@ -1,6 +1,6 @@
 </br>
 <div class="col-md-12 ">
-     <form id="checkout-form" action="index.php?c=checkout" method="GET" role="form">
+     <form id="checkout-form" action="index.php?c=invoice&a=addInvoice" method="POST" role="form">
          <div class="col-md-4">
             <div class="panel panel-primary">
                  <div class="panel-heading text-center">
@@ -33,7 +33,7 @@
                      Phương thức thanh toán
                  </div>
                  <div class="panel-body">
-                     <input type="number" name="paymentType" id="paymentType" hidden value="1">
+                     <input type="number" name="paymentType" id="paymentType" hidden value="<?php echo $checkoutType ?>">
                      <div class="form-group">
                          <label for="sel1">Phương thức thánh toán:</label>
                          <select multiple class="form-control" id="sel1">
