@@ -44,9 +44,9 @@
                                 $description= explode(" ",$bookDetail[0]->BOOK_DESCRIPTION);
                                 $descriptionCut = "";
                                 $check = 0;
-                                if(count($description) > 50)
+                                if(count($description) > 49)
                                 {
-                                    for($i=0;$i <= 50 ;$i++)
+                                    for($i=0;$i <= 49 ;$i++)
                                     {
                                         $descriptionCut .= " ".$description[$i];
                                     }
@@ -80,22 +80,13 @@
                     </div>
 				</h5>
 
-                <!--<div class="available">-->
-                    <!--<h6>Đặt hàng :</h6>-->
-                    <!--<ul>-->
-                        <!--<li>Số lượng:-->
-                            <!--<select>-->
-                                <!--<option>1</option>-->
-                                <!--<option>2</option>-->
-                                <!--<option>3</option>-->
-                                <!--<option>4</option>-->
-                                <!--<option>5</option>-->
-                            <!--</select>-->
-							<!-- -->
-                        <!--</li>-->
-                    <!--</ul>-->
-					<!-- -->
-                <!--</div>-->
+                <div class="available">
+                    <h6><b>Ưu đãi </b></h6>
+                    <ul>
+                        <li>&nbsp &nbsp &nbsp <span style="color:green" class="glyphicon glyphicon-ok">&nbsp </span> Với mỗi 200.000 VNĐ trong đơn hàng, quý khách được giảm 4%</li>
+						<li>&nbsp &nbsp &nbsp <span style="color:green" class="glyphicon glyphicon-ok">&nbsp </span> Với mỗi 500.000 VNĐ trong đơn hàng, quý khách được giảm 12% </li>
+					</ul>	
+               </div>
             </div>
         </div>
         <div class="clearfix"> </div>
@@ -180,11 +171,10 @@
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="elit">'.$value->BOOK_NAME.'</a>
-                                    <span class="price price-in"><small>$100000 </small>'.number_format(intval($value->BOOK_COST)).' VNĐ</span>
+                                    <span class="price price-in"><small>'.number_format(intval($value->BOOK_COST_OLD)).' VNĐ </small>'.number_format(intval($value->BOOK_COST)).' VNĐ</span>
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
-
                 ';
         }
     ?>
