@@ -34,7 +34,7 @@
             <div class="footer-middle-in col-md-4">
                 <h6>BOOKSTORE</h6>
                 <ul>
-                    <li><a href="contact.html">Liên hệ với chúng tôi</a></li>
+                    <li><a href="index.php?c=contact">Liên hệ với chúng tôi</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
