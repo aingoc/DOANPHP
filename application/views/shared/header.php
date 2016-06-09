@@ -68,7 +68,7 @@
                         </li>
                         <li>
                             <div class="cart">
-                                <a href="#" class="cart-in glyphicon glyphicon-shopping-cart"> </a>
+                                <a href="index.php?c=cart" class="cart-in glyphicon glyphicon-shopping-cart"> </a>
                                 <span> 0</span>
                             </div>
                             <ul class="sub-icon1 list">
