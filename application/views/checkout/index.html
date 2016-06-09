@@ -45,7 +45,7 @@
                      </div>
                      <div class="form-group">
                          <p class="small"><i>Ngày tạo hóa đơn (Mặc định)</i></p>
-                         <input type="datetime" name="currentDate" id="currentDate" tabindex="1" class="form-control" readonly value="<?php echo date('d/m/Y H:i:s');?>">
+                         <input type="datetime" name="currentDate" id="currentDate" tabindex="1" class="form-control" readonly value="<?php echo date('d/m/Y');?>">
                      </div>
                  </div>
              </div>
@@ -74,17 +74,19 @@
                          <?php
                             $count = 0;
                             $total = 0;
-                            foreach($listCartBook as $key=>$value)
+                            $totalQuality = 0;
+                            for($i = 0 ; $i < count($listCartBook) ;$i++)
                             {
                                 echo '
                                      <tr>
-                                         <td class="filterable-cell">'.$value->BOOK_NAME.'</td>
-                                         <td>'.$_SESSION["cartBook"][$count][1].'</td>
-                                         <td>'.number_format(intval($_SESSION["cartBook"][$count][1]*$value->BOOK_COST)).' VNĐ</td>
+                                         <td class="filterable-cell">'.$listCartBook[$i]->BOOK_NAME.'</td>
+                                         <td>'.$listBookQuality[$i].'</td>
+
+                                         <td>'.number_format(intval($listBookQuality[$i]*$listCartBook[$i]->BOOK_COST)).' VNĐ</td>
                                      </tr>
                                     ';
-                                    $total = $total + intval($_SESSION["cartBook"][$count][1]*$value->BOOK_COST);
-                                    $count++;
+                                    $total = $total + intval($listBookQuality[$i]*$listCartBook[$i]->BOOK_COST);
+                                    $totalQuality = $totalQuality + intval($listBookQuality[$i]);
 
                             }
 
@@ -115,12 +117,15 @@
                         }
                         else
                         {   $sale=0;
-                            echo number_format($total);
+                            echo number_format($total).' VNĐ';
                         }
 
 
                      ?>
                  </div>
+                 <input type="number" name="maxInvoiceID" id="maxInvoiceID" hidden value="<?php echo $maxInvoiceID[0]->INVOICE_HEADER_ID +1 ?>" >
+                 <?php var_dump($maxInvoiceID[0]); ?>
+                 <input type="number" name="totalQuality" id="totalQuality" hidden value="<?php echo $totalQuality ?>" >
                  <input type="number" name="total" id="total" hidden value="<?php echo $total ?>" >
                  <input type="number" name="totalBefore" id="totalBefore" hidden value="<?php echo $totalBefore ?>" >
              </div>

@@ -5,10 +5,12 @@ class Checkout extends Controller
     private $checkoutType;
     private $listCartBook;
     private $cartModel;
+    private $maxInvoiceID;
 
     function __construct()
     {
         include("application/models/carts_model.php");
+
         $this->cartModel = new Carts();
     }
 
@@ -36,15 +38,22 @@ class Checkout extends Controller
         }
 
         $listBookID = array();
-
-        for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
+        $listBookQuality = array();
+        $count = count($_SESSION["cartBook"]);
+        for($i = 0; $i < $count; $i++)
         {
+            if(empty($_SESSION["cartBook"][$i]))
+            {
+                $count++;
+                continue;
+            }
             $listBookID[] = $_SESSION["cartBook"][$i][0];
+            $listBookQuality[] = $_SESSION["cartBook"][$i][1];
         }
 
         $this->listCartBook = $this->cartModel->GetBookByMultipleID($listBookID);
-
-        $data = array("checkoutType" => $checkoutType,"listCartBook" =>$this->listCartBook);
+        $this->maxInvoiceID = $this->cartModel->GetMaxID();
+        $data = array("checkoutType" => $checkoutType,"listCartBook" =>$this->listCartBook,"maxInvoiceID"=>$this->maxInvoiceID,"listBookQuality" => $listBookQuality);
         $view = array("Index" => "Index");
         $this->View($view,$data);
     }

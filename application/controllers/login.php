@@ -2,11 +2,13 @@
 class Login extends Controller
 {
     private $userModel;
-
+    private $invoiceModel;
     function __construct()
     {
         include("application/models/user_model.php");
+        include("application/models/invoices_model.php");
         $this->userModel = new User();
+        $this->invoiceModel = new Invoices();
     }
     function Index()
     {
@@ -112,8 +114,11 @@ class Login extends Controller
             header('Location: index.php?c=login');
             exit;
         }
+        $allInvoice = $this->invoiceModel->GetAllInvoiceByUserID($_SESSION["userInfo"][0]->USER_ID);
+        $data = array("allInvoice"=>$allInvoice);
+
         $view = array("User_Detail" => "User_Detail");
-        $this->View($view);
+        $this->View($view,$data);
     }
 
     function UserUpdate()
