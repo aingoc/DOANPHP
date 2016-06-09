@@ -73,12 +73,21 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                <h4 class="modal-title">Phương thức đặt hàng </h4>
+                                                <h4 class="modal-title"><strong>Phương thức đặt hàng </strong></h4>
                                             </div>
                                             <div class="modal-body">
-                                                            <a href="index.php?c=checkout&checkoutType=0"><button type="button" class="btn btn-warning" >Đặt hàng không cần tài khoản</button></a>
-                                                            <a href="index.php?c=checkout&checkoutType=1"><button type="button" class="btn btn-success" >Đặt hàng bằng tài khoản</button></a>
-                                                </form>
+                                            <?php
+                                                if(empty($_SESSION['userInfo']))
+                                                {
+                                                    echo '<a href="index.php?c=checkout&checkoutType=1"><button type="button" class="btn btn-warning" > Đặt hàng không cần tài khoản</button></a>';
+                                                }
+                                                else
+                                                {
+                                                    echo '<a  class="not-active" href="index.php?c=checkout&checkoutType=1"><button type="button" class="btn btn-default" > Đặt hàng không cần tài khoản</br><strong style="color: red">(Chưa đăng xuất)</strong></button></a>';
+                                                }
+                                            ?>
+
+                                                            <a href="index.php?c=checkout&checkoutType=2"><button type="button" class="btn btn-success" >Đặt hàng bằng tài khoản(User)</button></a>
 
                                             </div>
                                             <div class="modal-footer">

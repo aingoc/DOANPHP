@@ -71,37 +71,6 @@
                                 <a href="index.php?c=cart" class="cart-in glyphicon glyphicon-shopping-cart"> </a>
                                 <span> 0</span>
                             </div>
-                            <ul class="sub-icon1 list">
-                                <h3>Recently added items(2)</h3>
-                                <div class="shopping_cart">
-                                    <div class="cart_box">
-                                        <div class="message">
-                                            <div class="alert-close"> </div>
-                                            <div class="list_img"><img src="public/themes/images/14.jpg" class="img-responsive" alt=""></div>
-                                            <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">$12.00</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="cart_box1">
-                                        <div class="message1">
-                                            <div class="alert-close1"> </div>
-                                            <div class="list_img"><img src="public/themes/images/15.jpg" class="img-responsive" alt=""></div>
-                                            <div class="list_desc"><h4><a href="#">velit esse molestie</a></h4>1 x<span class="actual">$12.00</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="total">
-                                    <div class="total_left">CartSubtotal : </div>
-                                    <div class="total_right">25000VNĐ</div>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="login_buttons">
-                                    <div class="check_button"><a href="checkout.html">Check out</a></div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </ul>
                         </li>
                     </ul>
                 </div>

@@ -1,1 +1,91 @@
-<h1>test</h1>
+</br>
+<div class="col-md-12 ">
+     <form id="checkout-form" action="index.php?c=checkout" method="GET" role="form">
+         <div class="col-md-4">
+            <div class="panel panel-primary">
+                 <div class="panel-heading text-center">
+                     Thông tin giao hàng
+                 </div>
+                 <div class="panel-body">
+                     <div class="form-group">
+                         <input type="text" name="Ten" id="Ten" tabindex="1" class="form-control" placeholder="Họ tên người nhận" value="">
+                     </div>
+                     <script>
+                         function valid(f) {
+                             !(/^[A-z&#209;&#241;0-9]*$/i).test(f.value)?f.value = f.value.replace(/[^A-z&#209;&#241;0-9]/ig,''):null;
+                         }</script>
+                     <div class="form-group">
+                         <input type="text" name="DiaChi" id="DiaChi" tabindex="1" class="form-control" placeholder="Địa chỉ nhận" value="">
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name="SDT" id="SDT" pattern="[0-9]{10}" tabindex="1" class="form-control" placeholder="Số điện thoại" value="">
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email@ liên lạc" value="">
+                     </div>
+                 </div>
+            </div>
+         </div>
+         <!--Phương thức thanh toán-->
+         <div class="col-md-4">
+             <div class="panel panel-primary">
+                 <div class="panel-heading text-center">
+                     Phương thức thanh toán
+                 </div>
+                 <div class="panel-body">
+                     <input type="number" name="paymentType" id="paymentType" hidden value="1">
+                     <div class="form-group">
+                         <label for="sel1">Phương thức thánh toán:</label>
+                         <select multiple class="form-control" id="sel1">
+                             <option selected value="1" >Thanh toán khi nhận hàng</option>
+                             <option value="2">Thanh toán bằng Thẻ điện thoại</option>
+                             <option value="3">Thanh toán bằng Thẻ ngân hàng</option>
+                             <option value="4">Thanh toán khác</option>
+                         </select>
+                     </div>
+                     <div class="form-group">
+                         <p class="small"><i>Ngày tạo hóa đơn (Mặc định)</i></p>
+                         <input type="datetime" name="currentDate" id="currentDate" tabindex="1" class="form-control" readonly value="<?php echo date('d/m/Y');?>">
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <!--Thông tin đơn hàng-->
+         <div class="col-md-4">
+             <div class="panel panel-primary">
+                 <div class="panel-heading text-center">
+                     Thông tin đơn hàng
+                 </div>
+                 <div class="panel-body">
+
+                 </div>
+             </div>
+         </div>
+
+
+
+         <div class="form-group">
+             <div class="row">
+                 <div class="col-sm-6 col-sm-offset-3">
+                     <input type="submit" name="checkout-submit" id="btnCheckout" class="form-control btn-warning"  tabindex="4" value="THANH TOÁN">
+                 </div>
+             </div>
+         </div>
+     </form>
+</div>
+<script type="text/javascript" src="public/themes/js/otherCheckout.js"></script>
+<script>
+
+    $(document).ready(function() {
+
+        $('#sel1 option').on('click', function(){
+            $('#paymentType').val($(this).val());
+        });
+
+
+
+
+    });
+
+</script>
