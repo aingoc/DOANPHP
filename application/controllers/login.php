@@ -125,7 +125,7 @@ class Login extends Controller
         $this->userModel = new User();
         $password = 0;
 
-        if($_POST["name"] = "password")
+        if($_POST["name"] == "password")
         {
             $check = md5($_POST["value"]);
         }
@@ -133,7 +133,7 @@ class Login extends Controller
         {
             $check = $_POST["value"];
         }
-
+        echo $check;
         $update = $this->userModel->UserUpdate($_POST["pk"],$_POST["name"],$check);
 
         if($update = 1)
