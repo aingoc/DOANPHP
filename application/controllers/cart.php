@@ -15,6 +15,12 @@ class Cart extends Controller
         $_SESSION["cartBook"][] = array(2 ,1);
 
         $_SESSION["cartBook"][] = array(3 ,1);
+        $_SESSION["cartBook"][] = array(4 ,1);
+
+        $_SESSION["cartBook"][] = array(5 ,1);
+        $_SESSION["cartBook"][] = array(6 ,1);
+
+        $_SESSION["cartBook"][] = array(7 ,1);
         if(empty($_SESSION["cartBook"]))
         {
             header('Location: index.php?c=home');
@@ -46,7 +52,7 @@ class Cart extends Controller
         for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
         {
 
-            if($_POST["id"] = $_SESSION["cartBook"][$i][0])
+            if($_POST["id"] == $_SESSION["cartBook"][$i][0])
             {
                 unset($_SESSION['cartBook'][$i]);
             }
@@ -59,11 +65,13 @@ class Cart extends Controller
         for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
         {
 
-            if($_POST["id"] = $_SESSION["cartBook"][$i][0])
+            if($_POST["id"] == $_SESSION["cartBook"][$i][0])
             {
                 $_SESSION['cartBook'][$i][1] = $_POST['quality'];
+                var_dump( $_SESSION['cartBook'][$i][0]);
+                var_dump( $_SESSION['cartBook'][$i][1]);
             }
-            var_dump( $_SESSION['cartBook'][$i][1]);
+
         }
 
     }

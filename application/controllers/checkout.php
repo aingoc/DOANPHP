@@ -15,7 +15,7 @@ class Checkout extends Controller
     function Index()
     {
 
-        if(empty($_GET["checkoutType"])) {
+        if(empty($_GET["checkoutType"]) || empty($_SESSION["cartBook"])) {
             header('Location: index.php?c=cart');
             exit;
         }

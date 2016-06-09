@@ -20,7 +20,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel-body">
+                <style>.scrollTable{overflow: scroll;  height: 500px;}</style>
+                <div class="panel-body scrollTable small">
                     <?php
                         $count = 0;
                         foreach($listCartBook as $key=>$value)
@@ -54,7 +55,7 @@
 
                     ?>
                     </div>
-                <div class="panel-footer">
+                <div class="panel-footer small">
                         <div class="row text-center">
                             <div class="col-xs-9">
                                 <h3><strong>Tổng tiền : </strong></h3>
@@ -101,6 +102,7 @@
         </div>
     </div>
 </div>
+</div>
 
 
 
@@ -130,16 +132,17 @@
         {
             sale = total - ((total * 96)/100);
             total = (total * 96)/100;
-            $('.total').text(total + " VNĐ (Giảm giá 4% - "+sale+"VNĐ)");
+            $('.total').text(total + " VNĐ (Đã giảm giá 4% - "+sale+"VNĐ)");
         }
         else if(total > 500000)
         {
             sale = total - ((total * 88)/100);
             total = (total * 88)/100;
-            $('.total').text(total + " VNĐ (Giảm giá 12% - "+sale+"VNĐ)");
+            $('.total').text(total + " VNĐ (Đã Giảm giá 12% - "+sale+"VNĐ)");
         }
         else
         {
+            sale=0;
             $('.total').text(total + " VNĐ");
         }
 
@@ -148,10 +151,29 @@
             bookCost = parseInt($(this).parentsUntil('.panel-body').find('.bookCost').attr('value'));
             quality = $(this).parentsUntil('.panel-body').find('.quality').val();
             bookID = $(this).attr('bookID');
+            $(this).parentsUntil('.panel-body').fadeOut().remove();
 
-            $(this).parentsUntil('.panel-body').fadeOut();
+            total = (total - (bookCost * quality)) + sale;
 
-            total = (total - (bookCost * quality));
+            if(total >200000 && total <= 500000)
+            {
+
+                sale = total - ((total * 96)/100);
+                total = (total * 96)/100;
+                $('.total').text(total + " VNĐ (Đã giảm giá 4% - "+sale+"VNĐ)");
+            }
+            else if(total > 500000)
+            {
+                sale = total - ((total * 88)/100);
+                total = (total * 88)/100;
+                $('.total').text(total + " VNĐ (Đã Giảm giá 12% - "+sale+"VNĐ)");
+            }
+            else
+            {
+                sale=0;
+                $('.total').text(total + " VNĐ");
+            }
+
             var bookID = $(this).attr('bookID');
 
             $.ajax({
@@ -206,6 +228,7 @@
             }
             else
             {
+                sale = 0;
                 $('.total').text(total + " VNĐ");
             }
 
