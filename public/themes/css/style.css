@@ -16,6 +16,7 @@ body a{
 h1,h2,h3,h4,h5,h6,label,p{
 	margin:0;	
 }
+/* header */
 .header-top{
 	background:url(../images/backgroundBookStore.jpg);
 }
@@ -42,6 +43,28 @@ h1,h2,h3,h4,h5,h6,label,p{
 .header-in ul li a:hover{
 	  color: #9fdcda;
 }
+/*---*/
+.header-bottom{
+	width: 100%;
+	height: 71px;
+	background: url(../images/back1.png) bottom ;
+	display:block;
+}
+/*----*/
+.header-bottom-in{
+	width: 100%;
+	height: 63px;
+	background: url(../images/back2.png)0px 0px ;
+	display:block;
+}
+.header-bottom-on {
+  padding: 1.3em 1em 0;
+}
+.header-can{
+	float:right;
+	  width: 40%;
+}
+/* header cart */
 .cart{
 	vertical-align: middle;
 	display: inline-block;
@@ -73,23 +96,6 @@ a.cart-in{
 .h_menu4 {
   padding: 0 1em;
 }
-/*---*/
-.header-bottom{
-	width: 100%;
-	height: 71px;
-	background: url(../images/back1.png) bottom ;
-	display:block;
-}
-/*----*/
-.header-bottom-in{
-	width: 100%;
-	height: 63px;
-	background: url(../images/back2.png)0px 0px ;
-	display:block;
-}
-.header-bottom-on {
-  padding: 1.3em 1em 0;
-}
 p.wel{
 	float:left;
 	font-size:1em;
@@ -103,10 +109,8 @@ p.wel a{
 p.wel a:hover{
 	color: #f95a32;
 }
-.header-can{
-	float:right;
-	  width: 40%;
-}
+
+/* icon facebook,... */
 ul.social-in{
 	float:left;
 	width: 23%;
@@ -295,8 +299,9 @@ span.actual{
 }
 .total{
 	padding:10px;
-	background:#F9F9F9;
+	background:#bce8f1;
 	margin: 0.3em 0;
+	color:#754f57;
 }
 .cart_box, .cart_box1{
 	position:relative;
@@ -913,7 +918,7 @@ p.dollar span.in-dollar{
 .bag h5{
 	text-align:left;
 }
-/*--products--*/
+/*--category--*/
 .products {
   padding: 4em 0;
 }
@@ -981,7 +986,7 @@ h2.products-in:after{
 	background: linear-gradient(to bottom, rgba(252,94,53,1) 55%,rgba(252,94,53,1) 55%,rgba(233,71,34,1) 100%);
 	color: #fff;
 }
-/*--single--*/
+/*--details--*/
 .single-para h4{
 	font-size:1.5em;
 	color:#747272;
