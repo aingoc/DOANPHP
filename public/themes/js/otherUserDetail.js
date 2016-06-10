@@ -69,8 +69,17 @@ $(document).ready(function() {
     });
 
     $('#user .editable').editable('toggleDisabled');
-
+	
+			var check=0;
     $('#enable').click(function() {
+		
         $('#user .editable').editable('toggleDisabled');
+		if(check == 0){
+			$('#enable').css('background', 'rgb(102, 255, 136)');
+			check++;
+		}else{
+			$('#enable').css('background', 'rgb(228, 234, 239)');
+			check = 0;
+		}
     });
 });
