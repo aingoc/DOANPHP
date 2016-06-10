@@ -30,7 +30,9 @@ class Cart extends Controller
             $listBookID[] = $_SESSION["cartBook"][$i][0];
             $listBookQuality[] = $_SESSION["cartBook"][$i][1];
         }
+
         $this->listCartBook = $this->cartModel->GetBookByMultipleID($listBookID);
+
         $data = array("listCartBook"=>$this->listCartBook,"listBookQuality" => $listBookQuality);
         $view = array("Index" => "Index");
         $this->View($view,$data);
@@ -65,12 +67,9 @@ class Cart extends Controller
                     $_SESSION["cartBook"][$i][1]++;
                     break;
                 }
-                var_dump($i);
-                var_dump($count);
+
                 if($i + 1 == $count)
                 {
-                    var_dump($i);
-                    var_dump($count);
                     array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
                 }
 

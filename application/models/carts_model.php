@@ -6,7 +6,7 @@
 
             $in = join(",",$listBookID);
             //Câu Select
-            $sql = "SELECT * FROM books WHERE BOOK_ID IN($in) ";
+            $sql = "SELECT * FROM books WHERE BOOK_ID IN($in) ORDER BY FIELD(BOOK_NO,$in) ";
 
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
