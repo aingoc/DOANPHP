@@ -50,39 +50,34 @@ class Cart extends Controller
         }
         else
         {
-
             $count = count($_SESSION["cartBook"]);
-            $check = 0;
             for($i=0 ; $i < $count ; $i++)
             {
                 if(empty($_SESSION["cartBook"][$i]))
                 {
 
                     $count++;
-                    $check ++;
                     continue;
                 }
 
                 if($bookID == $_SESSION["cartBook"][$i][0])
                 {
-
                     $_SESSION["cartBook"][$i][1]++;
                     break;
                 }
-                else
+                var_dump($i);
+                var_dump($count);
+                if($i + 1 == $count)
                 {
-
-                    $check ++;
-                }
-                if($check == $count)
-                {
+                    var_dump($i);
+                    var_dump($count);
                     array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
                 }
 
             }
         }
 
-        var_dump($_SESSION["cartBook"]);
+//        var_dump($_SESSION["cartBook"]);
     }
 
     function RemoveSessionBookID()
