@@ -3,13 +3,13 @@
         <!---->
         <div class="content-top">
             <h3 class="future">BÁN CHẠY</h3>
-            <div class="content-middle-in">
+            <div class="content-middle-in ">
 
                 <ul id="flexiselDemo1">
                     <?php
                         foreach($hot as $key => $value)
                         {
-                            echo '<li><div class = "sizeimg"><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></a></div></li>';
+                            echo '<li><div class = "sizeimg "><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></a></div></li>';
                         }
                     ?>
                 </ul>
@@ -19,7 +19,7 @@
         <div class="content-middle">
 
             <h3 class="future">SÁCH MỚI</h3>
-            <div class="content-top-in">
+            <div class="content-top-in gallery">
                 <?php
                     $count = 0;
                     foreach($new as $key => $value)

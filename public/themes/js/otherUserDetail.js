@@ -67,8 +67,7 @@ $(document).ready(function() {
         type: 'password',
         title: 'Nhập Password mới',
     });
-
-
+	
     $('#enable').click(function() {
         $('#user .editable').editable('toggleDisabled');
     });
