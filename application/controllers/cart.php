@@ -18,6 +18,7 @@ class Cart extends Controller
         }
 
         $listBookID = array();
+        $listBookQuality = array();
         $count = count($_SESSION["cartBook"]);
         for($i = 0; $i < $count; $i++)
         {
@@ -27,10 +28,10 @@ class Cart extends Controller
                 continue;
             }
             $listBookID[] = $_SESSION["cartBook"][$i][0];
+            $listBookQuality[] = $_SESSION["cartBook"][$i][1];
         }
-
         $this->listCartBook = $this->cartModel->GetBookByMultipleID($listBookID);
-        $data = array("listCartBook"=>$this->listCartBook);
+        $data = array("listCartBook"=>$this->listCartBook,"listBookQuality" => $listBookQuality);
         $view = array("Index" => "Index");
         $this->View($view,$data);
     }
@@ -44,30 +45,35 @@ class Cart extends Controller
         }
 
         if(empty($_SESSION["cartBook"])) {
+
             array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
         }
         else
         {
+
             $count = count($_SESSION["cartBook"]);
             $check = 0;
             for($i=0 ; $i < $count ; $i++)
             {
                 if(empty($_SESSION["cartBook"][$i]))
                 {
+
                     $count++;
+                    $check ++;
                     continue;
                 }
 
                 if($bookID == $_SESSION["cartBook"][$i][0])
                 {
+
                     $_SESSION["cartBook"][$i][1]++;
                     break;
                 }
                 else
                 {
+
                     $check ++;
                 }
-
                 if($check == $count)
                 {
                     array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
@@ -117,4 +123,6 @@ class Cart extends Controller
         var_dump($_SESSION['cartBook']);
     }
 }
+
+
 ?>
