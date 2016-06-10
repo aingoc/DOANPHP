@@ -69,6 +69,7 @@ $(document).ready(function() {
     });
 
     $('#user .editable').editable('toggleDisabled');
+
     $('#enable').click(function() {
         $('#user .editable').editable('toggleDisabled');
     });

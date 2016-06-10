@@ -18,7 +18,7 @@ $(function() {
 });
 $(document).ready(function() {
 	$('#login-form').bootstrapValidator({
-		message: 'This value is not valid',
+		message: 'Thông tin này không được để trống !!',
 		feedbackIcons: {
 			valid: 'glyphicon glyphicon-ok',
 			invalid: 'glyphicon glyphicon-remove',
@@ -28,20 +28,20 @@ $(document).ready(function() {
 			passwordLogin: {
 				validators: {
 					notEmpty: {
-						message: 'The password is required'
+						message: 'Vui lòng nhập mật khẩu !!'
 					}
 				}
 			},
 			usernameLogin: {
-				message: 'The username is not valid',
+				message: 'Tên đăng nhập không được để trống !!',
 				validators: {
 					notEmpty: {
-						message: 'The username is required and cannot be empty'
+						message: 'Vui lòng nhập tên đăng nhập !!'
 					},
 					stringLength: {
 						min: 6,
 						max: 30,
-						message: 'The username must be more than 6 and less than 30 characters long'
+						message: 'Tên đăng nhập phải từ 6-30 kí tự !!'
 					}
 				}
 			}
@@ -50,7 +50,7 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
 	$('#register-form').bootstrapValidator({
-		message: 'This value is not valid',
+		message: 'Thông tin này không được để trống !!',
 		feedbackIcons: {
 			valid: 'glyphicon glyphicon-ok',
 			invalid: 'glyphicon glyphicon-remove',
@@ -58,46 +58,41 @@ $(document).ready(function() {
 		},
 		fields: {
 			Ten: {
-				message: 'The username is not valid',
+				message: 'Vui lòng nhập đầy đủ họ tên để chúng tôi tiện xưng hô ! Thanks !',
 				validators: {
 					notEmpty: {
-						message: 'The username is required and can\'t be empty'
-					},
-					stringLength: {
-						min: 6,
-						max: 30,
-						message: 'The username must be more than 6 and less than 30 characters long'
+						message: 'Vui lòng nhập đầy đủ họ tên để chúng tôi tiện xưng hô ! Thanks!'
 					}
 				}
 			},
 			username1: {
-				message: 'The username is not valid',
+				message: 'Tên đăng nhập không được để trống !!',
 				validators: {
 					notEmpty: {
-						message: 'The username is required and can\'t be empty'
+						message: 'Vui lòng nhập tên đăng nhập !!'
 					},
 					stringLength: {
 						min: 6,
 						max: 30,
-						message: 'The username must be more than 6 and less than 30 characters long'
+						message: 'Tên đăng nhập phải từ 6-30 kí tự !!'
 					}
 				}
 			},
 
 			DiaChi: {
-				message: 'The username is not valid',
+				message: 'Địa chỉ giúp chúng tôi có thể giao hàng tận nơi cho bạn. Không được bỏ trống !',
 				validators: {
 					notEmpty: {
-						message: 'The username is required and cannot be empty'
+						message: 'Địa chỉ giúp chúng tôi có thể giao hàng tận nơi cho bạn ! Vì vậy bạn hãy nhập đúng địa chỉ của mình !'
 					}
 
 				}
 			},
 			password1: {
-				message: 'The username is not valid',
+				message: 'Mật khẩu không được trống !',
 				validators: {
 					notEmpty: {
-						message: 'The password is required and cannot be empty'
+						message: 'Vui lòng nhập mật khẩu !'
 					}
 
 				}
@@ -105,24 +100,24 @@ $(document).ready(function() {
 			email: {
 				validators: {
 					notEmpty: {
-						message: 'The password is required and cannot be empty'
+						message: 'example@gmail.com ! Email giúp chúng tôi có thể trả lời mọi thắc mắc của bạn. Vì vậy bạn hãy nhập đúng email của mình !'
 					},
 					regexp: {
 						regexp: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i,
-						message: 'The value is not a valid email address'
+						message: 'Email giúp chúng tôi có thể trả lời mọi thắc mắc của bạn. Vì vậy bạn hãy nhập đúng email của mình !'
 					}
 				}
 			},
 			SDT: {
-				message: 'The phonenumber is not valid',
+				message: 'Số điện thoại không được trống !',
 				validators: {
 					notEmpty: {
-						message: 'The phonenumber is required and cannot be empty'
+						message: 'Số điện giúp chúng tôi có thể liên lạc với bạn. Vì vậy bạn hãy nhập đúng SĐT của mình ! '
 					},
 					stringLength: {
 						min: 8,
 						max: 11,
-						message: 'The phonenumber must be more than 6 and less than 30 characters long'
+						message: 'SĐT phải từ 8-11 số !'
 					}
 				}
 			}
