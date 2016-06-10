@@ -69,7 +69,7 @@
                         </li>
                         <li>
                             <div class="cart">
-                                <a href="index.php?c=cart" class="cart-in glyphicon glyphicon-shopping-cart"> </a>
+                                <a href="index.php?c=cart" class="cart-in glyphicon glyphicon-shopping-cart shopping-cart"> </a>
                                 <span> 0</span>
                             </div>
                         </li>
