@@ -11,16 +11,6 @@ class Cart extends Controller
 
     function Index()
     {
-        $_SESSION["cartBook"] = array();
-        $_SESSION["cartBook"][] = array(2 ,1);
-
-        $_SESSION["cartBook"][] = array(3 ,1);
-        $_SESSION["cartBook"][] = array(4 ,1);
-
-        $_SESSION["cartBook"][] = array(5 ,1);
-        $_SESSION["cartBook"][] = array(6 ,1);
-
-        $_SESSION["cartBook"][] = array(7 ,1);
         if(empty($_SESSION["cartBook"]))
         {
             header('Location: index.php?c=home');
@@ -28,30 +18,77 @@ class Cart extends Controller
         }
 
         $listBookID = array();
-
-        for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
+        $count = count($_SESSION["cartBook"]);
+        for($i = 0; $i < $count; $i++)
         {
+            if(empty($_SESSION["cartBook"][$i]))
+            {
+                $count++;
+                continue;
+            }
             $listBookID[] = $_SESSION["cartBook"][$i][0];
         }
 
         $this->listCartBook = $this->cartModel->GetBookByMultipleID($listBookID);
-
         $data = array("listCartBook"=>$this->listCartBook);
         $view = array("Index" => "Index");
         $this->View($view,$data);
     }
 
-    function AddSessionBookID($bookID)
+    function AddSessionBookID()
     {
-        //............................
+        $bookID = $_POST["id"];
+        if(!is_array($_SESSION["cartBook"]))
+        {
+            $_SESSION["cartBook"] = array();
+        }
+
+        if(empty($_SESSION["cartBook"])) {
+            array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
+        }
+        else
+        {
+            $count = count($_SESSION["cartBook"]);
+            $check = 0;
+            for($i=0 ; $i < $count ; $i++)
+            {
+                if(empty($_SESSION["cartBook"][$i]))
+                {
+                    $count++;
+                    continue;
+                }
+
+                if($bookID == $_SESSION["cartBook"][$i][0])
+                {
+                    $_SESSION["cartBook"][$i][1]++;
+                    break;
+                }
+                else
+                {
+                    $check ++;
+                }
+
+                if($check == $count)
+                {
+                    array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
+                }
+
+            }
+        }
+
+        var_dump($_SESSION["cartBook"]);
     }
 
     function RemoveSessionBookID()
     {
-
-        for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
+        $count = count($_SESSION["cartBook"]);
+        for($i = 0; $i < $count; $i++)
         {
-
+            if(empty($_SESSION["cartBook"][$i]))
+            {
+                $count++;
+                continue;
+            }
             if($_POST["id"] == $_SESSION["cartBook"][$i][0])
             {
                 unset($_SESSION['cartBook'][$i]);
@@ -61,17 +98,23 @@ class Cart extends Controller
 
     function UpdateSessionBookID()
     {
-
-        for($i = 0; $i < count($_SESSION["cartBook"]); $i++)
+        $count = count($_SESSION["cartBook"]);
+        for($i = 0; $i < $count; $i++)
         {
+            if(empty($_SESSION["cartBook"][$i]))
+            {
+                $count++;
+                continue;
+            }
 
             if($_POST["id"] == $_SESSION["cartBook"][$i][0])
             {
                 $_SESSION['cartBook'][$i][1] = $_POST['quality'];
+                var_dump($_SESSION['cartBook'][$i][1]);
             }
 
         }
-
+        var_dump($_SESSION['cartBook']);
     }
 }
 ?>

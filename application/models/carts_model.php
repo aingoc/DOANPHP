@@ -5,7 +5,6 @@
         {
 
             $in = join(",",$listBookID);
-
             //Câu Select
             $sql = "SELECT * FROM books WHERE BOOK_ID IN($in) ";
 
