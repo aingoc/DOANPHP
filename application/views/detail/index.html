@@ -18,7 +18,7 @@
 </script>
 <div class="single">
     <div class="col-md-9 top-in-single">
-        <div class="col-md-5 single-top">
+        <div class="col-md-5 single-top item">
             <ul id="etalage">
                 <li>
                     <a href="#">
@@ -28,12 +28,12 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-7 single-top-in">
+        <div class="col-md-7 single-top-in ">
             <div class="single-para">
                 <h4><?php echo $bookDetail[0]->BOOK_NAME ?></h4>
                 <div class="para-grid">
                     <span  class="add-to"><?php echo number_format(intval($bookDetail[0]->BOOK_COST)) ?> VNĐ</span>
-                    <a href="#" class="hvr-shutter-in-vertical cart-to"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào Giỏ</a>
+                    <button type="button"  bookID="<?php echo $bookDetail[0]->BOOK_ID ?>" class="hvr-shutter-in-vertical cart-to addCart"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào Giỏ</button>
                     <div class="clearfix"></div>
                 </div>
                 <h5>Giới thiệu 
@@ -113,7 +113,7 @@
 
                         echo '
 
-                                <div class="col-md-4 top-single">
+                                <div class="col-md-4 top-single item">
                                     <div class="col-md">
                                         <div class="hovereffect">
                                             <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
@@ -131,7 +131,7 @@
 												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a>
 											</h5>
                                             <div class="white">
-                                                <a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                                <button type="button"  bookID="'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 addCart "><span class="glyphicon glyphicon-shopping-cart"></span></button>
                                                 <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -182,3 +182,5 @@
     </div>
     <div class="clearfix"> </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="public/themes/js/otherAddCart.js"></script>
