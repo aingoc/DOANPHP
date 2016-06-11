@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/home/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.576923">
-              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="81" selection-end-column="94" />
+            <state vertical-scroll-proportion="0.55131966">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -64,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="invoice.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="invoice.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/invoice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55131966">
+            <state vertical-scroll-proportion="-54.26923">
               <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
               <folding />
             </state>
@@ -87,7 +87,7 @@
       <file leaf-file-name="cart.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-46.46154">
+            <state vertical-scroll-proportion="29.384615">
               <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
             </state>
@@ -182,7 +182,6 @@
         <option value="$PROJECT_DIR$/application/models/carts_model.php" />
         <option value="$PROJECT_DIR$/application/views/checkout/index.html" />
         <option value="$PROJECT_DIR$/public/themes/js/addCart.js" />
-        <option value="$PROJECT_DIR$/application/views/home/index.html" />
         <option value="$PROJECT_DIR$/application/views/shared/header.php" />
         <option value="$PROJECT_DIR$/public/themes/js/otherAddCart.js" />
         <option value="$PROJECT_DIR$/public/themes/js/otherRemoveCart.js" />
@@ -192,6 +191,7 @@
         <option value="$PROJECT_DIR$/application/views/shared/footer.php" />
         <option value="$PROJECT_DIR$/application/views/help/index.html" />
         <option value="$PROJECT_DIR$/application/controllers/invoice.php" />
+        <option value="$PROJECT_DIR$/application/views/home/index.html" />
       </list>
     </option>
   </component>
@@ -960,14 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.576923">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="81" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/shared/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617">
@@ -975,14 +967,6 @@
           <folding>
             <marker date="1465654204791" expanded="true" signature="2939:3205" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-46.46154">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,8 +1012,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/invoice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55131966">
+        <state vertical-scroll-proportion="-54.26923">
           <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="29.384615">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/home/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55131966">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="94" />
           <folding />
         </state>
       </provider>
