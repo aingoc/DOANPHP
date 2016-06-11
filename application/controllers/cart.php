@@ -41,7 +41,8 @@ class Cart extends Controller
     function AddSessionBookID()
     {
         $bookID = $_POST["id"];
-        if(!is_array($_SESSION["cartBook"]))
+        $count= 0;
+        if(empty($_SESSION["cartBook"]))
         {
             $_SESSION["cartBook"] = array();
         }
@@ -49,6 +50,7 @@ class Cart extends Controller
         if(empty($_SESSION["cartBook"])) {
 
             array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
+            echo count($_SESSION["cartBook"]);
         }
         else
         {
@@ -71,12 +73,12 @@ class Cart extends Controller
                 if($i + 1 == $count)
                 {
                     array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
+                    echo count($_SESSION["cartBook"]);
                 }
 
             }
         }
 
-//        var_dump($_SESSION["cartBook"]);
     }
 
     function RemoveSessionBookID()
@@ -92,8 +94,10 @@ class Cart extends Controller
             if($_POST["id"] == $_SESSION["cartBook"][$i][0])
             {
                 unset($_SESSION['cartBook'][$i]);
+                echo count($_SESSION["cartBook"]);
             }
         }
+
     }
 
     function UpdateSessionBookID()
@@ -114,7 +118,13 @@ class Cart extends Controller
             }
 
         }
-        var_dump($_SESSION['cartBook']);
+        echo count($_SESSION["cartBook"]);
+    }
+
+    function CartTotal()
+    {
+        $count = count($_SESSION["cartBook"]);
+        echo count($_SESSION["cartBook"]);
     }
 }
 

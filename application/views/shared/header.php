@@ -70,7 +70,16 @@
                         <li>
                             <div class="cart">
                                 <a href="index.php?c=cart" class="cart-in glyphicon glyphicon-shopping-cart shopping-cart"> </a>
-                                <span> 0</span>
+                                <span class="cartTotal"></span>
+                                <script>
+                                        $.ajax({
+                                            url: 'index.php?c=cart&a=CartTotal',
+                                            success: function(response) {
+                                                $(".cartTotal").text(response);
+
+                                            }
+                                        });
+                                </script>
                             </div>
                         </li>
                     </ul>
