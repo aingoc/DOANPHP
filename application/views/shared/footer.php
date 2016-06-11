@@ -18,7 +18,7 @@
             <div class="footer-middle-in col-md-4">
                 <h6>HỖ TRỢ KHÁCH HÀNG</h6>
                 <ul>
-					<li><a href="index.html">Hướng dẫn mua hàng</a></li>
+					<li><a href="index.php?c=help">Hướng dẫn mua hàng</a></li>
                     <li><a href="#">Chính sách đổi/trả</a></li>
 					<li><a href="#">Phương thức vận chuyển</a></li>
                 </ul>

@@ -102,7 +102,6 @@ class Cart extends Controller
 
             }
         }
-
     }
 
     function RemoveSessionBookID()

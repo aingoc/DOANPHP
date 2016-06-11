@@ -81,7 +81,7 @@
             $data = array("invoiceNo" => $invoiceNo);
             $view = array("invoice_success" => "invoice_success");
             $this->View($view,$data);
-            unset($_SESSION["cartInfo"]);
+            unset($_SESSION["cartBook"]);
         }
     }
 ?>
