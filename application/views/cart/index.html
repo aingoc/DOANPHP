@@ -9,6 +9,15 @@
                             <div class="col-xs-6">
                                 <h5><span class="glyphicon glyphicon-shopping-cart"></span> Giỏ Hàng Của Tôi</h5>
                             </div>
+                            <br>
+                            <div class="col-xs-6">
+                                <a href="index.php?c=home">
+                                <button type="button" class="btn btn-primary btn-sm btn-block dellAllCart">
+                                    <span class="glyphicon glyphicon-share-alt"></span>
+                                    Xóa giỏ hàng
+                                </button>
+                                </a>
+                            </div>
                             <div class="col-xs-6">
                                 <a href="index.php?c=home">
                                 <button type="button" class="btn btn-primary btn-sm btn-block">
@@ -49,7 +58,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
+                                <br>
                                 ';
 
                         }
@@ -106,3 +115,20 @@
 </div>
 </div>
 <script type="text/javascript" src="public/themes/js/otherRemoveCart.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('.dellAllCart').click(function () {
+            bookID = $(this).attr("bookID");
+            $.ajax({
+                url: 'index.php?c=cart&a=DellAllSessionBookID',
+                dataType: 'json',
+                data: {
+                    id: bookID
+                },
+                type: "POST"
+            });
+        });
+    });
+
+</script>
