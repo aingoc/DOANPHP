@@ -155,6 +155,11 @@ class Cart extends Controller
             echo count($_SESSION["cartBook"]);
         }
     }
+
+    function DellAllSessionBookID()
+    {
+        session_destroy();
+    }
 }
 
 
