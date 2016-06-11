@@ -158,7 +158,7 @@ class Cart extends Controller
 
     function DellAllSessionBookID()
     {
-        session_destroy();
+        unset($_SESSION["cartBook"]);
     }
 }
 

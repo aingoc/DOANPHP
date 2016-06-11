@@ -7,14 +7,14 @@ $(document).ready(function() {
 			$(this).addClass("parent");
 		};
 	})
-	
+
 	$(".toggleMenu").click(function(e) {
 		e.preventDefault();
 		$(this).toggleClass("active");
 		$(".nav").toggle();
 	});
 	adjustMenu();
-})
+});
 
 $(window).bind('resize orientationchange', function() {
 	ww = document.body.clientWidth;
