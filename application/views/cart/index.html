@@ -119,14 +119,8 @@
     $(document).ready(function() {
 
         $('.dellAllCart').click(function () {
-            bookID = $(this).attr("bookID");
             $.ajax({
-                url: 'index.php?c=cart&a=DellAllSessionBookID',
-                dataType: 'json',
-                data: {
-                    id: bookID
-                },
-                type: "POST"
+                url: 'index.php?c=cart&a=DellAllSessionBookID'
             });
         });
     });
