@@ -10,5 +10,14 @@ class Admins extends Model
         //Trả về dữ liệu
         return $runSql;
     }
+    function UpdateBookNo()
+    {
+        //Câu Select
+        $sql = "UPDATE books SET BOOK_NO=BOOK_ID";
+        //Thực thi câu lệnh
+        $runSql = $this->db->ExeQuery($sql);
+        //Trả về dữ liệu
+        return $runSql;
+    }
 }
 ?>

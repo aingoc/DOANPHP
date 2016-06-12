@@ -1,5 +1,5 @@
 </br>
-<form id="addBook-form" action="index.php?c=admin" method="POST" role="form"  enctype="multipart/form-data" >
+<form id="addBook-form" action="index.php?c=admin&a=AddBook" method="POST" role="form"  enctype="multipart/form-data" >
     <div class="form-group">
         <input type="text" name="bookName" id="bookName" tabindex="1" class="form-control" placeholder="Tên sách" value="">
     </div>
@@ -52,6 +52,7 @@
     <div class="form-group">
         <input type="number" name="bookOldCost" id="bookOldCost"  class="form-control"  placeholder="Nhập nguyên giá" >
     </div>
+    <label><?php echo $status;?></label>
     <input type="hidden" name="addBook" value="addBook">
     <div class="form-group">
         <div class="row">
@@ -60,5 +61,6 @@
             </div>
         </div>
     </div>
+
 </form>
 <script type="text/javascript" src="public/themes/js/otherAddBook.js"></script>

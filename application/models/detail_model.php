@@ -19,5 +19,16 @@
             //Trả về dữ liệu
             return $runSql->fetchAll(PDO::FETCH_CLASS);
         }
+        function DeleteBookByID($bookID)
+        {
+            //Câu Select
+            $sql = "DELETE FROM `books` WHERE BOOK_ID = $bookID;
+                                          ";
+            //Thực thi câu lệnh
+            $runSql = $this->db->ExeQuery($sql);
+
+            //Trả về dữ liệu
+            return $runSql;
+        }
     }
 ?>
