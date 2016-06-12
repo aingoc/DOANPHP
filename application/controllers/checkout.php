@@ -1,8 +1,7 @@
 <?php
 class Checkout extends Controller
 {
-    private $data;
-    private $checkoutType;
+
     private $listCartBook;
     private $cartModel;
     private $maxInvoiceID;
@@ -17,13 +16,14 @@ class Checkout extends Controller
     function Index()
     {
 
+        //Kiểm tra nếu chưa chọn loại thanh toán hay danh sách giỏ hàng trống thì ...
         if(empty($_GET["checkoutType"]) || empty($_SESSION["cartBook"])) {
             header('Location: index.php?c=cart');
             exit;
         }
 
+        //Nếu chọn loại thanh toán theo tài khoản thì chuyển sang login cho người dùng đăng nhập
         $checkoutType = $_GET["checkoutType"];
-
         if(intval($_GET["checkoutType"]) == 2)
         {
             if(empty($_SESSION["userInfo"]))
@@ -37,6 +37,7 @@ class Checkout extends Controller
             }
         }
 
+        //Thuật toán truyền dữ liệu session vào biến listbookid và listbookquality qqua invoice
         $listBookID = array();
         $listBookQuality = array();
         $count = count($_SESSION["cartBook"]);
@@ -50,6 +51,7 @@ class Checkout extends Controller
             $listBookID[] = $_SESSION["cartBook"][$i][0];
             $listBookQuality[] = $_SESSION["cartBook"][$i][1];
         }
+        //--------------------------------------------------------------------------------------
 
         $this->listCartBook = $this->cartModel->GetBookByMultipleID($listBookID);
         $this->maxInvoiceID = $this->cartModel->GetMaxID();

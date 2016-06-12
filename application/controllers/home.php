@@ -8,7 +8,6 @@
         function Index()
         {
             include("application/models/books_model.php");
-
             $books = new Books();
             //Biến chứa dữ liệu component sách mới
             $new = $books->SelectNewBooks(0,8);

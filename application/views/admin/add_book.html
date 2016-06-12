@@ -1,0 +1,64 @@
+</br>
+<form id="addBook-form" action="index.php?c=admin" method="POST" role="form"  enctype="multipart/form-data" >
+    <div class="form-group">
+        <input type="text" name="bookName" id="bookName" tabindex="1" class="form-control" placeholder="Tên sách" value="">
+    </div>
+    <div class="form-group">
+        <textarea name="description"  id="description" class="form-control" placeholder="Giới thiệu về sách"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="status">Trạng thái:</label>
+        <select class="form-control" id="status" name="status">
+            <option>New</option>
+            <option>Hot</option>
+            <option>Normal</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="category">Loại sách:</label>
+        <select class="form-control" id="category" name="category">
+            <option value="1">Truyện Tranh</option>
+            <option value="2">Cổ Tích - Thần Thoại</option>
+            <option value="3">Văn Học Việt Nam</option>
+            <option value="4">Kế Toán</option>
+            <option value="6">MARKETING</option>
+            <option value="7">NGOẠI THƯƠNG</option>
+            <option value="8">Y HỌC THƯỜNG THỨC</option>
+            <option value="9">Y HỌC CỔ TRUYỀN</option>
+            <option value="10">TIẾNG ANH</option>
+            <option value="11">TIẾNG NHẬT</option>
+            <option value="12">TIẾNG HÀN</option>
+            <option value="13">NẤU ĂN</option>
+            <option value="14">ÂM NHẠC</option>
+            <option value="15">DU LỊCH</option>
+            <option value="16">Quản Trị Kinh doanh</option>
+            <option value="17">Thơ ca Dân gian</option>
+            <option value="18">Truyện tiểu thuyết</option>
+            <option value="19">Truyện Kinh Dị</option>
+            <option value="20">Truyện Trinh thám - Vụ án</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="category">Hình 1:</label>
+        <input id="image" name="image" type="file" class="file" data-show-preview="false">
+    </div>
+    <div class="form-group">
+        <label for="category">Banner:</label>
+        <input id="image1" name="image1" type="file" class="file" data-show-preview="false">
+    </div>
+    <div class="form-group">
+        <input type="number" name="bookCost" id="bookCost"  class="form-control"  placeholder="Nhập giá tiền" >
+    </div>
+    <div class="form-group">
+        <input type="number" name="bookOldCost" id="bookOldCost"  class="form-control"  placeholder="Nhập nguyên giá" >
+    </div>
+    <input type="hidden" name="addBook" value="addBook">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <input type="submit" name="add-submit" id="btnAddBook" class="form-control btn-primary"  tabindex="4" value="Thêm sách">
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="public/themes/js/otherAddBook.js"></script>

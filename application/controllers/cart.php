@@ -61,16 +61,21 @@ class Cart extends Controller
         //--------------------------------
     }
 
+
+    //Hàm này được kích hoạt khi người dùng nhấn vào giỏ hàng
     function AddSessionBookID()
     {
+        //Lấy book id từ nút nhấn giỏ hàng
         $bookID = $_POST["id"];
 
 
+        //Kiểm tra nếu giỏ hàng trống thì tạo ra giỏ hàng dạng array
         if(empty($_SESSION["cartBook"]))
         {
             $_SESSION["cartBook"] = array();
         }
 
+        //Sau Khi tạo array cho giỏ hàng thì kiểm trả 1 lần nữa nếu giỏ hàng không có dữ liệu thì add vào
         if(empty($_SESSION["cartBook"])) {
 
             array_push($_SESSION["cartBook"],array(0=>$bookID,1=>1));
@@ -78,9 +83,13 @@ class Cart extends Controller
         }
         else
         {
+            //Đếm số lượng sách có trong giỏ hàng
             $count = count($_SESSION["cartBook"]);
+
+            //Thuật toán thêm sách vào giỏ hàng khi giỏ hàng không trống
             for($i=0 ; $i < $count ; $i++)
             {
+
                 if(empty($_SESSION["cartBook"][$i]))
                 {
 
@@ -104,6 +113,7 @@ class Cart extends Controller
         }
     }
 
+    //Xóa sách trong giỏ hàng
     function RemoveSessionBookID()
     {
         $count = count($_SESSION["cartBook"]);
@@ -123,6 +133,7 @@ class Cart extends Controller
 
     }
 
+    //Hàm này kích hoạt khi người dùng thay đổi số lượng sách trong giỏ hàng
     function UpdateSessionBookID()
     {
         $count = count($_SESSION["cartBook"]);
@@ -144,6 +155,7 @@ class Cart extends Controller
         echo count($_SESSION["cartBook"]);
     }
 
+    //Hàm này dùng để tính tổng các sách khác nhau có trong giỏ hàng và show lên icon
     function CartTotal()
     {
         if(empty($_SESSION["cartBook"]))
@@ -156,6 +168,7 @@ class Cart extends Controller
         }
     }
 
+    //Xóa hết trong giỏ hàng
     function DellAllSessionBookID()
     {
         unset($_SESSION["cartBook"]);
