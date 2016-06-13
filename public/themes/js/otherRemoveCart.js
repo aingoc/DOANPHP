@@ -92,9 +92,16 @@ $(document).ready(function() {
 
     $( ".quality" ).change(function() {
         total = 0;
+
         $(".quality").each(function(){
             bookCost = parseInt($(this).parentsUntil('.row').find('.bookCost').attr('value'));
             quality = $(this).val();
+            if(quality  < 0)
+            {
+
+                $(this).val('1');
+                quality=1;
+            }
             bookID = $(this).parentsUntil('.row').find('.remove').attr('bookID');
             if(quality == 0)
             {
