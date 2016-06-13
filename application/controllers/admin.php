@@ -114,36 +114,36 @@ class Admin extends Controller
 
         if(!empty($_POST["updateBook"]))
         {
-            //Đang lỗi
+            $this->bookInfoByID = $this->detailModel->GetBookDetailByID($_POST["bookID"]);
             $bookName = $_POST["bookName"];
             $description = $_POST["description"];
             $status = $_POST["status"];
             $category = $_POST["category"];
 
             $image =  $_FILES['image']['name'];
-            if(!empty($image))
+            if($image != "")
             {
                 $this->UploadImage("image");
             }
             else
             {
-                $image = $this->bookInfoByID["BOOK_IMAGE"];
-
+                $image = $this->bookInfoByID[0]->BOOK_IMAGE;
             }
 
             $image1 = $_FILES['image1']['name'];
-            if(!empty($image1))
+            if($image1 != "")
             {
                 $this->UploadImage("image1");
             }
             else
             {
-                $image = $this->bookInfoByID["BOOK_IMAGE_1"];
+                $image1 =  $this->bookInfoByID[0]->BOOK_IMAGE_1;
             }
             $bookCost = $_POST["bookCost"];
             $bookOldCost = $_POST["bookOldCost"];
 
-
+            $result = $this->adminModel->UpdateBookInfo($_POST["bookID"],$bookName,$description,$status,$category,$image,$image1,$bookCost,$bookOldCost);
+            $status= "<style>.check{color:green;}</style>Chỉnh sửa thành công";
         }
 
 
