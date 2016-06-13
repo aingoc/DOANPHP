@@ -12,7 +12,11 @@ class Login extends Controller
     }
     function Index()
     {
-
+        $redirect = null;
+        if(!empty($_GET["redirect"]))
+        {
+            $redirect = $_GET["redirect"];
+        }
         if(!empty($_SESSION["userInfo"]))
         {
             header('Location: index.php?c=login&a=UserDetail');
@@ -20,14 +24,15 @@ class Login extends Controller
         }
         else
         {
+            $data= array("redirect"=> $redirect);
             $view = array("Index" => "Index");
-            $this->View($view);
+            $this->View($view,$data);
         }
     }
 
     function LoginValidate()
     {
-
+        $redirect = $_GET["redirect"];
         if(!empty($_SESSION["userInfo"]))
         {
             header('Location: index.php?c=login&a=UserDetail');
@@ -42,6 +47,13 @@ class Login extends Controller
 
             //Nếu $username = null thì show trang lỗi
             if($username != null) {
+                if($redirect == "cart")
+                {
+                    $_SESSION["userInfo"] = $username;
+                    header('Location: index.php?c=cart');
+                    exit;
+                }
+
                 $_SESSION["userInfo"] = $username;
                 header('Location: index.php');
                 exit;
@@ -63,7 +75,7 @@ class Login extends Controller
     function Logout()
     {
         session_destroy();
-        header('Location: index.php');
+        header('Location: index.php?c=login');
         exit;
     }
 
