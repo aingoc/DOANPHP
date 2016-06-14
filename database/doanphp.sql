@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2016 at 03:55 AM
+-- Generation Time: Jun 14, 2016 at 03:53 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -58,10 +58,10 @@ INSERT INTO `books` (`BOOK_ID`, `BOOK_NO`, `BOOK_NAME`, `BOOK_DESCRIPTION`, `STA
 (9, 9, 'Trận chiến đáng sợ của Sư tử con và Hổ con', 'Trễn thế giới này có cha mẹ nào không muốn con mình trở nên tài giỏi? Hổ mẹ trong câu chuyện này cũng luôn mong Hổ con thành tài... \r\n', 'normal', 1, 'sutu.jpg', '', '', '', 'vnđ', 12000, 0, 0x323031362d30352d32342030303a30303a3030),
 (10, 10, 'Cây tre trăm đốt', 'Ngày xưa có một chàng trai hiền lành, khỏe mạnh (tên là Khoai) đi cày thuê cho vợ chồng ông phú hộ. Hai người này có hứa: "Con chịu khó làm lụng giúp ta, ba năm nữa ta sẽ gả con gái ta cho". Tin vào lời hứa, anh ra sức làm việc không ngại khó nhọc. Nhưng ba năm sau, khi mà ông nhà giàu đã có mọi thứ của cải, ông bèn trở mặt, ông đưa ra một điều kiện là phải tìm được một cây tre trăm đốt để làm nhà cưới vợ thì ông mới gả con gái cho', 'normal', 2, 'caytre.jpg', '', '', '', 'vnđ', 32000, 0, 0x323031362d30352d31302030303a30303a3030),
 (11, 11, 'Sự tích chú cuội cung trăng', 'Hôm nay, mình sẽ kể cho các bạn nghe về Sự tích Chú Cuội trên cung trăng để các bạn hiểu rõ hơn về ngày tết trung thu nhé. Đây coi như là món quà tặng trung trung thu năm nay cho các bạn nhé.\r\nNgày xửa ngày xưa, ở một miền núi nọ, có một chàng trai nghèo khổ, cô độc tên là Cuội. Ngày ngày, chàng phải lên rừng đốn củi, đổi gạo kiếm sống. Không người thân thích, không họ hàng, tất cả những gì Cuội có chỉ là một chiếc rìu nhỏ...', 'normal', 2, 'chucuoi.jpg', '', '', '', 'vnđ', 17000, 0, 0x323031362d30352d32362030303a30303a3030),
-(12, 12, 'Sự tích dưa hấu', 'Nhiều năm về trước, vào thời Hùng Vương, đất nước ta rất trù phú và rộng lớn với những ngọn núi cao tới 9 tầng mây, những con sông rộng mênh mông và những khu rừng bạt ngàn với rất nhiều các loài cây và muông thú.\r\n\r\n  Ở thời đó ruộng đồng vẫn còn rất thưa thớt và các loại cây cho trái ngon, quả ngọt chưa được phong phú như thời bây giờ vì mọi người vẫn chưa khám phá ra hết để mang về trồng....', 'normal', 2, 'duahau.jpg', '', '', '', 'vnđ', 40000, 0, 0x323031362d30352d30362030303a30303a3030),
-(13, 13, 'Sự tích sọ dừa', 'Hãy Đón Xem Bộ Truyện Mới Nha Các Bạn', 'normal', 2, 'sodua.jpg', '', '', '', 'vnđ', 26000, 0, 0x323031362d30352d31322030303a30303a3030),
+(12, 12, 'Sự tích dưa hấu', 'Nhiều năm về trước, vào thời Hùng Vương, đất nước ta rất trù phú và rộng lớn với những ngọn núi cao tới 9 tầng mây, những con sông rộng mênh mông và những khu rừng bạt ngàn với rất nhiều các loài cây và muông thú.\r\n\r\n  Ở thời đó ruộng đồng vẫn còn rất thưa thớt và các loại cây cho trái ngon, quả ngọt chưa được phong phú như thời bây giờ vì mọi người vẫn chưa khám phá ra hết để mang về trồng....', 'New', 1, '', '', '', '', 'VNĐ', 40000, 120000, 0x323031362d30362d31332030393a32323a3239),
+(13, 13, 'Sự tích sọ dừa', 'Hãy Đón Xem Bộ Truyện Mới Nha Các Bạn', 'New', 1, '', '', '', '', 'VNĐ', 26000, 0, 0x323031362d30362d31332030393a32373a3335),
 (14, 14, 'Tấm cám', 'Tấm Cám là một câu chuyện cổ tích Việt Nam thuộc thể loại truyện cổ tích thần kì, phản ánh những mâu thuẫn trong gia đình, cuộc đấu tranh giữa cái thiện và cái ác, cùng ước mơ cái thiện thắng cái ác của người Việt Nam.', 'normal', 2, 'tamcam.jpg', '', '', '', 'vnđ', 27000, 0, 0x323031362d30352d32362030303a30303a3030),
-(15, 15, 'Thạch sanh', 'Thạch Sanh mồ côi sớm, làm nghề đốn củi, sống một mình trong một túp lều dưới gốc đa. Có một người làm nghề nấu rượu tên là Lý Thông đến kết nghĩa anh em với Thạch Sanh. Trong vùng có một con Chằn tinh (hay Trăn tinh) thường bắt người ăn thịt, nên dân lập miếu thờ và hàng năm phải nộp cho nó một mạng người, mới được yên ổn làm ăn.', 'normal', 2, 'thachsanh.jpg', '', '', '', 'vnđ', 29000, 0, 0x323031362d30352d31382030303a30303a3030),
+(15, 15, 'Thạch sanh', 'Thạch Sanh mồ côi sớm, làm nghề đốn củi, sống một mình trong một túp lều dưới gốc đa. Có một người làm nghề nấu rượu tên là Lý Thông đến kết nghĩa anh em với Thạch Sanh. Trong vùng có một con Chằn tinh (hay Trăn tinh) thường bắt người ăn thịt, nên dân lập miếu thờ và hàng năm phải nộp cho nó một mạng người, mới được yên ổn làm ăn.', 'New', 1, 'Lenovo-K5-Note-vs-Coolpad-Note-3-Plus-e1465360842129.jpg', '', '', '', 'VNĐ', 400000, 0, 0x323031362d30362d31332030393a35383a3439),
 (16, 16, 'Văn học Việt Nam sau năm 1975', '', 'normal', 3, '1975.jpg', '', '', '', 'vnđ', 115000, 0, 0x323031362d30352d31392030303a30303a3030),
 (17, 17, 'Mùa lá rụng trong vườn', '  Mùa lá rụng trong vườn là một tiểu thuyết của nhà văn Ma Văn Kháng, hoàn thành vào tháng 12 năm 1982 và được xuất bản lần đầu vào năm 1985.\r\n   Lấy bối cảnh một gia đình truyền thống vào những năm 80 của thế kỉ XX, khi đất nước bắt đầu có những bước chuyển mình mạnh mẽ sau chiến tranh, gây ra nhiều thay đổi tốt có, xấu có; truyện đã phản ánh chân thực những biến động trong xã hội thời bấy giờ và những ảnh hưởng to lớn của nó tới gia đình - tế bào của xã hội.\r\nTruyện đã giành giải thưởng loại B của Hội Nhà văn Việt Nam năm 1986.', 'normal', 3, 'muala.jpg', '', '', '', 'vnđ', 215000, 0, 0x323031362d30352d31312030303a30303a3030),
 (19, 19, 'Tuyển tập văn học dân gian Việt Nam', 'Những năm gần đây, do nhu cầu sử dụng và tra cứu, người ta thường hướng tới việc làm các bộ sách Tuyển tập, Tổng tập như Tuyển tập về các tác giả, các giai đoạn, các thể loại văn học hoặc Tổng tập Văn học Việt Nam từ thế kỉ X đến 1945 (gồm 37 tập, 53 quyển của Nhà xuất bản Khoa học xã hội), v.v...\r\n\r\nBộ Tuyển tập Văn học dân gian Việt Nam này hình thành do nhu cầu đó và trong hoàn cảnh đó. Có thể xem đây là bước khởi đầu để tiến tới một bộ Tổng tập Văn học dân gian tương xứng với Tổng tập văn học viết trước hết đáp ứng kịp thời các nhu cầu học tập và giảng dạy trong  nhà trường.\r\n\r\nTuyển tập Văn học dân gian Việt Nam được cấu tạo thành 5 tập, 7 quyển...', 'normal', 3, 'tuyentap.jpg', '', '', '', 'vnđ', 215000, 0, 0x323031362d30352d32352030303a30303a3030),
@@ -310,6 +310,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `USER_PHONE` int(11) NOT NULL,
   `USER_AGE` int(11) NOT NULL,
   `USER_EMAIL` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `POSITION` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `STATUS` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `DATE` datetime NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
@@ -318,10 +319,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`USER_ID`, `USERNAME`, `PASSWORD`, `USER_NO`, `USER_NAME`, `USER_BIRTHDAY`, `USER_SEX`, `USER_ADDRESS`, `USER_PHONE`, `USER_AGE`, `USER_EMAIL`, `STATUS`, `DATE`) VALUES
-(4, 'daobadat', '2f5c8d37a7f6987b4fc2471be23d1b20', 4, 'Đào Bá Đạt', 0x323031362d30352d3237, 'Nam', 'CMT8', 2147483647, 21, 'dat@gmail.com', '', 0x323031362d30352d32372030303a30303a3030),
-(7, 'nguyenthanhchuong', 'f99046da84746517a90cfe0b1b4abcef', 0, 'Nguyễn Thanh Chương', 0x303030302d30302d3030, '', 'Quan trung', 12345678, 0, 'ntcchuong@gmail.com', '', 0x303030302d30302d30302030303a30303a3030),
-(8, 'nguyenthiaingoc', '37817f37e57bead04f4ab04a5665553e', 0, 'Nguyễn Thị Ái Ngọc', 0x303030302d30302d3030, '', 'Gò Vấp', 987654321, 0, 'nguyenthiaingoc@gmai', '', 0x303030302d30302d30302030303a30303a3030);
+INSERT INTO `users` (`USER_ID`, `USERNAME`, `PASSWORD`, `USER_NO`, `USER_NAME`, `USER_BIRTHDAY`, `USER_SEX`, `USER_ADDRESS`, `USER_PHONE`, `USER_AGE`, `USER_EMAIL`, `POSITION`, `STATUS`, `DATE`) VALUES
+(4, 'daobadat', '2f5c8d37a7f6987b4fc2471be23d1b20', 4, 'Đào Bá Đạt', 0x323031362d30352d3237, 'Nam', 'CMT8', 2147483647, 21, 'dat@gmail.com', '', '', 0x323031362d30352d32372030303a30303a3030),
+(7, 'nguyenthanhchuong', 'f99046da84746517a90cfe0b1b4abcef', 0, 'Nguyễn Thanh Chương', 0x303030302d30302d3030, '', 'Quan trung', 12345678, 0, 'ntcchuong@gmail.com', '', '', 0x303030302d30302d30302030303a30303a3030),
+(8, 'nguyenthiaingoc', '37817f37e57bead04f4ab04a5665553e', 0, 'Nguyễn Thị Ái Ngọc', 0x303030302d30302d3030, '', 'Gò Vấp', 987654321, 0, 'nguyenthiaingoc@gmai', '', '', 0x303030302d30302d30302030303a30303a3030);
 
 --
 -- Indexes for dumped tables

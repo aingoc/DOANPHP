@@ -35,7 +35,7 @@ class Login extends Controller
         }
 
         //Kiểm tra nếu user và password không có thì trở lại trang login
-        if(empty($_POST["usernameLogin"]) != true || empty($_POST["passwordLogin"]) != true)
+        if(!empty($_POST["usernameLogin"])|| !empty($_POST["passwordLogin"]))
         {
             //Lấy dữ liệu từ database bằng username password
             $username = $this->userModel->CheckUserPass($_POST["usernameLogin"],md5($_POST["passwordLogin"]));
