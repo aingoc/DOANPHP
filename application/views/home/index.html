@@ -4,20 +4,28 @@
         <div class="content-top">
             <h3 class="future">BÁN CHẠY</h3>
             <div class="content-middle-in ">
-
                 <ul id="flexiselDemo1">
                     <?php
                         foreach($hot as $key => $value)
                         {
-                            echo '<li><div class = "sizeimg "><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></a></div></li>';
+                            echo '
+									<li>
+										<div class = "sizeimg ">
+											<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
+												<img src="public/themes/images/'.$value->BOOK_IMAGE.'"/>
+											</a>
+										</div>
+									</li>
+								 ';
                         }
                     ?>
                 </ul>
+				
                 <script type="text/javascript" src="public/themes/js/jquery.flexisel.js"></script>
             </div>
         </div>
+		
         <div class="content-middle">
-
             <h3 class="future">SÁCH MỚI</h3>
             <div class="content-top-in gallery">
                 <?php
@@ -38,9 +46,9 @@
                         {
                         $bookCut = $value->BOOK_NAME;
                         }
-
-
-                        echo '  <div class="col-md-3 md-col item">
+						
+                        echo '  
+								<div class="col-md-3 md-col item">
                                     <div class="col-md ">
                                         <div class="hovereffect">
                                             <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
@@ -53,6 +61,7 @@
                                                 </p>
                                             </div>
                                         </div>
+										
                                         <!--<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>-->
                                         <div class="top-content">
                                             <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a></h5>
@@ -70,14 +79,18 @@
 
                         if($count == 4)
                         {
-                            echo '<div class="clearfix"></div></div><div class="content-top-in">';
+                            echo '
+									<div class="clearfix"></div>
+									<div class="content-top-in"></div>
+								 ';
                         }
                     }
                 ?>
-            <div class="clearfix"></div>
+				<div class="clearfix"></div>
             </div>
         </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="public/themes/js/otherAddCart.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="public/themes/js/otherAddCart.js"></script>
 

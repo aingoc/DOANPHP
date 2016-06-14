@@ -75,7 +75,7 @@
                     continue;
                 }
                 $bookCost = $this->detailModel->GetBookDetailByID($_SESSION["cartBook"][$i][0]);
-                $insertLine = $this->invoiceModel->AddInvoiceLine($invoiceNo,$_SESSION["cartBook"][$i][0] , 'VNĐ',$_SESSION["cartBook"][$i][1],$_SESSION["cartBook"][$i][1]*$bookCost[0]->BOOK_COST);
+                $insertLine = $this->invoiceModel->AddInvoiceLine($invoiceNo,$_SESSION["cartBook"][$i][0] , ' VNĐ',$_SESSION["cartBook"][$i][1],$_SESSION["cartBook"][$i][1]*$bookCost[0]->BOOK_COST);
 
             }
             $data = array("invoiceNo" => $invoiceNo);

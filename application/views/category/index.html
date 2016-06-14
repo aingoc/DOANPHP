@@ -1,6 +1,5 @@
     <div class="products">
         <h2 class=" products-in"><?php echo $nameCategory[0]->CATEGORY_NAME ;?></h2>
-		
         <div class=" top-products">
             <?php
                 $count = 0;
@@ -21,36 +20,39 @@
                         $bookCut = $value->BOOK_NAME;
                     }
                     echo '
-                    <div class="col-md-3 md-col item">
-                        <div class="col-md">
-                            <div class="hovereffect">
-                                <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
-                                <div class="overlay">
-                                    <h2>'.$value->BOOK_NAME.'</h2>
-                                    </br>
-                                    </br>
-                                    <p>
-                                        <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="top-content">
-                                <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a></h5>
-                                <div class="white">
-                                    <button type="button"  bookID="'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 addCart "><span class="glyphicon glyphicon-shopping-cart"></span></button>
-                                    <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ';
+							<div class="col-md-3 md-col item">
+								<div class="col-md">
+									<div class="hovereffect">
+										<img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+										<div class="overlay">
+											<h2>'.$value->BOOK_NAME.'</h2>
+											</br>
+											</br>
+											<p>
+												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+											</p>
+										</div>
+									</div>
+									<div class="top-content">
+										<h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a></h5>
+										<div class="white">
+											<button type="button"  bookID="'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 addCart ">
+												<span class="glyphicon glyphicon-shopping-cart"></span>
+											</button>
+											<p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar"> VNĐ</span></p>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						 ';
 					
                     $count++;
-
+					
                     if($count == 4)
                     {
-                        echo '<div class="clearfix"></div></div><div class=" top-products">';
+                        echo '<div class="clearfix"></div>
+							  <div class=" top-products"></div>';
                         $count = 0;
                     }
                 }
@@ -59,6 +61,7 @@
         </div>
         <div class="clearfix"></div>
     </div>
-<!---->
+	
+	<!---->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="public/themes/js/otherAddCart.js"></script>

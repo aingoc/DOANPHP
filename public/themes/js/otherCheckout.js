@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#checkout-form').bootstrapValidator({
-        message: 'This value is not valid',
+        message: 'Không được bỏ trống !',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -8,37 +8,32 @@ $(document).ready(function() {
         },
         fields: {
             Ten: {
-                message: 'The username is not valid',
+                message: 'Vui lòng nhập họ tên của bạn !',
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and can\'t be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
+                        message: 'Vui lòng nhập họ tên của bạn !'
                     }
-                }
+				}
             },
             username1: {
-                message: 'The username is not valid',
+                message: 'Tên đăng nhập không được trống !',
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and can\'t be empty'
+                        message: 'Vui lòng nhập tên đăng nhập !'
                     },
                     stringLength: {
                         min: 6,
                         max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
+                        message: 'Tên đăng nhập phải từ 6 - 30 ký tự !!'
                     }
                 }
             },
 
             DiaChi: {
-                message: 'The username is not valid',
+                message: 'Địa chỉ giao hàng giúp chúng tôi có thể giao hàng đúng nơi !!',
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and cannot be empty'
+                        message: 'Vui lòng nhập địa chỉ giao hàng !'
                     }
 
                 }
@@ -46,24 +41,24 @@ $(document).ready(function() {
             email: {
                 validators: {
                     notEmpty: {
-                        message: 'The password is required and cannot be empty'
+                        message: 'Email không được trống !'
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i,
-                        message: 'The value is not a valid email address'
+                        message: 'Địa chỉ Email có dạng example@email.com !'
                     }
                 }
             },
             SDT: {
-                message: 'The phonenumber is not valid',
+                message: '',
                 validators: {
                     notEmpty: {
-                        message: 'The phonenumber is required and cannot be empty'
+                        message: 'Vui lòng nhập số điện thoại !'
                     },
                     stringLength: {
-                        min: 8,
+                        min: 10,
                         max: 11,
-                        message: 'The phonenumber must be more than 6 and less than 30 characters long'
+                        message: 'Số điện thoại phải từ 10 - 11 số !'
                     }
                 }
             }

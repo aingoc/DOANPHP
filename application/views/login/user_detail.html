@@ -1,13 +1,15 @@
 
-<br style="width: 80%; margin: auto;">
-    <h3 class="text-center" style="color: rgb(70, 170, 19)"><span class="glyphicon glyphicon-user" style="color: rgb(70, 170, 19)" aria-hidden="true"></span>   Thông tin khách hàng</h3>
+	<br style="width: 80%; margin: auto;">
+    <h3 class="text-center" style="color: rgb(70, 170, 19)">
+		<span class="glyphicon glyphicon-user" style="color: rgb(70, 170, 19)" aria-hidden="true"></span>   
+		Thông tin khách hàng
+	</h3>
     <hr>
     <div class="col-md-12 text-right">
 
         <button id="enable" class="btn">Bật/tắt chỉnh sửa</button>
 
     </div>
-
 
     <div class="col-md-12">
         <table id="user" class="table table-bordered table-striped" style="clear: both">
@@ -48,67 +50,67 @@
             </tbody>
         </table>
     </div>
-<script type="text/javascript" src="public/themes/js/otherUserDetail.js"></script>
+	<script type="text/javascript" src="public/themes/js/otherUserDetail.js"></script>
 
-<br style="width: 80%; margin: auto;">
-<h3 class="text-center " style="color: rgb(70, 170, 19)"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color: rgb(70, 170, 19)" ></span>&nbsp Danh sách hóa đơn</h3>
-<hr>
+	<br style="width: 80%; margin: auto;">
+	<h3 class="text-center " style="color: rgb(70, 170, 19)">
+		<span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color: rgb(70, 170, 19)" ></span>
+		&nbsp Danh sách hóa đơn
+	</h3>
+	<hr>
 
+	<div class="input-group"> 
+		<span class="input-group-addon">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		</span>
+		<input id="filter" type="text" class="form-control" placeholder="Nhập thông tin cần tìm...">
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Mã hóa đơn</th>
+				<th>Tên người nhận</th>
+				<th>Ngày tạo</th>
+				<th>Giá trị hóa đơn</th>
+				<th>Trạng thái</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody class="searchable">
+			<?php
+				foreach($allInvoice as $value)
+				{
+					echo '
+						<tr>
+							<td>'.$value->INVOICE_HEADER_NO.'</td>
+							<td>'.$value->NAME.'</td>
+							<td>'.$value->DATE.'</td>
+							<td>'.number_format($value->TOTAL_COST).' VNĐ</td>
+							<td style="color: grey">Đang xác thực</td>
+							<td>
+								<a href="index.php?c=invoice&a=invoiceDetail&invoiceNo='.$value->INVOICE_HEADER_NO.'">Xem chi tiết</a>
+							</td>
+						</tr>
+					';
+				}
+			?>
+		</tbody>
+	</table>
+	<script>
+		$(document).ready(function () {
 
+			(function ($) {
 
-<div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+				$('#filter').keyup(function () {
 
-    <input id="filter" type="text" class="form-control" placeholder="Nhập thông tin cần tìm...">
-</div>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Mã hóa đơn</th>
-        <th>Tên người nhận</th>
-        <th>Ngày tạo</th>
-        <th>Giá trị hóa đơn</th>
-        <th>Trạng thái</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody class="searchable">
-    <?php
-        foreach($allInvoice as $value)
-        {
-            echo '
+					var rex = new RegExp($(this).val(), 'i');
+					$('.searchable tr').hide();
+					$('.searchable tr').filter(function () {
+						return rex.test($(this).text());
+					}).show();
 
-                <tr>
-
-                        <td>'.$value->INVOICE_HEADER_NO.'</td>
-                        <td>'.$value->NAME.'</td>
-                        <td>'.$value->DATE.'</td>
-                        <td>'.number_format($value->TOTAL_COST).' VNĐ</td>
-                        <td style="color: grey">Đang xác thực</td>
-                        <td><a href="index.php?c=invoice&a=invoiceDetail&invoiceNo='.$value->INVOICE_HEADER_NO.'">Xem chi tiết</a></td>
-
-                </tr>
-
-            ';
-
-        }
-    ?>
-
-    </tbody>
-</table>
-<script>$(document).ready(function () {
-
-    (function ($) {
-
-        $('#filter').keyup(function () {
-
-            var rex = new RegExp($(this).val(), 'i');
-            $('.searchable tr').hide();
-            $('.searchable tr').filter(function () {
-                return rex.test($(this).text());
-            }).show();
-
-        })
-
-    }(jQuery));
-
-});</script>
+				})
+				
+			}(jQuery));
+		});
+	</script>

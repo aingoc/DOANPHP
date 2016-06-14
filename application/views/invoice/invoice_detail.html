@@ -1,132 +1,131 @@
-</br>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="text-center">
-                <i class="fa fa-search-plus pull-left icon"></i>
-                <h2>Hóa đơn mã số #<?php echo $invoiceHeaderInfo[0]->INVOICE_HEADER_NO ?></h2>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-xs-12 col-md-4 col-lg-4 pull-left">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Thông tin giao hàng</div>
-                        <div class="panel-body">
-                            <strong>Tên người nhận:</strong> <i> <?php echo $invoiceHeaderInfo[0]->NAME ?></i><br>
-                            <strong>Địa chỉ giao hàng:</strong><i> <?php echo $invoiceHeaderInfo[0]->ADDRESS ?></i><br>
-                            <strong>Số điện thoại để liên lạc:</strong><i> <?php echo $invoiceHeaderInfo[0]->PHONE ?></i><br>
-                            <strong>Email để liên lạc:</strong><i> <?php echo $invoiceHeaderInfo[0]->EMAIL ?></i><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-4 col-lg-4">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Thông tin thanh toán</div>
-                        <div class="panel-body">
-                            <strong>Thanh toán loại:</strong><i> <?php echo $invoiceHeaderInfo[0]->PAYMENT_METHOD ?>(Thanh toán khi nhận hàng)</i><br>
-                            <strong>Ngày tạo hóa đơn:</strong><i> <?php echo $invoiceHeaderInfo[0]->DATE ?></i><br>
-                            <strong>Thông tin khác:</strong> *****<br>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-4 col-lg-4">
-                    <div class="panel panel-default height">
-                        <div class="panel-heading">Thông tin liên quan</div>
-                        <div class="panel-body">
-                            <strong>Quà tặng:</strong><i> Không</i><br>
-                            <strong>Phí vận chuyển:</strong><i> Không</i><br>
-                            <strong>Giảm giá:</strong><i> <?php  echo (($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST) == 0)? 'Không': number_format(($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST)).' VNĐ' ?></i><br>
-                            <strong>Khác</strong><i> Không</i><br>
-                        </div>
-                    </div>
-                </div>
+	</br>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="text-center">
+					<i class="fa fa-search-plus pull-left icon"></i>
+					<h2>Hóa đơn mã số #<?php echo $invoiceHeaderInfo[0]->INVOICE_HEADER_NO ?></h2>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-xs-12 col-md-4 col-lg-4 pull-left">
+						<div class="panel panel-default height">
+							<div class="panel-heading">Thông tin giao hàng</div>
+							<div class="panel-body">
+								<strong>Tên người nhận:</strong> <i> <?php echo $invoiceHeaderInfo[0]->NAME ?></i><br>
+								<strong>Địa chỉ giao hàng:</strong><i> <?php echo $invoiceHeaderInfo[0]->ADDRESS ?></i><br>
+								<strong>Số điện thoại để liên lạc:</strong><i> <?php echo $invoiceHeaderInfo[0]->PHONE ?></i><br>
+								<strong>Email để liên lạc:</strong><i> <?php echo $invoiceHeaderInfo[0]->EMAIL ?></i><br>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4 col-lg-4">
+						<div class="panel panel-default height">
+							<div class="panel-heading">Thông tin thanh toán</div>
+							<div class="panel-body">
+								<strong>Thanh toán loại:</strong><i> <?php echo $invoiceHeaderInfo[0]->PAYMENT_METHOD ?>(Thanh toán khi nhận hàng)</i><br>
+								<strong>Ngày tạo hóa đơn:</strong><i> <?php echo $invoiceHeaderInfo[0]->DATE ?></i><br>
+								<strong>Thông tin khác:</strong> *****<br>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4 col-lg-4">
+						<div class="panel panel-default height">
+							<div class="panel-heading">Thông tin liên quan</div>
+							<div class="panel-body">
+								<strong>Quà tặng:</strong><i> Không</i><br>
+								<strong>Phí vận chuyển:</strong><i> Không</i><br>
+								<strong>Giảm giá:</strong><i> <?php  echo (($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST) == 0)? 'Không': number_format(($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST)).' VNĐ' ?></i><br>
+								<strong>Khác</strong><i> Không</i><br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="text-center"><strong>Thông tin Đặt hàng</strong></h3>
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<td><strong>Tên sách</strong></td>
+										<td class="text-center"><strong>Giá sách</strong></td>
+										<td class="text-center"><strong>Số lượng sách</strong></td>
+										<td class="text-right"><strong>Thành tiền</strong></td>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<?php
+										foreach($invoiceLineInfo as $value)
+										{
+											echo '  <tr>
+														<td>'.$value->BOOK_NAME.'</td>
+														<td class="text-center">'.number_format($value->BOOK_COST).' VNĐ</td>
+														<td class="text-center">'.$value->QUALITY.'</td>
+														<td class="text-right">'.number_format($value->BOOK_COST*$value->QUALITY).' VNĐ</td>
+													</tr>
+									';
+										}
 
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="text-center"><strong>Thông tin Đặt hàng</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-condensed">
-                            <thead>
-                            <tr>
-                                <td><strong>Tên sách</strong></td>
-                                <td class="text-center"><strong>Giá sách</strong></td>
-                                <td class="text-center"><strong>Số lượng sách</strong></td>
-                                <td class="text-right"><strong>Thành tiền</strong></td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                                foreach($invoiceLineInfo as $value)
-                                {
-                                    echo '  <tr>
-                                                <td>'.$value->BOOK_NAME.'</td>
-                                                <td class="text-center">'.number_format($value->BOOK_COST).'VNĐ</td>
-                                                <td class="text-center">'.$value->QUALITY.'</td>
-                                                <td class="text-right">'.number_format($value->BOOK_COST*$value->QUALITY).' VNĐ</td>
-                                            </tr>
-                            ';
-                                }
+									?>
+									<tr>
+										<td class="highrow"></td>
+										<td class="highrow"></td>
+										<td class="highrow text-center"><strong>Nguyên Giá</strong></td>
+										<td class="highrow text-right"><?php echo number_format($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE).' VNĐ' ?></td>
+									</tr>
+									<tr>
+										<td class="emptyrow"></td>
+										<td class="emptyrow"></td>
+										<td class="emptyrow text-center"><strong>Giảm giá</strong></td>
+										<td class="emptyrow text-right"><?php  echo number_format((($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST) == 0)? 0: ($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST)).' VNĐ' ?></td>
+									</tr>
+									<tr style="border-top: dashed 1px black">
+										<td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+										<td class="emptyrow"></td>
+										<td class="emptyrow text-center"><strong>Tổng cộng</strong></td>
+										<td class="emptyrow text-right"><?php echo number_format($invoiceHeaderInfo[0]->TOTAL_COST).' VNĐ' ?></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                            ?>
+	<style>
+		.height {
+			min-height: 200px;
+		}
 
-                            <tr>
-                                <td class="highrow"></td>
-                                <td class="highrow"></td>
-                                <td class="highrow text-center"><strong>Nguyên Giá</strong></td>
-                                <td class="highrow text-right"><?php echo number_format($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE).' VNĐ' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow text-center"><strong>Giảm giá</strong></td>
-                                <td class="emptyrow text-right"><?php  echo number_format((($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST) == 0)? 0: ($invoiceHeaderInfo[0]->TOTAL_COST_BEFORE -  $invoiceHeaderInfo[0]->TOTAL_COST)).' VNĐ' ?></td>
-                            </tr>
-                            <tr style="border-top: dashed 1px black">
-                                <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
-                                <td class="emptyrow"></td>
-                                <td class="emptyrow text-center"><strong>Tổng cộng</strong></td>
-                                <td class="emptyrow text-right"><?php echo number_format($invoiceHeaderInfo[0]->TOTAL_COST).' VNĐ' ?></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+		.icon {
+			font-size: 47px;
+			color: #5CB85C;
+		}
 
-<style>
-    .height {
-        min-height: 200px;
-    }
+		.iconbig {
+			font-size: 77px;
+			color: #5CB85C;
+		}
 
-    .icon {
-        font-size: 47px;
-        color: #5CB85C;
-    }
+		.table > tbody > tr > .emptyrow {
+			border-top: none;
+		}
 
-    .iconbig {
-        font-size: 77px;
-        color: #5CB85C;
-    }
+		.table > thead > tr > .emptyrow {
+			border-bottom: none;
+		}
 
-    .table > tbody > tr > .emptyrow {
-        border-top: none;
-    }
-
-    .table > thead > tr > .emptyrow {
-        border-bottom: none;
-    }
-
-    .table > tbody > tr > .highrow {
-        border-top: 3px solid;
-    }
-</style>
+		.table > tbody > tr > .highrow {
+			border-top: 3px solid;
+		}
+	</style>

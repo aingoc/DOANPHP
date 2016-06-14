@@ -1,80 +1,84 @@
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-login">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <a href="#" class="active" id="login-form-link" style="padding-left:40px">Đăng Nhập</a>
-                    </div>
-                    <div class="col-xs-6 text-center">
-                        <a href="#" id="register-form-link">Đăng ký</a>
-                    </div>
-                </div>
-                <hr>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form id="login-form" action="index.php?c=login&a=LoginValidate" method="post" role="form" style="display: block;">
-                            <div class="form-group">
-                                <input type="text" name="usernameLogin" id="username" tabindex="1" class="form-control" placeholder="Tên Đăng Nhập" value="">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="passwordLogin" id="password" tabindex="2" class="form-control" placeholder="Mật khẩu">
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <input type="submit" name="login" id="login-submit" tabindex="4" class="form-control btn-primary" value="Đăng Nhập">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="text-center">
-                                            <a href="#" tabindex="5" class="forgot-password">Quên mật khẩu ???</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <form id="register-form" action="index.php?c=login&a=LoginRegister" method="POST" role="form" style="display: none;">
-                            <div class="form-group">
-                                <input type="text" name="Ten" id="Ten" tabindex="1" class="form-control" placeholder="Họ tên" value="">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="username1" id="username1" tabindex="1" class="form-control" onkeyup="valid(this)" onblur="valid(this)" placeholder="Tên đăng nhập" value="">
-                            </div>
-                            <script>
-                            function valid(f) {
-                            !(/^[A-z&#209;&#241;0-9]*$/i).test(f.value)?f.value = f.value.replace(/[^A-z&#209;&#241;0-9]/ig,''):null;
-                            }</script>
-                            <div class="form-group">
-                                <input type="text" name="DiaChi" id="DiaChi" tabindex="1" class="form-control" placeholder="Địa chỉ" value="">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="SDT" id="SDT" pattern="[0-9]{10}" tabindex="1" class="form-control" placeholder="Số điện thoại" value="">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="mail@example.com" value="">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" name="password1" id="password1" tabindex="2" class="form-control" placeholder="Mật khẩu">
-                            </div>
-                            <input type="hidden" name="checkValidate" value="register">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-6 col-sm-offset-3">
-                                        <input type="submit" name="register-submit" id="btnDangKy" class="form-control btn-primary"  tabindex="4" value="Đăng ký">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<script type="text/javascript" src="public/themes/js/otherLogin.js"></script>
-</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-login">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-6">
+							<a href="#" class="active" id="login-form-link" style="padding-left:40px">Đăng Nhập</a>
+						</div>
+						<div class="col-xs-6 text-center">
+							<a href="#" id="register-form-link">Đăng ký</a>
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-12">
+							<form id="login-form" action="index.php?c=login&a=LoginValidate" method="post" role="form" style="display: block;">
+								<div class="form-group">
+									<input type="text" name="usernameLogin" id="username" tabindex="1" class="form-control" placeholder="Tên Đăng Nhập" value="">
+								</div>
+								<div class="form-group">
+									<input type="password" name="passwordLogin" id="password" tabindex="2" class="form-control" placeholder="Mật khẩu">
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="login" id="login-submit" tabindex="4" class="form-control btn-primary" value="Đăng Nhập">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="text-center">
+												<a href="#" tabindex="5" class="forgot-password">Quên mật khẩu ???</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+							
+							<form id="register-form" action="index.php?c=login&a=LoginRegister" method="POST" role="form" style="display: none;">
+								<div class="form-group">
+									<input type="text" name="Ten" id="Ten" tabindex="1" class="form-control" placeholder="Họ tên" value="">
+								</div>
+								<div class="form-group">
+									<input type="text" name="username1" id="username1" tabindex="1" class="form-control" onkeyup="valid(this)" onblur="valid(this)" placeholder="Tên đăng nhập" value="">
+								</div>
+								
+									<script>
+										function valid(f) {
+										!(/^[A-z&#209;&#241;0-9]*$/i).test(f.value)?f.value = f.value.replace(/[^A-z&#209;&#241;0-9]/ig,''):null;
+										}
+									</script>
+									
+								<div class="form-group">
+									<input type="text" name="DiaChi" id="DiaChi" tabindex="1" class="form-control" placeholder="Địa chỉ" value="">
+								</div>
+								<div class="form-group">
+									<input type="text" name="SDT" id="SDT" pattern="[0-9]{10}" tabindex="1" class="form-control" placeholder="Số điện thoại" value="">
+								</div>
+								<div class="form-group">
+									<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="mail@example.com" value="">
+								</div>
+								<div class="form-group">
+									<input type="password" name="password1" id="password1" tabindex="2" class="form-control" placeholder="Mật khẩu">
+								</div>
+								<input type="hidden" name="checkValidate" value="register">
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="register-submit" id="btnDangKy" class="form-control btn-primary"  tabindex="4" value="Đăng ký">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="public/themes/js/otherLogin.js"></script>
+	</div>
