@@ -28,7 +28,7 @@ class Checkout extends Controller
         {
             if(empty($_SESSION["userInfo"]))
             {
-                header('Location: index.php?c=login');
+                header('Location: index.php?c=login&redirect=cart');
                 exit;
             }
             else
