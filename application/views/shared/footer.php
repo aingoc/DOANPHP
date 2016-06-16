@@ -26,9 +26,9 @@
 				<div class="footer-middle-in col-md-4">
 					<h6>TÀI KHOẢN CỦA BẠN</h6>
 					<ul>
-						<li><a href="index.php?c=help">Thông tin tài khoản</a></li>
+						<li><a href="index.php?c=login&a=UserDetail">Thông tin tài khoản</a></li>
 						<li><a href="index.php?c=cart">Trạng thái đơn hàng</a></li>
-						<li><a href="#">Lịch sử đơn hàng</a></li>
+						<li><a href="index.php?c=login&a=UserDetail">Lịch sử đơn hàng</a></li>
 					</ul>
 				</div>
 				<div class="footer-middle-in col-md-4">

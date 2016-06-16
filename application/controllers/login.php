@@ -1,3 +1,4 @@
+
 	<?php
 		class Login extends Controller
 		{
@@ -12,6 +13,11 @@
 			}
 			function Index()
 			{
+				$redirect = null;
+				if(!empty($_GET["redirect"]))
+				{
+					$redirect = $_GET["redirect"];
+				}
 				if(!empty($_SESSION["userInfo"]))
 				{
 					header('Location: index.php?c=login&a=UserDetail');
@@ -19,13 +25,15 @@
 				}
 				else
 				{
+					$data= array("redirect"=> $redirect);
 					$view = array("Index" => "Index");
-					$this->View($view);
+					$this->View($view,$data);
 				}
 			}
 
 			function LoginValidate()
 			{
+				$redirect = $_GET["redirect"];
 				if(!empty($_SESSION["userInfo"]))
 				{
 					header('Location: index.php?c=login&a=UserDetail');
@@ -33,13 +41,20 @@
 				}
 
 				//Kiểm tra nếu user và password không có thì trở lại trang login
-				if(empty($_POST["usernameLogin"]) != true || empty($_POST["passwordLogin"]) != true)
+				if(!empty($_POST["usernameLogin"])|| !empty($_POST["passwordLogin"]))
 				{
 					//Lấy dữ liệu từ database bằng username password
 					$username = $this->userModel->CheckUserPass($_POST["usernameLogin"],md5($_POST["passwordLogin"]));
 
 					//Nếu $username = null thì show trang lỗi
 					if($username != null) {
+						if($redirect == "cart")
+						{
+							$_SESSION["userInfo"] = $username;
+							header('Location: index.php?c=cart');
+							exit;
+						}
+
 						$_SESSION["userInfo"] = $username;
 						header('Location: index.php');
 						exit;
@@ -49,89 +64,8 @@
 						$view = array("Login_Fail" => "Login_Fail");
 						$this->View($view);
 					}
-
 				}
-				else
-				{
-					header('Location: index.php?c=home');
-					exit;
-				}
-
 			}
-			function Logout()
-			{
-				session_destroy();
-				header('Location: index.php');
-				exit;
-			}
-
-<?php
-class Login extends Controller
-{
-    private $userModel;
-    private $invoiceModel;
-    function __construct()
-    {
-        include("application/models/user_model.php");
-        include("application/models/invoices_model.php");
-        $this->userModel = new User();
-        $this->invoiceModel = new Invoices();
-    }
-    function Index()
-    {
-        $redirect = null;
-        if(!empty($_GET["redirect"]))
-        {
-            $redirect = $_GET["redirect"];
-        }
-        if(!empty($_SESSION["userInfo"]))
-        {
-            header('Location: index.php?c=login&a=UserDetail');
-            exit;
-        }
-        else
-        {
-            $data= array("redirect"=> $redirect);
-            $view = array("Index" => "Index");
-            $this->View($view,$data);
-        }
-    }
-
-    function LoginValidate()
-    {
-        $redirect = $_GET["redirect"];
-        if(!empty($_SESSION["userInfo"]))
-        {
-            header('Location: index.php?c=login&a=UserDetail');
-            exit;
-        }
-
-        //Kiểm tra nếu user và password không có thì trở lại trang login
-        if(!empty($_POST["usernameLogin"])|| !empty($_POST["passwordLogin"]))
-        {
-            //Lấy dữ liệu từ database bằng username password
-            $username = $this->userModel->CheckUserPass($_POST["usernameLogin"],md5($_POST["passwordLogin"]));
-
-            //Nếu $username = null thì show trang lỗi
-            if($username != null) {
-                if($redirect == "cart")
-                {
-                    $_SESSION["userInfo"] = $username;
-                    header('Location: index.php?c=cart');
-                    exit;
-                }
-
-                $_SESSION["userInfo"] = $username;
-                header('Location: index.php');
-                exit;
-            }
-            else
-            {
-                $view = array("Login_Fail" => "Login_Fail");
-                $this->View($view);
-            }
-
-
 			function LoginRegister()
 			{
 				if (!empty($_SESSION["userInfo"])) {
@@ -172,7 +106,7 @@ class Login extends Controller
 					}
 				}
 			}
-		}
+		
 			function Logout()
 			{
 				session_destroy();
