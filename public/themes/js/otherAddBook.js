@@ -25,15 +25,15 @@ $(document).ready(function() {
 				}
 			},
 			bookCost: {
-				message: 'Tên đăng nhập không được để trống !!',
+				message: 'Giá tiền không được để trống !!',
 				validators: {
 					notEmpty: {
-						message: 'Vui lòng nhập tên đăng nhập !!'
+						message: 'Vui lòng nhập giá tiền của sách !!'
 					},
 					stringLength: {
-						min: 0,
+						min: 4,
 						max: 30,
-						message: 'Tên đăng nhập phải từ 6-30 kí tự !!'
+						message: 'số tiền thấp nhất là 1000!!'
 					}
 				}
 			}

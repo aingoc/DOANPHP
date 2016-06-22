@@ -21,7 +21,7 @@
 							<input type="text" name="DiaChi" id="DiaChi" tabindex="1" class="form-control" placeholder="Địa chỉ nhận" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_ADDRESS:''; ?>">
 						</div>
 						<div class="form-group">
-							<input type="text" name="SDT" id="SDT" pattern="[0-9]{10}" tabindex="1" class="form-control" placeholder="Số điện thoại" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_PHONE:''; ?>">
+							<input type="text" name="SDT" id="SDT" pattern="[0-9]" tabindex="1" class="form-control" placeholder="Số điện thoại" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_PHONE:''; ?>">
 						</div>
 						<div class="form-group">
 							<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="example@gmail.com" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_EMAIL:''; ?>">

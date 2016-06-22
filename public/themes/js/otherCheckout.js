@@ -56,9 +56,9 @@ $(document).ready(function() {
                         message: 'Vui lòng nhập số điện thoại !'
                     },
                     stringLength: {
-                        min: 10,
+                        min: 8,
                         max: 11,
-                        message: 'Số điện thoại phải từ 10 - 11 số !'
+                        message: 'Số điện thoại phải từ 8 - 11 số !'
                     }
                 }
             }
