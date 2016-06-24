@@ -5,24 +5,30 @@
         {
             //Câu Select
             $sql = "SELECT * FROM books WHERE BOOK_ID = $bookID ";
-
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
-
             //Trả về dữ liệu
             return $runSql->fetchAll(PDO::FETCH_CLASS);
         }
-
         function GetBookSameType($categoryID,$position,$number)
         {
             //Câu Select
-            $sql = "SELECT * FROM books WHERE books.CATEGORY_ID = $categoryID ORDER BY books.DATE LIMIT $position,$number";
-
+            $sql = "SELECT * FROM books WHERE books.CATEGORY_ID = $categoryID ORDER BY RAND()  LIMIT  $position,$number";
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
-
             //Trả về dữ liệu
             return $runSql->fetchAll(PDO::FETCH_CLASS);
+        }
+        function DeleteBookByID($bookID)
+        {
+            //Câu Select
+            $sql = "DELETE FROM `books` WHERE BOOK_ID = $bookID;
+                                          ";
+            //Thực thi câu lệnh
+            $runSql = $this->db->ExeQuery($sql);
+
+            //Trả về dữ liệu
+            return $runSql;
         }
     }
 ?>

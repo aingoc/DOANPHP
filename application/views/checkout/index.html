@@ -1,1 +1,170 @@
-<h1>test</h1>
+	</br>
+	<div class="col-md-12 ">
+		<form id="checkout-form" action="index.php?c=invoice&a=addInvoice" method="POST" role="form">
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading text-center">
+						Thông tin giao hàng
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<input type="text" name="Ten" 
+								<?php echo (!empty($_SESSION['userInfo']))?'readonly':''?> id="Ten" tabindex="1" class="form-control" placeholder="Họ tên người nhận" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_NAME:''; ?>">
+						</div>
+								<script>
+									 function valid(f) {
+										 !(/^[A-z&#209;&#241;0-9]*$/i).test(f.value)?f.value = f.value.replace(/[^A-z&#209;&#241;0-9]/ig,''):null;
+									 }
+								</script>
+								
+						<div class="form-group">
+							<input type="text" name="DiaChi" id="DiaChi" tabindex="1" class="form-control" placeholder="Địa chỉ nhận" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_ADDRESS:''; ?>">
+						</div>
+						<div class="form-group">
+							<input type="text" name="SDT" id="SDT" pattern="[0-9]" tabindex="1" class="form-control" placeholder="Số điện thoại" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_PHONE:''; ?>">
+						</div>
+						<div class="form-group">
+							<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="example@gmail.com" value="<?php echo (!empty($_SESSION['userInfo']))?$_SESSION['userInfo'][0]->USER_EMAIL:''; ?>">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--Phương thức thanh toán-->
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading text-center">
+						 Phương thức thanh toán
+					</div>
+					<div class="panel-body">
+						<input type="number" name="paymentType" id="paymentType" hidden value="<?php echo $checkoutType ?>">
+						<div class="form-group">
+							<label for="sel1">Phương thức thánh toán:</label>
+							<select multiple class="form-control" id="sel1">
+								<option selected value="1" >Thanh toán khi nhận hàng</option>
+								<option value="2">Thanh toán bằng Thẻ điện thoại</option>
+								<option value="3">Thanh toán bằng Thẻ ngân hàng</option>
+								<option value="4">Thanh toán khác</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<p class="small">
+								<i>Ngày tạo hóa đơn (Mặc định)</i>
+							</p>
+							<input type="datetime" name="currentDate" id="currentDate" tabindex="1" class="form-control" readonly value="<?php echo date('d/m/Y');?>">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Thông tin đơn hàng-->
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading text-center">
+						 Thông tin đơn hàng
+					</div>
+					<div class="panel-body small scrollTable">
+						 <style>
+							.scrollTable{overflow: scroll;
+										 height: 185px;}
+
+						</style>
+						
+						<table class="table table-striped" >
+							<thead>
+								<tr>
+									<th>Tên Sách</th>
+									<th>Số lượng</th>
+									<th>Thành tiền</th>
+								</tr>
+							</thead>
+							<tbody>
+								 <?php
+									$count = 0;
+									$total = 0;
+									$totalQuality = 0;
+									for($i = 0 ; $i < count($listCartBook) ;$i++)
+									{
+										echo '
+											<tr>
+												<td class="filterable-cell">'.$listCartBook[$i]->BOOK_NAME.'</td>
+												<td>'.$listBookQuality[$i].'</td>
+												<td>'.number_format(intval($listBookQuality[$i]*$listCartBook[$i]->BOOK_COST)).' </td>
+											</tr>
+											';
+											
+											$total = $total + intval($listBookQuality[$i]*$listCartBook[$i]->BOOK_COST);
+											$totalQuality = $totalQuality + intval($listBookQuality[$i]);
+
+									}
+
+								?>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="panel-footer small">
+						<b>Tổng tiền : </b>
+						<?php
+							$sale = 0;
+							$totalBefore= $total;
+
+							if($total > 200000 && $total <= 500000)
+							{
+
+							   $sale = $total - (($total * 96)/100);
+							   $total = ($total * 96)/100;
+
+							   echo number_format($total) .' VNĐ (Đã giảm 4% - '.$sale.' VNĐ)';
+							}
+							elseif($total > 500000)
+							{
+								$sale = $total - (($total * 88)/100);
+								$total = ($total * 88)/100;
+								echo number_format($total).' VNĐ (Đã Giảm 12% - '.$sale.' VNĐ)';
+							}
+							else
+							{   $sale=0;
+								echo number_format($total).' VNĐ';
+							}
+
+
+						?>
+					</div>
+					<input type="number" name="maxInvoiceID" id="maxInvoiceID" hidden value="<?php echo $maxInvoiceID[0]->INVOICE_HEADER_ID +1 ?>" >
+					<input type="number" name="totalQuality" id="totalQuality" hidden value="<?php echo $totalQuality ?>" >
+					<input type="number" name="total" id="total" hidden value="<?php echo $total ?>" >
+					<input type="number" name="totalBefore" id="totalBefore" hidden value="<?php echo $totalBefore ?>" >
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="col-xs-6">
+							<input type="submit" name="back-submit" id="btnBack" class="form-control btn-info" style="color:rgb(246, 249, 249)" tabindex="4" value="QUAY LẠI ĐƠN HÀNG">
+						</div>
+						<div class="col-xs-6">
+							<input type="submit" name="checkout-submit" id="btnCheckout" class="form-control" style="background:#f36b2d; color: white" tabindex="4" value="THANH TOÁN">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+	
+	<script type="text/javascript" src="public/themes/js/otherCheckout.js"></script>
+	<script>
+	
+		$(document).ready(function() {
+
+			$('#sel1 option').on('click', function(){
+				$('#paymentType').val($(this).val());
+			});
+
+		});
+
+	</script>
+
+

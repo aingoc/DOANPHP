@@ -1,48 +1,116 @@
-<br style="width: 80%; margin: auto;">
-    <h1>Thông tin khách hàng</h1>
+
+	<br style="width: 80%; margin: auto;">
+    <h3 class="text-center" style="color: rgb(70, 170, 19)">
+		<span class="glyphicon glyphicon-user" style="color: rgb(70, 170, 19)" aria-hidden="true"></span>   
+		Thông tin khách hàng
+	</h3>
     <hr>
     <div class="col-md-12 text-right">
-        <button id="enable" class="btn btn-danger">Bật/tắt chỉnh sửa</button>
-    </div>
 
+        <button id="enable" class="btn">Bật/tắt chỉnh sửa</button>
+
+    </div>
 
     <div class="col-md-12">
         <table id="user" class="table table-bordered table-striped" style="clear: both">
             <tbody>
                 <tr>
-                    <td width="35%">Tên khách hàng</td>
+                    <td width="35%"><strong>Tên khách hàng</strong></td>
                     <td width="65%"><a href="#" id="user_name" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_NAME; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Ngày sinh</td>
+                    <td width="35%"><strong>Ngày sinh</strong></td>
                     <td width="65%"><a href="#" id="user_birthday" data-type="date" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_BIRTHDAY; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Giới tính</td>
+                    <td width="35%"><strong>Giới tính</strong></td>
                     <td width="65%"><a href="#" id="user_sex" data-type="select" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_SEX; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Địa chỉ</td>
+                    <td width="35%"><strong>Địa chỉ</strong></td>
                     <td width="65%"><a href="#" id="user_address" data-type="textarea" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_ADDRESS; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Số điện thoại</td>
+                    <td width="35%"><strong>Số điện thoại</strong></td>
                     <td width="65%"><a href="#" id="user_phone" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_PHONE; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Tuổi</td>
+                    <td width="35%"><strong>Tuổi</strong></td>
                     <td width="65%"><a href="#" id="user_age" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_AGE; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Email</td>
+                    <td width="35%"><strong>Email</strong></td>
                     <td width="65%"><a href="#" id="user_email" data-type="text" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"><?php echo $_SESSION["userInfo"][0]->USER_EMAIL; ?></a></td>
                 </tr>
                 <tr>
-                    <td width="35%">Password</td>
+                    <td width="35%"><strong>Password</strong></td>
                     <td width="65%"><a href="#" id="password" data-pk="<?php echo $_SESSION['userInfo'][0]->USER_ID; ?>"  data-url="index.php?c=login&a=UserUpdate" class="editable editable-click"></a></td>
                 </tr>
 
             </tbody>
         </table>
     </div>
-<script type="text/javascript" src="public/themes/js/otherUserDetail.js"></script>
+	<script type="text/javascript" src="public/themes/js/otherUserDetail.js"></script>
+
+	<br style="width: 80%; margin: auto;">
+	<h3 class="text-center " style="color: rgb(70, 170, 19)">
+		<span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="color: rgb(70, 170, 19)" ></span>
+		&nbsp Danh sách hóa đơn
+	</h3>
+	<hr>
+
+	<div class="input-group"> 
+		<span class="input-group-addon">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		</span>
+		<input id="filter" type="text" class="form-control" placeholder="Nhập thông tin cần tìm...">
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Mã hóa đơn</th>
+				<th>Tên người nhận</th>
+				<th>Ngày tạo</th>
+				<th>Giá trị hóa đơn</th>
+				<th>Trạng thái</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody class="searchable">
+			<?php
+				foreach($allInvoice as $value)
+				{
+					echo '
+						<tr>
+							<td>'.$value->INVOICE_HEADER_NO.'</td>
+							<td>'.$value->NAME.'</td>
+							<td>'.$value->DATE.'</td>
+							<td>'.number_format($value->TOTAL_COST).' VNĐ</td>
+							<td style="color: grey">Đang xác thực</td>
+							<td>
+								<a href="index.php?c=invoice&a=invoiceDetail&invoiceNo='.$value->INVOICE_HEADER_NO.'">Xem chi tiết</a>
+							</td>
+						</tr>
+					';
+				}
+			?>
+		</tbody>
+	</table>
+	<script>
+		$(document).ready(function () {
+
+			(function ($) {
+
+				$('#filter').keyup(function () {
+
+					var rex = new RegExp($(this).val(), 'i');
+					$('.searchable tr').hide();
+					$('.searchable tr').filter(function () {
+						return rex.test($(this).text());
+					}).show();
+
+				})
+				
+			}(jQuery));
+		});
+	</script>

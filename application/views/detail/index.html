@@ -1,194 +1,187 @@
-<link rel="stylesheet" href="public/themes/css/etalage.css">
-<script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
-<script>
-    jQuery(document).ready(function($){
+	<link rel="stylesheet" href="public/themes/css/etalage.css">
+	<script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
+	<script>
+		jQuery(document).ready(function($){
 
-        $('#etalage').etalage({
-            thumb_image_width: 300,
-            thumb_image_height: 400,
-            source_image_width: 900,
-            source_image_height: 1200,
-            show_hint: true,
-            click_callback: function(image_anchor, instance_id){
-                alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-            }
-        });
+			$('#etalage').etalage({
+				thumb_image_width: 300,
+				thumb_image_height: 400,
+				source_image_width: 900,
+				source_image_height: 1200,
+				show_hint: true,
+				click_callback: function(image_anchor, instance_id){
+					alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+				}
+			});
 
-    });
-</script>
-<div class="single">
-    <div class="col-md-9 top-in-single">
-        <div class="col-md-5 single-top">
-            <ul id="etalage">
-                <li>
-                    <a href="#">
-                        <img class="etalage_thumb_image img-responsive col-md-12" src="public/themes/images/<?php echo $bookDetail[0]->BOOK_IMAGE ?>" alt="" >
-                        <img class="etalage_source_image img-responsive col-md-12" src="public/themes/images/<?php echo $bookDetail[0]->BOOK_IMAGE ?>" alt="" >
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-7 single-top-in">
-            <div class="single-para">
-                <h4><?php echo $bookDetail[0]->BOOK_NAME ?></h4>
-                <div class="para-grid">
-                    <span  class="add-to"><?php echo number_format(intval($bookDetail[0]->BOOK_COST)) ?> VNĐ</span>
-                    <a href="#" class="hvr-shutter-in-vertical cart-to"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào Giỏ</a>
-                    <div class="clearfix"></div>
-                </div>
-                <h5>Giới thiệu 
-					<!--<p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>-->
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <?php
-                                $description= explode(" ",$bookDetail[0]->BOOK_DESCRIPTION);
-                                $descriptionCut = "";
-                                $check = 0;
-                                if(count($description) > 50)
-                                {
-                                    for($i=0;$i <= 50 ;$i++)
-                                    {
-                                        $descriptionCut .= " ".$description[$i];
-                                    }
-                                    $descriptionCut .= "...";
-                                    $check = 1;
-                                }
-                                else
-                                {
-                                $descriptionCut = $bookDetail[0]->BOOK_DESCRIPTION;
-                                }
-                            ?>
-                            <p>
-                                <?php
-                                 echo $descriptionCut;
+		});
+	</script>
+	<div class="single">
+		<div class="col-md-9 top-in-single">
+			<div class="col-md-5 single-top item">
+				<ul id="etalage">
+					<li>
+						<a href="#">
+							<img class="etalage_thumb_image img-responsive col-md-12" src="public/themes/images/<?php echo $bookDetail[0]->BOOK_IMAGE ?>" alt="" >
+							<img class="etalage_source_image img-responsive col-md-12" src="public/themes/images/<?php echo $bookDetail[0]->BOOK_IMAGE ?>" alt="" >
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-7 single-top-in ">
+				<div class="single-para">
+					<h4><?php echo $bookDetail[0]->BOOK_NAME ?></h4>
+					<div class="para-grid">
+						<span  class="add-to"><?php echo number_format(intval($bookDetail[0]->BOOK_COST)) ?> VNĐ</span>
+						<button type="button"  bookID="<?php echo $bookDetail[0]->BOOK_ID ?>" class="hvr-shutter-in-vertical cart-to addCart pull-right"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào Giỏ</button>
+						<div class="clearfix"></div>
+					</div>
+					<h5>Giới thiệu 
+						<!--<p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?></p>-->
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<?php
+									$description= explode(" ",$bookDetail[0]->BOOK_DESCRIPTION);
+									$descriptionCut = "";
+									$check = 0;
+									if(count($description) > 48)
+									{
+										for($i=0;$i <= 48 ;$i++)
+										{
+											$descriptionCut .= " ".$description[$i];
+										}
+										$descriptionCut .= "...";
+										$check = 1;
+									}
+									else
+									{
+									$descriptionCut = $bookDetail[0]->BOOK_DESCRIPTION;
+									}
+								?>
+								<p>
+									<?php
+									 echo $descriptionCut;
 
-                                if($check == 1)
-                                {
-                                    echo '<a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" > Xem thêm</a>';
-                                }
-                                ?>
+									if($check == 1)
+									{
+										echo '<a class="SeeMore2" data-toggle="collapse" href="#collapseTwo" > Xem thêm</a>';
+									}
+									?>
 
-                            </p>
-                        </div>
-                        <div id="collapseTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?><a class="SeeMore1" data-toggle="collapse" href="#collapseTwo" > Rút ngắn</a></p>
-                            </div>
-                        </div>
+								</p>
+							</div>
+							<div id="collapseTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									<p><?php echo $bookDetail[0]->BOOK_DESCRIPTION ?><a class="SeeMore1" data-toggle="collapse" href="#collapseTwo" > Rút ngắn</a></p>
+								</div>
+							</div>
 
-                        <script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
-                    </div>
-				</h5>
+							<script type="text/javascript" src="public/themes/js/otherSeemore.js"></script>
+						</div>
+					</h5>
 
-                <!--<div class="available">-->
-                    <!--<h6>Đặt hàng :</h6>-->
-                    <!--<ul>-->
-                        <!--<li>Số lượng:-->
-                            <!--<select>-->
-                                <!--<option>1</option>-->
-                                <!--<option>2</option>-->
-                                <!--<option>3</option>-->
-                                <!--<option>4</option>-->
-                                <!--<option>5</option>-->
-                            <!--</select>-->
-							<!-- -->
-                        <!--</li>-->
-                    <!--</ul>-->
-					<!-- -->
-                <!--</div>-->
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-		
-        <div class="content-top-in">
-			<h3 class="samecategories">CÙNG LOẠI</h3>
-            <?php
-                    foreach($bookSameType as $key => $value)
-                    {
-                        $bookName = explode(" ",$value->BOOK_NAME);
-                        $bookCut = "";
-                        if(count($bookName) > 6)
-                        {
-                        for($i=0;$i <= 5;$i++)
-                        {
-                        $bookCut .= " ".$bookName[$i];
-                        }
-                        $bookCut .= "...";
-                        }
-                        else
-                        {
-                        $bookCut = $value->BOOK_NAME;
-                        }
+					<div class="available">
+						<h6><b>Ưu đãi </b></h6>
+						<ul>
+							<li>&nbsp &nbsp &nbsp <span style="color:green" class="glyphicon glyphicon-ok">&nbsp </span> Với mỗi 200.000 VNĐ trong đơn hàng, quý khách được giảm 4%</li>
+							<li>&nbsp &nbsp &nbsp <span style="color:green" class="glyphicon glyphicon-ok">&nbsp </span> Với mỗi 500.000 VNĐ trong đơn hàng, quý khách được giảm 12% </li>
+						</ul>	
+				   </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+			
+			<div class="content-top-in">
+				<h3 class="samecategories">CÙNG LOẠI</h3>
+				<?php
+						foreach($bookSameType as $key => $value)
+						{
+							$bookName = explode(" ",$value->BOOK_NAME);
+							$bookCut = "";
+							if(count($bookName) > 6)
+							{
+							for($i=0;$i <= 5;$i++)
+							{
+							$bookCut .= " ".$bookName[$i];
+							}
+							$bookCut .= "...";
+							}
+							else
+							{
+							$bookCut = $value->BOOK_NAME;
+							}
 
-                        echo '
+							echo '
 
-                                <div class="col-md-4 top-single">
-                                    <div class="col-md">
-                                        <div class="hovereffect">
-                                            <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
-                                            <div class="overlay">
-                                                <h2>'.$value->BOOK_NAME.'</h2>
-                                                </br>
-                                                </br>
-                                                <p>
-                                                    <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="top-content">
-											<h5>
-												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a>
-											</h5>
-                                            <div class="white">
-                                                <a href="#" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
-                                                <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        ';
-                    }
-            ?>
-            <div class="clearfix"></div>
-        </div>
-    </div>
+									<div class="col-md-4 top-single item">
+										<div class="col-md">
+											<div class="hovereffect">
+												<img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+												<div class="overlay">
+													<h2>'.$value->BOOK_NAME.'</h2>
+													</br>
+													</br>
+													<p>
+														<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+													</p>
+												</div>
+											</div>
+											<div class="top-content">
+												<h5>
+													<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a>
+												</h5>
+												<div class="white">
+													<button type="button"  bookID="'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 addCart "><span class="glyphicon glyphicon-shopping-cart"></span></button>
+													<p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
+													<div class="clearfix"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+							';
+						}
+				?>
+				<div class="clearfix"></div>
+			</div>
+		</div>
 
 
-    <div class="col-md-3">
-        <div class="single-bottom">
-            <h4 class="text-center">Sách Hot</h4>
-    <?php
-        foreach($hot as $key => $value)
-        {
-            echo '
+		<div class="col-md-3">
+			<div class="single-bottom">
+				<h4 class="text-center">Sách Hot</h4>
+				<?php
+					foreach($hot as $key => $value)
+					{
+						echo '
 
 
-                            <div class="product">
-                                <div class="col-md-12 text-center">
-                                    <div class="hovereffect">
-                                        <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
-                                        <div class="overlay">
-                                            <h2>'.$value->BOOK_NAME.'</h2>
-                                            </br>
-                                            </br>
-                                            <p>
-                                                <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="elit">'.$value->BOOK_NAME.'</a>
-                                    <span class="price price-in"><small>$100000 </small>'.number_format(intval($value->BOOK_COST)).' VNĐ</span>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-
-                ';
-        }
-    ?>
-        </div>
-    </div>
-    <div class="clearfix"> </div>
-</div>
+										<div class="product">
+											<div class="col-md-12 text-center">
+												<div class="hovereffect">
+													<img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
+													<div class="overlay">
+														<h2>'.$value->BOOK_NAME.'</h2>
+														</br>
+														</br>
+														<p>
+															<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">XEM CHI TIẾT</a>
+														</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-12 text-center">
+												<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'" class="elit">'.$value->BOOK_NAME.'</a>
+												<span class="price price-in"><small>'.number_format(intval($value->BOOK_COST_OLD)).' VNĐ </small>'.number_format(intval($value->BOOK_COST)).' VNĐ</span>
+											</div>
+											<div class="clearfix"> </div>
+										</div>
+							';
+					}
+				?>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="public/themes/js/otherAddCart.js"></script>

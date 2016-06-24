@@ -1,0 +1,19 @@
+	<hr>
+	<form id="deleteBook-form" action="index.php?c=admin&a=deleteBook" method="POST" role="form"  enctype="multipart/form-data" >
+
+		<div class="form-group">
+			<input type="number" name="bookID" id="bookID"  class="form-control"  placeholder="Nhập ID sách cần xóa" >
+			<label><?php echo $status  ?></label>
+		</div>
+		<input type="hidden" name="deleteBook" value="deleteBook">
+		
+		<div class="form-group">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<input type="submit" name="delete-submit" id="btnDeleteBook" class="form-control btn-primary"  tabindex="4" value="Xóa sách">
+				</div>
+			</div>
+		</div>
+		
+	</form>
+	<hr>

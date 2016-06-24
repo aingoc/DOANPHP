@@ -3,23 +3,31 @@
         <!---->
         <div class="content-top">
             <h3 class="future">BÁN CHẠY</h3>
-            <div class="content-middle-in">
-
+            <div class="content-middle-in ">
                 <ul id="flexiselDemo1">
                     <?php
                         foreach($hot as $key => $value)
                         {
-                            echo '<li><div class = "sizeimg"><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img src="public/themes/images/'.$value->BOOK_IMAGE.'"/></a></div></li>';
+                            echo '
+									<li>
+										<div class = "sizeimg ">
+											<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">
+												<img src="public/themes/images/'.$value->BOOK_IMAGE.'"/>
+											</a>
+										</div>
+									</li>
+								 ';
                         }
                     ?>
                 </ul>
+				
                 <script type="text/javascript" src="public/themes/js/jquery.flexisel.js"></script>
             </div>
         </div>
+		
         <div class="content-middle">
-
             <h3 class="future">SÁCH MỚI</h3>
-            <div class="content-top-in">
+            <div class="content-top-in gallery">
                 <?php
                     $count = 0;
                     foreach($new as $key => $value)
@@ -38,9 +46,9 @@
                         {
                         $bookCut = $value->BOOK_NAME;
                         }
-
-
-                        echo '  <div class="col-md-3 md-col">
+						
+                        echo '  
+								<div class="col-md-3 md-col item">
                                     <div class="col-md ">
                                         <div class="hovereffect">
                                             <img  src="public/themes/images/'.$value->BOOK_IMAGE.'" class="" alt="" />
@@ -53,11 +61,12 @@
                                                 </p>
                                             </div>
                                         </div>
+										
                                         <!--<a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'"><img  src="public/themes/images/'.$value->BOOK_IMAGE.'" alt="" /></a>-->
                                         <div class="top-content">
                                             <h5><a href="index.php?c=detail&a=index&id='.$value->BOOK_ID.'">'.$bookCut.'</a></h5>
                                             <div class="white">
-                                                <a href="#'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 "><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                                                <button type="button"  bookID="'.$value->BOOK_ID.'" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 addCart"><span class="glyphicon glyphicon-shopping-cart"></span></button>
                                                 <p class="dollar">'.number_format(intval($value->BOOK_COST)).'<span class="in-dollar">VNĐ</span></p>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -70,13 +79,18 @@
 
                         if($count == 4)
                         {
-                            echo '<div class="clearfix"></div></div><div class="content-top-in">';
+                            echo '
+									<div class="clearfix"></div>
+									<div class="content-top-in"></div>
+								 ';
                         }
                     }
                 ?>
-            <div class="clearfix"></div>
+				<div class="clearfix"></div>
             </div>
         </div>
     </div>
-
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="public/themes/js/otherAddCart.js"></script>
 

@@ -4,7 +4,7 @@
         function CheckUserPass($username,$password)
         {
             //Câu Select
-            $sql = "SELECT USER_ID, USER_NAME,USER_NO,USER_BIRTHDAY,USER_SEX,USER_AGE,USER_ADDRESS,USER_PHONE,USER_EMAIL FROM users WHERE 1=1 AND USERNAME = '$username'
+            $sql = "SELECT USER_ID, USER_NAME,USER_NO,USER_BIRTHDAY,USER_SEX,USER_AGE,USER_ADDRESS,USER_PHONE,USER_EMAIL,POSITION FROM users WHERE 1=1 AND USERNAME = '$username'
                                                   AND PASSWORD = '$password' ";
             //Thực thi câu lệnh
             $runSql = $this->db->QueryResult($sql);
